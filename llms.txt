@@ -84,6 +84,12 @@
 
 ## Pages
 
-- [Resume](https://www.senthilsweb.com/resume/)
+- [Resume](https://www.senthilsweb.com/resume/) — also machine-readable JSON Resume at /resume.json
 - [About](https://www.senthilsweb.com/about/)
-- [Projects](https://www.senthilsweb.com/projects/)
+- [Projects](https://www.senthilsweb.com/projects/) — catalog at /data/projects.parquet
+- [AI Agents](https://www.senthilsweb.com/agents/) — catalog at /data/agents.parquet
+- [Docker Images](https://www.senthilsweb.com/images/) — catalog at /data/docker.parquet
+- [Claude Skills](https://www.senthilsweb.com/skills/) — catalog at /data/skills.parquet, downloads under /downloads/skills/
+- [Slide Decks](https://www.senthilsweb.com/decks/) — catalog at /data/decks.parquet, decks hosted under /decks/<slug>/
+- [Datasets](https://www.senthilsweb.com/datasets/) — catalog at /data/datasets.parquet
+- [Data Studio](https://www.senthilsweb.com/studio/) — DuckDB-WASM query editor; pass ?url=<parquet-or-csv-url>
