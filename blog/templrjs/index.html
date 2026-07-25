@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TemplrJS — Senthilsweb</title><meta name="description" content="Discover TemplrJS, the amalgamation of best-practice templates and cutting-edge development inspired by RedwoodJS for building high-performance web and mobile applications."><link rel="canonical" href="https://www.senthilsweb.com/blog/templrjs/"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:title" content="TemplrJS — Senthilsweb"><meta property="og:description" content="Discover TemplrJS, the amalgamation of best-practice templates and cutting-edge development inspired by RedwoodJS for building high-performance web and mobile applications."><meta property="og:url" content="https://www.senthilsweb.com/blog/templrjs/"><meta property="og:site_name" content="Senthilsweb"><meta property="og:image" content="https://www.senthilsweb.com/og/blog/templrjs.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="TemplrJS — Senthilsweb"><meta name="twitter:description" content="Discover TemplrJS, the amalgamation of best-practice templates and cutting-edge development inspired by RedwoodJS for building high-performance web and mobile applications."><meta name="twitter:image" content="https://www.senthilsweb.com/og/blog/templrjs.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":"https://www.senthilsweb.com/blog/templrjs/","headline":"TemplrJS","description":"Discover TemplrJS, the amalgamation of best-practice templates and cutting-edge development inspired by RedwoodJS for building high-performance web and mobile applications.","datePublished":"2024-03-31T03:38:35.621Z","image":"https://www.senthilsweb.com/og/blog/templrjs.png","author":{"@type":"Person","name":"Senthilnathan Karuppaiah","url":"https://www.senthilsweb.com/about/","sameAs":["https://github.com/senthilsweb","https://www.linkedin.com/in/senthilnathan-karuppaiah/"]}}</script><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f2ea"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130e"><script>
+      document.documentElement.dataset.theme =
+        localStorage.theme ??
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;0,6..72,500&family=JetBrains+Mono:wght@500;600&family=Archivo+Narrow:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Base.B2SL9vj6.css"><style>.phero{border:1px solid var(--line);background:var(--card);border-radius:14px;margin-top:30px;position:relative;overflow:hidden}.phero .wash{color:var(--accent);background:radial-gradient(120% 150% at 100% 0%, var(--accent-soft), transparent 55%), radial-gradient(90% 120% at 0% 100%, var(--accent-soft), transparent 45%);position:absolute;inset:0}.phero .in{padding:24px 24px 18px;position:relative}.phero .k{letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font:600 11px JetBrains Mono,monospace}.phero h1{letter-spacing:-.025em;max-width:26ch;margin:10px 0 0;font-size:clamp(24px,4.6vw,34px);font-weight:700;line-height:1.1}.phero .dek{color:var(--ink-2);max-width:56ch;margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-size:16.5px;font-style:italic}.phero .byline{border-top:1px solid var(--line);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap;gap:8px 16px;margin-top:16px;padding-top:12px;font:600 10.5px JetBrains Mono,monospace;display:flex}.toc{border-left:1px solid var(--line);max-height:calc(100vh - 90px);padding-left:16px;position:sticky;top:70px;overflow-y:auto}.toc-h{letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font:600 10px JetBrains Mono,monospace}.toc ul{margin:10px 0 0;padding:0;list-style:none}.toc li{margin:7px 0}.toc li.d3{padding-left:12px}.toc a{color:var(--muted);font-size:12.5px;line-height:1.35;display:block}.toc a:hover{color:var(--ink)}.toc a.active{color:var(--accent);font-weight:600}@media (width<=1099px){.toc{display:none}}
+</style></head><body><header class="bar" data-pagefind-ignore><div class="in"><a class="mark" href="/"><span class="d"></span><span>Senthilsweb</span></a><nav><a href="/blog">Blog</a><a href="/linkedin">LinkedIn</a><a href="/projects">Projects</a><a href="/resume">Resume</a><a href="/about">About</a><button id="search-open" aria-label="Search" title="Search ( / or ⌘K )"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.8-3.8"></path></svg></button><dialog id="search-dialog"><div class="sd-in"><div class="sd-head"><span class="sd-k">Search</span><button id="search-close" aria-label="Close">esc</button></div><pagefind-config bundle-path="/pagefind/"></pagefind-config><script type="module" src="/_astro/PagefindConfig.astro_astro_type_script_index_0_lang.oMACxZGj.js"></script><pagefind-searchbox showImages="false" class="pagefind-ui"></pagefind-searchbox></div></dialog><script type="module">var e=document.getElementById(`search-dialog`),t=()=>{e.showModal(),e.querySelector(`input`)?.focus()};document.getElementById(`search-open`).addEventListener(`click`,t),document.getElementById(`search-close`).addEventListener(`click`,()=>e.close()),e.addEventListener(`click`,t=>{t.target===e&&e.close()}),document.addEventListener(`keydown`,n=>{if((n.key===`/`||n.key===`k`&&(n.metaKey||n.ctrlKey))&&!e.open){let e=n.target;e.tagName!==`INPUT`&&e.tagName!==`TEXTAREA`&&(n.preventDefault(),t())}});</script><button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle class="sun" cx="12" cy="12" r="4.4"></circle><g class="sun"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19"></path></g><path class="moon" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"></path></svg></button><script type="module">document.getElementById(`theme-toggle`).addEventListener(`click`,()=>{let e=document.documentElement.dataset.theme===`dark`?`light`:`dark`;document.documentElement.dataset.theme=e,localStorage.theme=e});</script></nav></div></header><div class="wrap wide"><div class="post-grid"><article class="post" data-pagefind-body><header class="phero"><div class="wash" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="phdots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.3" fill="currentColor" fill-opacity=".22"></circle></pattern></defs><rect width="100%" height="100%" fill="url(#phdots)"></rect><g fill="currentColor"><rect x="86%" y="-30" width="120" height="120" rx="14" fill-opacity=".10" transform="rotate(45 1060 30)"></rect><rect x="72%" y="55%" width="170" height="170" rx="18" fill-opacity=".07" transform="rotate(45 900 160)"></rect><rect x="94%" y="45%" width="70" height="70" rx="10" fill-opacity=".14" transform="rotate(45 1160 130)"></rect></g></svg></div><div class="in"><span class="k">Blog</span><h1>TemplrJS</h1><p class="dek">Discover TemplrJS, the amalgamation of best-practice templates and cutting-edge development inspired by RedwoodJS for building high-performance web and mobile applications.</p><div class="byline"><span>Senthilnathan Karuppaiah</span><span>Mar 31, 2024</span><span>5 min read</span></div></div></header><div class="prose"><h2 id="introduction">Introduction</h2>
+<p>As the digital world continues to evolve at a breakneck pace, developers need tools that can keep up with the demand for fast, efficient, and cost-effective solutions. That’s where TemplrJS comes in. Built upon a foundation of 100% open-source technologies, TemplrJS is a testament to modern, cutting-edge development practices. It’s a developer’s toolkit designed for agility, speed, and flexibility.</p>
+<h2 id="what-is-templrjs">What is TemplrJS?</h2>
+<p><a href="https://github.com/senthilsweb/templrjs">TemplrJS</a> is an Open Source Developer tooling platform that leverages the capabilities of Vue.js, Nuxt.js, Tailwind CSS, Supabase and DuckDB/MotherDuck. It’s crafted to provide developers with a seamless and efficient experience for creating fast, performance-optimized web and mobile sites, apps, and data-driven dashboards.</p>
+<p>I initiated TemplrJS Project to power my own blog site <a href="www.senthilsweb.com">www.senthilsweb.com</a> and made the leap to open source in July, 2021 under the code named <strong>zypress</strong>. TemplrJS began as a vision 3 years ago and has since undergone substantial refinement.</p>
+<p><img src="/i/blog/templrjs-architecture.png" alt="TemplrJS Framework Architecture"></p>
+<p>The architecture is based on time-tested database driven design coupled with modern front-end stacks that can be deployed cross platform in a hybrid infrastructure i.e. cloud and or on-prem in a serverless model without using any Virtual Machines or AWS Lambda or Azure Function by leveraging Chrome V8 runtimes a.k.a Javascript Isolate or Ilands Architecture. The programming language is Javascript (EC6), the most widely used language in the universe.</p>
+<p><strong>V8 Isolates Architecture</strong> (Image courtesy <a href="https://blog.cloudflare.com/cloud-computing-without-containers/">cloudflare worker</a>)</p>
+<p><img src="/i/blog/v8.isolates.png" alt="V8 Isolates"></p>
+<p>The popular V8 runtime that <code>TemplrJS</code> can be deployed on the edge nodes are:</p>
+<p>::list{type=“success”}</p>
+<ul>
+<li><a href="https://deno.land/">Denos</a></li>
+<li><a href="https://www.netlify.com/products/#netlify-edge-functions">Netlify edge functions</a></li>
+<li><a href="https://vercel.com/">Vercel functions</a></li>
+<li><a href="https://workers.cloudflare.com/">Cloudflare workers</a>
+::</li>
+</ul>
+<h2 id="going-live-with-zero-to-low-operating-cost">Going Live with Zero to Low Operating Cost</h2>
+<p>TemplrJS isn’t just about crafting beautiful front ends; it’s also about making life easier for developers. With a rapid setup process, you can go from configuration to build to deployment in 90+ edge locations using Vercel in less than an hour.</p>
+<h2 id="rich-features-for-developers">Rich Features for Developers</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configurable Branding, Color Theme and Navigation</td>
+<td>Allows for complete customization to match your branding.</td>
+</tr>
+<tr>
+<td>Customizable Landing Page</td>
+<td>Create an impactful and personalized entry point for visitors.</td>
+</tr>
+<tr>
+<td>Blog</td>
+<td>A platform to share and distribute content.</td>
+</tr>
+<tr>
+<td>Resume</td>
+<td>Compatible with the JSONResume schema for professional presentation.</td>
+</tr>
+<tr>
+<td>Technical Documentation</td>
+<td>Organize and display technical details and guides.</td>
+</tr>
+<tr>
+<td>Ebook Reader</td>
+<td>Provide a digital reading experience for users.</td>
+</tr>
+<tr>
+<td>Social Cards</td>
+<td>Dynamically generated cards for social media sharing, optimized at the edge.</td>
+</tr>
+<tr>
+<td>CMS/Dynamic Page</td>
+<td>Manage and publish content with ease.</td>
+</tr>
+<tr>
+<td>Customizable Footer</td>
+<td>Tailor the footer with links and information as needed.</td>
+</tr>
+<tr>
+<td>Customizable Social Links</td>
+<td>Easily update and display social media links.</td>
+</tr>
+<tr>
+<td>Contact Us</td>
+<td>A direct line to you, with integrated database and email sending.</td>
+</tr>
+<tr>
+<td>Registration</td>
+<td>Streamlined user registration process with integrated database.</td>
+</tr>
+<tr>
+<td>Available in two templates - Spotlight &amp; Templr</td>
+<td>Choose between two distinct template designs.</td>
+</tr>
+<tr>
+<td>Terms &amp; Conditions</td>
+<td>Ready-to-use legal text that can be customized as necessary.</td>
+</tr>
+<tr>
+<td>Legal | Privacy | Cookie Policy</td>
+<td>Essential legal documents are provided and customizable.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="components">Components</h2>
+<ul>
+<li>From Headers and Footers to Hero sections and Carousels, TemplrJS comes equipped with a variety of components that are ready to use, making site assembly quick and intuitive.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>The first thing users see, encapsulating the essence of your brand.</td>
+</tr>
+<tr>
+<td>Footer</td>
+<td>Essential links and information placed at the bottom of each page.</td>
+</tr>
+<tr>
+<td>Hero</td>
+<td>A bold introduction to your site’s most important content.</td>
+</tr>
+<tr>
+<td>Carousel</td>
+<td>A dynamic way to showcase multiple pieces of content.</td>
+</tr>
+<tr>
+<td>Marquee</td>
+<td>For announcements or highlighting special features.</td>
+</tr>
+<tr>
+<td>Registration Form</td>
+<td>Easy to integrate with databases for user sign-ups.</td>
+</tr>
+<tr>
+<td>Inquiry Form</td>
+<td>For collecting user queries and feedback.</td>
+</tr>
+<tr>
+<td>Terms &amp; Conditions</td>
+<td>Pre-made legal text that’s easy to customize.</td>
+</tr>
+<tr>
+<td>Contact Card</td>
+<td>Connect your users directly with your business or personal brand.</td>
+</tr>
+<tr>
+<td>Simple Stats</td>
+<td>Display key figures and data attractively.</td>
+</tr>
+<tr>
+<td>Blog Cards</td>
+<td>Feature your latest or most popular posts.</td>
+</tr>
+<tr>
+<td>Instagram Cards</td>
+<td>A beautiful way to integrate social media content.</td>
+</tr>
+<tr>
+<td>Web Nav</td>
+<td>Navigational elements designed for web users.</td>
+</tr>
+<tr>
+<td>Mobile Nav</td>
+<td>A responsive navigation menu for mobile users.</td>
+</tr>
+<tr>
+<td>Dynamic Dropdown</td>
+<td>Based on Static JSON or REST API for flexible data display.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="advanced-technical-features">Advanced Technical Features</h2>
+<ul>
+<li><strong>Runs on the edge without a server</strong>: Experience the power of edge computing with TemplrJS.</li>
+<li><strong>Unified Binary</strong>: Package your application in a Go-based binary for cross-platform compatibility.</li>
+<li><strong>Client-Only NuxtJS Design</strong>: Streamline performance without the need for server-side rendering.</li>
+<li><strong>Optimized for All Devices</strong>: Ensure your site is responsive and mobile-friendly.</li>
+<li><strong>Edge Caching and Data Storage Solutions</strong>: From Vercel/Cloudflare KV stores to Supabase and DuckDB/MotherDuck integrations, your data needs are covered.</li>
+</ul>
+<p>Whether you’re an enterprise seeking to optimize your operational costs or a hobbyist building a simple portfolio website, TemplrJS adapts to your needs.</p>
+<h2 id="whats-in-the-name-templrjs">What’s in the name TemplrJS?</h2>
+<p>The “Templr” signifies its template-driven approach, ensuring that developers are equipped with a suite of best-practice templates ready to deploy. The “JS” is a nod to the inspirational <a href="https://redwoodjs.com/">RedwoodJS</a>, a popular framework known for its opinionated, but highly productive approach to building web applications.</p>
+<h2 id="roadmap">Roadmap</h2>
+<p>::list{type=“success”}</p>
+<ul>
+<li>Code Refactoring and clenup</li>
+<li>Developer documentaion</li>
+<li>Deployment guide</li>
+<li>API documentation</li>
+<li>UI components</li>
+<li>GUI Templates
+::</li>
+</ul>
+<h2 id="join-the-templrjs-community">Join the TemplrJS Community</h2>
+<p>If you find TemplrJS aligns with your development philosophy and you appreciate the project, I’d be thrilled to have you as part of the community. Your star on GitHub fuels my motivation, and contributions are always welcome. Together, we can continue to build and refine this platform, ensuring it remains by developers, for developers.</p>
+<p>Give <a href="https://github.com/senthilsweb/templrjs">TemplrJS</a> a star on GitHub, and let’s make development better, together.</p>
+</div><div class="tags" data-pagefind-ignore><span>Technology</span><span>Software Development</span><span>Web Design</span><span>Vue.js</span><span>Nuxt.js</span><span>Open Source</span><span>Web Development</span><span>Low Code Platform</span></div></article><nav class="toc" aria-label="Table of contents" data-pagefind-ignore><span class="toc-h">On this page</span><ul><li class="d2"><a href="#introduction">Introduction</a></li><li class="d2"><a href="#what-is-templrjs">What is TemplrJS?</a></li><li class="d2"><a href="#going-live-with-zero-to-low-operating-cost">Going Live with Zero to Low Operating Cost</a></li><li class="d2"><a href="#rich-features-for-developers">Rich Features for Developers</a></li><li class="d2"><a href="#components">Components</a></li><li class="d2"><a href="#advanced-technical-features">Advanced Technical Features</a></li><li class="d2"><a href="#whats-in-the-name-templrjs">What’s in the name TemplrJS?</a></li><li class="d2"><a href="#roadmap">Roadmap</a></li><li class="d2"><a href="#join-the-templrjs-community">Join the TemplrJS Community</a></li></ul></nav><script type="module">var e=document.querySelector(`.toc`);if(e){let t=[...e.querySelectorAll(`a`)],n=t.map(e=>({a:e,el:document.getElementById(decodeURIComponent(e.hash.slice(1)))})).filter(e=>e.el!==null),r=0,i=()=>{r=0;let e=n[0]?.a;for(let t of n)t.el.getBoundingClientRect().top<=90&&(e=t.a);t.forEach(t=>t.classList.toggle(`active`,t===e))};document.addEventListener(`scroll`,()=>{r||=requestAnimationFrame(i)},{passive:!0}),i()}</script></div></div><footer class="site" data-pagefind-ignore><p>© 2026 Senthilnathan Karuppaiah · Data &amp; AI engineering notes, open-source projects.</p><p><a href="https://github.com/senthilsweb" target="_blank" rel="noopener">GitHub ↗</a>&nbsp;·&nbsp;<a href="https://www.linkedin.com/in/senthilnathan-karuppaiah/" target="_blank" rel="noopener">LinkedIn ↗</a>&nbsp;·&nbsp;<a href="/data/posts.parquet">posts.parquet ↓</a>&nbsp;·&nbsp;<a href="/llms.txt">llms.txt</a></p></footer></body></html>

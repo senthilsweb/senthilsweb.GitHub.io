@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Smoothing ERPNext Deployment on Apple&#39;s M1 via Docker-Compose — Senthilsweb</title><meta name="description" content="Addressing the overlooked detail in ERPNext's Docker setup for the Apple M1 architecture and providing a simple solution."><link rel="canonical" href="https://www.senthilsweb.com/blog/smoothing-erpnext-deployment-on-apple-s-m1-via-docker-compose/"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:title" content="Smoothing ERPNext Deployment on Apple's M1 via Docker-Compose — Senthilsweb"><meta property="og:description" content="Addressing the overlooked detail in ERPNext's Docker setup for the Apple M1 architecture and providing a simple solution."><meta property="og:url" content="https://www.senthilsweb.com/blog/smoothing-erpnext-deployment-on-apple-s-m1-via-docker-compose/"><meta property="og:site_name" content="Senthilsweb"><meta property="og:image" content="https://www.senthilsweb.com/og/blog/smoothing-erpnext-deployment-on-apple-s-m1-via-docker-compose.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Smoothing ERPNext Deployment on Apple's M1 via Docker-Compose — Senthilsweb"><meta name="twitter:description" content="Addressing the overlooked detail in ERPNext's Docker setup for the Apple M1 architecture and providing a simple solution."><meta name="twitter:image" content="https://www.senthilsweb.com/og/blog/smoothing-erpnext-deployment-on-apple-s-m1-via-docker-compose.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":"https://www.senthilsweb.com/blog/smoothing-erpnext-deployment-on-apple-s-m1-via-docker-compose/","headline":"Smoothing ERPNext Deployment on Apple's M1 via Docker-Compose","description":"Addressing the overlooked detail in ERPNext's Docker setup for the Apple M1 architecture and providing a simple solution.","datePublished":"2023-10-22T08:30:00.000Z","image":"https://www.senthilsweb.com/og/blog/smoothing-erpnext-deployment-on-apple-s-m1-via-docker-compose.png","author":{"@type":"Person","name":"Senthilnathan Karuppaiah","url":"https://www.senthilsweb.com/about/","sameAs":["https://github.com/senthilsweb","https://www.linkedin.com/in/senthilnathan-karuppaiah/"]}}</script><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f2ea"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130e"><script>
+      document.documentElement.dataset.theme =
+        localStorage.theme ??
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;0,6..72,500&family=JetBrains+Mono:wght@500;600&family=Archivo+Narrow:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Base.B2SL9vj6.css"><style>.phero{border:1px solid var(--line);background:var(--card);border-radius:14px;margin-top:30px;position:relative;overflow:hidden}.phero .wash{color:var(--accent);background:radial-gradient(120% 150% at 100% 0%, var(--accent-soft), transparent 55%), radial-gradient(90% 120% at 0% 100%, var(--accent-soft), transparent 45%);position:absolute;inset:0}.phero .in{padding:24px 24px 18px;position:relative}.phero .k{letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font:600 11px JetBrains Mono,monospace}.phero h1{letter-spacing:-.025em;max-width:26ch;margin:10px 0 0;font-size:clamp(24px,4.6vw,34px);font-weight:700;line-height:1.1}.phero .dek{color:var(--ink-2);max-width:56ch;margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-size:16.5px;font-style:italic}.phero .byline{border-top:1px solid var(--line);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap;gap:8px 16px;margin-top:16px;padding-top:12px;font:600 10.5px JetBrains Mono,monospace;display:flex}.toc{border-left:1px solid var(--line);max-height:calc(100vh - 90px);padding-left:16px;position:sticky;top:70px;overflow-y:auto}.toc-h{letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font:600 10px JetBrains Mono,monospace}.toc ul{margin:10px 0 0;padding:0;list-style:none}.toc li{margin:7px 0}.toc li.d3{padding-left:12px}.toc a{color:var(--muted);font-size:12.5px;line-height:1.35;display:block}.toc a:hover{color:var(--ink)}.toc a.active{color:var(--accent);font-weight:600}@media (width<=1099px){.toc{display:none}}
+</style></head><body><header class="bar" data-pagefind-ignore><div class="in"><a class="mark" href="/"><span class="d"></span><span>Senthilsweb</span></a><nav><a href="/blog">Blog</a><a href="/linkedin">LinkedIn</a><a href="/projects">Projects</a><a href="/resume">Resume</a><a href="/about">About</a><button id="search-open" aria-label="Search" title="Search ( / or ⌘K )"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.8-3.8"></path></svg></button><dialog id="search-dialog"><div class="sd-in"><div class="sd-head"><span class="sd-k">Search</span><button id="search-close" aria-label="Close">esc</button></div><pagefind-config bundle-path="/pagefind/"></pagefind-config><script type="module" src="/_astro/PagefindConfig.astro_astro_type_script_index_0_lang.oMACxZGj.js"></script><pagefind-searchbox showImages="false" class="pagefind-ui"></pagefind-searchbox></div></dialog><script type="module">var e=document.getElementById(`search-dialog`),t=()=>{e.showModal(),e.querySelector(`input`)?.focus()};document.getElementById(`search-open`).addEventListener(`click`,t),document.getElementById(`search-close`).addEventListener(`click`,()=>e.close()),e.addEventListener(`click`,t=>{t.target===e&&e.close()}),document.addEventListener(`keydown`,n=>{if((n.key===`/`||n.key===`k`&&(n.metaKey||n.ctrlKey))&&!e.open){let e=n.target;e.tagName!==`INPUT`&&e.tagName!==`TEXTAREA`&&(n.preventDefault(),t())}});</script><button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle class="sun" cx="12" cy="12" r="4.4"></circle><g class="sun"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19"></path></g><path class="moon" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"></path></svg></button><script type="module">document.getElementById(`theme-toggle`).addEventListener(`click`,()=>{let e=document.documentElement.dataset.theme===`dark`?`light`:`dark`;document.documentElement.dataset.theme=e,localStorage.theme=e});</script></nav></div></header><div class="wrap wide"><div class="post-grid"><article class="post" data-pagefind-body><header class="phero"><div class="wash" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="phdots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.3" fill="currentColor" fill-opacity=".22"></circle></pattern></defs><rect width="100%" height="100%" fill="url(#phdots)"></rect><g fill="currentColor"><rect x="86%" y="-30" width="120" height="120" rx="14" fill-opacity=".10" transform="rotate(45 1060 30)"></rect><rect x="72%" y="55%" width="170" height="170" rx="18" fill-opacity=".07" transform="rotate(45 900 160)"></rect><rect x="94%" y="45%" width="70" height="70" rx="10" fill-opacity=".14" transform="rotate(45 1160 130)"></rect></g></svg></div><div class="in"><span class="k">Blog</span><h1>Smoothing ERPNext Deployment on Apple&#39;s M1 via Docker-Compose</h1><p class="dek">Addressing the overlooked detail in ERPNext&#39;s Docker setup for the Apple M1 architecture and providing a simple solution.</p><div class="byline"><span>Senthilnathan Karuppaiah</span><span>Oct 22, 2023</span><span>3 min read</span></div></div></header><div class="prose"><h2 id="introduction">Introduction</h2>
+<p>The ARM-based Apple M1 chip has revolutionized Mac’s performance capabilities. Yet, when diving into Docker-based setups, particularly with applications like ERPNext, I encountered a compatibility hiccup. This post unveils that journey and the quick fix I discovered.</p>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>The goal was simple: Install ERPNext using Docker-Compose on my Apple M1 Macbook Pro. However, this seemingly straightforward task became challenging due to the absence of specific instructions in the ERPNext documentation about M1 compatibility.</p>
+<h2 id="discovering-the-solution">Discovering the Solution</h2>
+<h3 id="1-uncovering-the-compatibility-issue">1. Uncovering the Compatibility Issue</h3>
+<p>During the initial ERPNext installation, I faced issues arising from the architectural differences between the M1 and traditional x86_64 systems.</p>
+<h3 id="2-the-quick-fix">2. The Quick Fix</h3>
+<p>Identifying the root of the problem, I realized the solution was quite simple. By adding <code>platform: linux/amd64</code> to every service in the <code>docker-compose.yml</code> file, the compatibility issues were resolved. This tweak ensured the containers would be spun up using the desired architecture, making the software run as intended.</p>
+<h3 id="updated-docker-composeyml">Updated docker-compose.yml</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">version</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"3"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  backend</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frappe/erpnext:v14.44.0</span></span>
+<span class="line"><span style="color:#85E89D">    platform</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux/amd64</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">sites:/home/frappe/frappe-bench/sites</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">logs:/home/frappe/frappe-bench/logs</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  configurator</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frappe/erpnext:v14.44.0</span></span>
+<span class="line"><span style="color:#85E89D">    platform</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux/amd64</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">none</span></span>
+<span class="line"><span style="color:#85E89D">    entrypoint</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">bash</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">-c</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#F97583">&gt;</span></span>
+<span class="line"><span style="color:#9ECBFF">        ls -1 apps &gt; sites/apps.txt;</span></span>
+<span class="line"><span style="color:#9ECBFF">        bench set-config -g db_host $$DB_HOST;</span></span>
+<span class="line"><span style="color:#9ECBFF">        bench set-config -gp db_port $$DB_PORT;</span></span>
+<span class="line"><span style="color:#9ECBFF">        bench set-config -g redis_cache "redis://$$REDIS_CACHE";</span></span>
+<span class="line"><span style="color:#9ECBFF">        bench set-config -g redis_queue "redis://$$REDIS_QUEUE";</span></span>
+<span class="line"><span style="color:#9ECBFF">        bench set-config -g redis_socketio "redis://$$REDIS_SOCKETIO";</span></span>
+<span class="line"><span style="color:#9ECBFF">        bench set-config -gp socketio_port $$SOCKETIO_PORT;</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      DB_HOST</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">db</span></span>
+<span class="line"><span style="color:#85E89D">      DB_PORT</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"3306"</span></span>
+<span class="line"><span style="color:#85E89D">      REDIS_CACHE</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis-cache:6379</span></span>
+<span class="line"><span style="color:#85E89D">      REDIS_QUEUE</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis-queue:6379</span></span>
+<span class="line"><span style="color:#85E89D">      REDIS_SOCKETIO</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis-socketio:6379</span></span>
+<span class="line"><span style="color:#85E89D">      SOCKETIO_PORT</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"9000"</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">sites:/home/frappe/frappe-bench/sites</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">logs:/home/frappe/frappe-bench/logs</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  create-site</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frappe/erpnext:v14.44.0</span></span>
+<span class="line"><span style="color:#85E89D">    platform</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux/amd64</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">none</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">sites:/home/frappe/frappe-bench/sites</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">logs:/home/frappe/frappe-bench/logs</span></span>
+<span class="line"><span style="color:#85E89D">    entrypoint</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">bash</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">-c</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#F97583">&gt;</span></span>
+<span class="line"><span style="color:#9ECBFF">        wait-for-it -t 120 db:3306;</span></span>
+<span class="line"><span style="color:#9ECBFF">        wait-for-it -t 120 redis-cache:6379;</span></span>
+<span class="line"><span style="color:#9ECBFF">        wait-for-it -t 120 redis-queue:6379;</span></span>
+<span class="line"><span style="color:#9ECBFF">        wait-for-it -t 120 redis-socketio:6379;</span></span>
+<span class="line"><span style="color:#9ECBFF">        export start=`date +%s`;</span></span>
+<span class="line"><span style="color:#9ECBFF">        until [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".db_host // empty"` ]] &amp;&amp; \</span></span>
+<span class="line"><span style="color:#9ECBFF">          [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_cache // empty"` ]] &amp;&amp; \</span></span>
+<span class="line"><span style="color:#9ECBFF">          [[ -n `grep -hs ^ sites/common_site_config.json | jq -r ".redis_queue // empty"` ]];</span></span>
+<span class="line"><span style="color:#9ECBFF">        do</span></span>
+<span class="line"><span style="color:#9ECBFF">          echo "Waiting for sites/common_site_config.json to be created";</span></span>
+<span class="line"><span style="color:#9ECBFF">          sleep 5;</span></span>
+<span class="line"><span style="color:#9ECBFF">          if (( `date +%s`-start &gt; 120 )); then</span></span>
+<span class="line"><span style="color:#9ECBFF">            echo "could not find sites/common_site_config.json with required keys";</span></span>
+<span class="line"><span style="color:#9ECBFF">            exit 1</span></span>
+<span class="line"><span style="color:#9ECBFF">          fi</span></span>
+<span class="line"><span style="color:#9ECBFF">        done;</span></span>
+<span class="line"><span style="color:#9ECBFF">        echo "sites/common_site_config.json found";</span></span>
+<span class="line"><span style="color:#9ECBFF">        bench new-site frontend --no-mariadb-socket --admin-password=admin --db-root-password=admin --install-app erpnext --set-default;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  db</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">mariadb:10.6</span></span>
+<span class="line"><span style="color:#85E89D">    healthcheck</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      test</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">mysqladmin ping -h localhost --password=admin</span></span>
+<span class="line"><span style="color:#85E89D">      interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">1s</span></span>
+<span class="line"><span style="color:#85E89D">      retries</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">15</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">--character-set-server=utf8mb4</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">--collation-server=utf8mb4_unicode_ci</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">--skip-character-set-client-handshake</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">--skip-innodb-read-only-compressed</span><span style="color:#6A737D"> # Temporary fix for MariaDB 10.6</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      MYSQL_ROOT_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">admin</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"3306:3306"</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">db-data:/var/lib/mysql</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  frontend</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frappe/erpnext:v14.44.0</span></span>
+<span class="line"><span style="color:#85E89D">    platform</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux/amd64</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">nginx-entrypoint.sh</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      BACKEND</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">backend:8000</span></span>
+<span class="line"><span style="color:#85E89D">      FRAPPE_SITE_NAME_HEADER</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frontend</span></span>
+<span class="line"><span style="color:#85E89D">      SOCKETIO</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">websocket:9000</span></span>
+<span class="line"><span style="color:#85E89D">      UPSTREAM_REAL_IP_ADDRESS</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">127.0.0.1</span></span>
+<span class="line"><span style="color:#85E89D">      UPSTREAM_REAL_IP_HEADER</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">X-Forwarded-For</span></span>
+<span class="line"><span style="color:#85E89D">      UPSTREAM_REAL_IP_RECURSIVE</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"off"</span></span>
+<span class="line"><span style="color:#85E89D">      PROXY_READ_TIMEOUT</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">120</span></span>
+<span class="line"><span style="color:#85E89D">      CLIENT_MAX_BODY_SIZE</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">50m</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">sites:/home/frappe/frappe-bench/sites</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">logs:/home/frappe/frappe-bench/logs</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"8080:8080"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  queue-default</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frappe/erpnext:v14.44.0</span></span>
+<span class="line"><span style="color:#85E89D">    platform</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux/amd64</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">bench</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">worker</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">--queue</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">default</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">sites:/home/frappe/frappe-bench/sites</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">logs:/home/frappe/frappe-bench/logs</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  queue-long</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frappe/erpnext:v14.44.0</span></span>
+<span class="line"><span style="color:#85E89D">    platform</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux/amd64</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">bench</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">worker</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">--queue</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">long</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">sites:/home/frappe/frappe-bench/sites</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">logs:/home/frappe/frappe-bench/logs</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  queue-short</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frappe/erpnext:v14.44.0</span></span>
+<span class="line"><span style="color:#85E89D">    platform</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux/amd64</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">bench</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">worker</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">--queue</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">short</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">sites:/home/frappe/frappe-bench/sites</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">logs:/home/frappe/frappe-bench/logs</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  redis-queue</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis:6.2-alpine</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">redis-queue-data:/data</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  redis-cache</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis:6.2-alpine</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">redis-cache-data:/data</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  redis-socketio</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis:6.2-alpine</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">redis-socketio-data:/data</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  scheduler</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frappe/erpnext:v14.44.0</span></span>
+<span class="line"><span style="color:#85E89D">    platform</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux/amd64</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">bench</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">schedule</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">sites:/home/frappe/frappe-bench/sites</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">logs:/home/frappe/frappe-bench/logs</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  websocket</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">frappe/erpnext:v14.44.0</span></span>
+<span class="line"><span style="color:#85E89D">    platform</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux/amd64</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      restart_policy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">on-failure</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">node</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">/home/frappe/frappe-bench/apps/frappe/socketio.js</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">sites:/home/frappe/frappe-bench/sites</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">logs:/home/frappe/frappe-bench/logs</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  db-data</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  redis-queue-data</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  redis-cache-data</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  redis-socketio-data</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  sites</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  logs</span><span style="color:#E1E4E8">:</span></span></code></pre>
+</div><div class="tags" data-pagefind-ignore><span>Technology</span><span>Development</span><span>Docker</span><span>ERP</span></div></article><nav class="toc" aria-label="Table of contents" data-pagefind-ignore><span class="toc-h">On this page</span><ul><li class="d2"><a href="#introduction">Introduction</a></li><li class="d2"><a href="#problem-statement">Problem Statement</a></li><li class="d2"><a href="#discovering-the-solution">Discovering the Solution</a></li><li class="d3"><a href="#1-uncovering-the-compatibility-issue">1. Uncovering the Compatibility Issue</a></li><li class="d3"><a href="#2-the-quick-fix">2. The Quick Fix</a></li><li class="d3"><a href="#updated-docker-composeyml">Updated docker-compose.yml</a></li></ul></nav><script type="module">var e=document.querySelector(`.toc`);if(e){let t=[...e.querySelectorAll(`a`)],n=t.map(e=>({a:e,el:document.getElementById(decodeURIComponent(e.hash.slice(1)))})).filter(e=>e.el!==null),r=0,i=()=>{r=0;let e=n[0]?.a;for(let t of n)t.el.getBoundingClientRect().top<=90&&(e=t.a);t.forEach(t=>t.classList.toggle(`active`,t===e))};document.addEventListener(`scroll`,()=>{r||=requestAnimationFrame(i)},{passive:!0}),i()}</script></div></div><footer class="site" data-pagefind-ignore><p>© 2026 Senthilnathan Karuppaiah · Data &amp; AI engineering notes, open-source projects.</p><p><a href="https://github.com/senthilsweb" target="_blank" rel="noopener">GitHub ↗</a>&nbsp;·&nbsp;<a href="https://www.linkedin.com/in/senthilnathan-karuppaiah/" target="_blank" rel="noopener">LinkedIn ↗</a>&nbsp;·&nbsp;<a href="/data/posts.parquet">posts.parquet ↓</a>&nbsp;·&nbsp;<a href="/llms.txt">llms.txt</a></p></footer></body></html>

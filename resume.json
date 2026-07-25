@@ -1,0 +1,286 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Senthilnathan Karuppaiah",
+    "label": "Data & GenAI Architect · Engineering Manager · Data Engineering & Governance",
+    "email": "nathansweb@icloud.com",
+    "url": "https://www.senthilsweb.com",
+    "summary": "Architect and people manager who has spent a career making enterprise data trustworthy in regulated industries — pipelines, data quality, catalog, discovery, classification, lineage and privacy — and now extends that governance to ML models and AI agents while building the agentic systems on top of it.",
+    "location": {
+      "region": "New Jersey",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "senthilsweb",
+        "url": "https://www.linkedin.com/in/senthilsweb"
+      },
+      {
+        "network": "GitHub",
+        "username": "senthilsweb",
+        "url": "https://github.com/senthilsweb"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Pentaho",
+      "position": "Senior Engineering Manager & Data / GenAI Architect",
+      "location": "Remote, New Jersey",
+      "startDate": "2021-05-01",
+      "summary": "Pentaho was part of Hitachi Vantara until 15 June 2026",
+      "highlights": [
+        "Run delivery management, release readiness and engineering standards for the follow-the-sun team behind Pentaho Data Integration (PDI), Pentaho Business Analytics (PBA) and Pentaho Data Catalog.",
+        "Own quality and performance engineering for Pentaho Data Integration (PDI) — an enterprise ETL and data integration product — covering connectors, transformations and job orchestration, large-volume performance runs and release readiness.",
+        "Built TestDataLake, an internal governed data platform engineered like a real customer business application — dlthub ingestion pipelines feeding DBT models — producing realistic data at volume for catalog, discovery, classification and lineage validation.",
+        "Drive engineering and architecture for Pentaho Data Catalog — automated discovery, classification, metadata harvesting and lineage across many thousands of data sources and billions of rows and files, spanning JDBC databases, structured and unstructured documents on file systems and network drives, object stores and lakehouses; applied data and pipeline observability, lineage and provenance across governed platforms via Grafana, Prometheus and OpenObserve.",
+        "Extended the governance model beyond data to ML model and AI agent governance — bringing catalog, lineage and policy controls to the models and agents themselves for regulated enterprise customers.",
+        "Took customer-facing GenAI from prototype through production with product engineering and enterprise customers — grounding AI chat and analytics on governed semantic layers, with evals, guardrails and human review in place before release.",
+        "Designed NLP/ML classification and metadata enrichment (Legal-BERT served via BentoML) and privacy-safe LLM processing (Presidio) for sensitive enterprise data in-product.",
+        "Built the SDET and Performance Engineering competencies from the ground up — defining the practice, standards and tooling, hiring and training engineers, and automating 80% of regression testing; scaled SDET from its Io-Tahoe origins into a far larger capability.",
+        "Developed and introduced AI-DLC and the Pentaho SDET AI Workbench — a spec-driven AI engineering methodology combining requirements traceability, deterministic tooling, automated validation, human review and repeatable evaluation; adopted as a standard across the wider engineering team and in internal production use.",
+        "Serve as Data Solutions Architect across 10+ concurrent enterprise engagements — large banks, insurance, healthcare and life sciences, government and a leading US mortgage institution — delivering Catalog, Discovery and Lakehouse implementations through discovery, BRDs, specs, demos, workshops and enablement with CDO, CISO and product stakeholders."
+      ]
+    },
+    {
+      "name": "Io-Tahoe LLC",
+      "position": "Solutions Architect / Client Delivery & Head of Production Engineering",
+      "location": "New York City, New York",
+      "startDate": "2018-12-01",
+      "endDate": "2021-05-01",
+      "highlights": [
+        "Rejoined Io-Tahoe — an early AI-driven data discovery and governance product company, acquired twice — having been with the team since its Rokittech days; shaped product capabilities from ideation through enterprise implementation.",
+        "Led ActiveDQ, a data quality product built natively on Snowflake — delivering quality capability that ran directly against warehouse data for enterprise customers.",
+        "Led client delivery and production engineering across banking, insurance and healthcare — scoping, implementation, reliability and release readiness for multiple concurrent engagements; turned customer goals into repeatable delivery playbooks.",
+        "Established the SDET competency from the ground up — defining test automation standards, tooling and engineering discipline that were later scaled organization-wide at Pentaho."
+      ]
+    },
+    {
+      "name": "AZ-Teach Radiology & Open MRI",
+      "position": "Solutions Architect",
+      "location": "Mesa, Arizona",
+      "startDate": "2017-07-01",
+      "endDate": "2018-11-01",
+      "highlights": [
+        "Architected a custom Radiology Information System (RIS), HL7 integration engine, and web/mobile applications for multi-site radiology centers."
+      ]
+    },
+    {
+      "name": "Vmoksha Technologies",
+      "position": "Solutions Architect",
+      "location": "NJ, USA & Bangalore, India",
+      "startDate": "2008-08-01",
+      "endDate": "2017-06-01",
+      "summary": "Enterprise application delivery; led teams across US and India. Client assignment: Rokittech, later Io-Tahoe (Dec 2014 – Jun 2017) — platform engineering and product ideation for the data discovery product."
+    },
+    {
+      "name": "Digitalpia",
+      "position": "Programmer Analyst",
+      "location": "Matsuyama, Japan",
+      "startDate": "2006-01-01",
+      "endDate": "2008-08-01",
+      "summary": "Multiple web and client-server projects using Oracle, MS SQL Server and MS Access."
+    },
+    {
+      "name": "Infosys Technologies",
+      "position": "Team Leader",
+      "location": "Bangalore, India",
+      "startDate": "2004-06-01",
+      "endDate": "2005-12-01",
+      "summary": "Solution engineering, technology consultation and performance optimization for enterprise clients."
+    },
+    {
+      "name": "Hewlett Packard",
+      "position": "Systems Engineer",
+      "location": "Bangalore, India",
+      "startDate": "2003-10-01",
+      "endDate": "2004-06-01",
+      "summary": "Workforce Management product and SMART CRAWLER for information security."
+    },
+    {
+      "name": "Earlier Roles",
+      "position": "Software Engineer",
+      "location": "Bangalore, India",
+      "startDate": "1999-01-01",
+      "endDate": "2003-10-01",
+      "summary": "Software engineering across call-centre, CMS, e-commerce and telecom directory systems."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Data Engineering & Governance",
+      "keywords": [
+        "ETL / ELT",
+        "DBT",
+        "dlthub",
+        "Dagster",
+        "Data Catalog",
+        "Discovery",
+        "Classification",
+        "Lineage",
+        "Provenance",
+        "Metadata Harvesting",
+        "Data Quality",
+        "PII",
+        "ML & Agent Governance",
+        "Data & Pipeline Observability"
+      ]
+    },
+    {
+      "name": "Agentic & GenAI Engineering",
+      "keywords": [
+        "Agents",
+        "Skills/Tools",
+        "MCP Servers",
+        "RAG",
+        "Semantic Search",
+        "Chatbots",
+        "Text-to-SQL",
+        "Agentic Analytics",
+        "Prompt Engineering",
+        "Guardrails",
+        "Evals",
+        "eve",
+        "Pydantic AI",
+        "LangChain",
+        "BentoML"
+      ]
+    },
+    {
+      "name": "Platform, Delivery & Leadership",
+      "keywords": [
+        "Python",
+        "TypeScript",
+        "Golang",
+        "SQL",
+        "Java",
+        "AWS/S3",
+        "Docker",
+        "Kubernetes",
+        "Snowflake",
+        "Lakehouse",
+        "DuckDB",
+        "Postgres",
+        "Distributed Teams",
+        "Hiring",
+        "Mentoring",
+        "Forward-Deployed",
+        "Client Delivery"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Privacy & Governance Engineering",
+      "description": "Privacy Shield — open-source Python/FastAPI utility using Presidio, LangChain and OpenAI/Ollama to detect and anonymize PII before LLM processing and reverse it afterwards with full auditability. Also an OpenLineage proxy capturing lineage events as JSON, and ClaimWise, a synthetic healthcare dataset generator built as DBT pipelines, open-sourced to demonstrate DBT lineage in the catalog product."
+    },
+    {
+      "name": "Agentic Analytics & Data Tooling",
+      "description": "DuckDB Data Studio — browser-based analytics console querying S3/Parquet via DuckDB-WASM over a governed DBT/Cube.dev semantic layer for text-to-SQL. Also dlthub ingestion and DBT pipelines orchestrated with Dagster and agentic analytics on top, a Data Pipeline Visualizer that generates diagrams from pipeline metadata, and TemplrGo, a single-binary data/ops toolkit with a built-in AI assistant."
+    },
+    {
+      "name": "AI Agents",
+      "description": "ai-agents — monorepo of filesystem-first eve agents sharing one runtime kit; typed tools do the deterministic work and models only coordinate, with every run recording data, reports and metrics to a timestamped folder — an observability-first agent pattern."
+    },
+    {
+      "name": "Writing & Community",
+      "description": "Templrpress publishing toolkit, regular long-form LinkedIn articles and cheatsheets on GenAI, agentic engineering and data governance — github.com/senthilsweb · senthilsweb.com, blogging since 2007."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Annamalai University",
+      "studyType": "B.E.",
+      "area": "Electronics & Instrumentation"
+    },
+    {
+      "institution": "Annamalai University",
+      "studyType": "M.B.A.",
+      "area": "IT & Tourism"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Social Innovation Leader – Global (SIL-G)",
+      "issuer": "Hitachi Academy · IMD Business School"
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "x-teal": {
+      "locationDisplay": "New Jersey, USA (NYC/EST)",
+      "linksDisplay": "linkedin.com/in/senthilsweb · github.com/senthilsweb · senthilsweb.com",
+      "earlierCompanies": [
+        "Vmoksha Technologies",
+        "Digitalpia",
+        "Infosys Technologies",
+        "Hewlett Packard",
+        "Earlier Roles"
+      ],
+      "summaryHighlights": [
+        "Architect and people manager who has spent a career making enterprise data trustworthy in regulated industries — pipelines, data quality, catalog, discovery, classification, lineage and privacy — and now extends that governance to ML models and AI agents while building the agentic systems on top of it.",
+        "Leads an average team of 15 engineers across the US, Europe and APAC in a follow-the-sun model — hiring, mentoring, performance reviews, roadmap input and release ownership; reporting directly to the CTO or Head of Engineering since 2014.",
+        "Works the full data path, not only the governance layer — owns quality and performance engineering for Pentaho Data Integration (PDI), an enterprise ETL product, and builds pipelines hands-on with dlthub, DBT and Dagster over Snowflake, lakehouse and DuckDB.",
+        "Ships customer-facing GenAI to production — agentic AI analytics, natural language query against a governed semantic layer (Cube.dev), text-to-SQL, RAG pipelines, semantic search, evals, PII detection and classification using both GenAI and algorithmic approaches, privacy engineering and tool/skill-using agents — from prototype to release with enterprise customers.",
+        "Founding-era member of Io-Tahoe (AI-driven data discovery and governance, acquired twice) and led ActiveDQ there, a data quality product built natively on Snowflake; a decade of data governance delivery across banking, insurance, healthcare and regulated financial services.",
+        "Forward-deployed by practice — works inside client environments as Data Solutions Architect across 10+ enterprise Catalog, Discovery and Lakehouse implementations, from discovery and scoping through go-live and enablement.",
+        "Strong across Python, TypeScript, Golang, Java and SQL on AWS/S3, Docker and Kubernetes with CI/CD; deep in observability and evaluation with LangSmith, Arize, OpenObserve, Grafana and Prometheus."
+      ],
+      "competencies": {
+        "columns": [
+          "Data Engineering & Governance",
+          "Agentic & GenAI Engineering",
+          "Platform, Delivery & Leadership"
+        ],
+        "rows": [
+          [
+            "ETL / ELT · DBT · dlthub · Dagster",
+            "Agents · Skills/Tools · MCP Servers",
+            "Python · TypeScript · Golang · SQL"
+          ],
+          [
+            "Data Catalog · Discovery · Classification",
+            "RAG · Semantic Search · Chatbots",
+            "Java · AWS/S3 · Docker · Kubernetes"
+          ],
+          [
+            "Lineage · Provenance · Metadata Harvesting",
+            "Text-to-SQL · Agentic Analytics",
+            "Snowflake · Lakehouse · DuckDB · Postgres"
+          ],
+          [
+            "Data Quality · PII · ML & Agent Governance",
+            "Prompt Engineering · Guardrails · Evals",
+            "Distributed Teams · Hiring · Mentoring"
+          ],
+          [
+            "Data & Pipeline Observability",
+            "eve · Pydantic AI · LangChain · BentoML",
+            "Forward-Deployed · Client Delivery"
+          ]
+        ]
+      },
+      "tooling": [
+        {
+          "label": "Data Engineering & Governance",
+          "body": "Enterprise ETL/ELT (Pentaho Data Integration), dlthub, DBT, Dagster, Cube.dev semantic layers; catalog, discovery, classification, metadata harvesting, lineage, provenance, data quality, PII/privacy (Presidio), ML and agent governance; Snowflake, lakehouse, S3, DuckDB, pgvector"
+        },
+        {
+          "label": "GenAI Observability & Evals",
+          "body": "LangSmith, Arize, OpenObserve; Grafana, Prometheus, node exporters; data and pipeline observability, agent run logging and metrics, prompt engineering, guardrails"
+        },
+        {
+          "label": "Agents & Frameworks",
+          "body": "eve (Vercel), Pydantic AI, Flue, LangChain, MCP servers, skills/tools, deterministic tool-calling, RAG, text-to-SQL"
+        },
+        {
+          "label": "MLOps, Models & Delivery",
+          "body": "BentoML, HuggingFace, Docker, Kubernetes, CI/CD; Claude, GPT, Gemini, GLM, DeepSeek, Ollama/local models; AI-DLC, spec-first delivery, forward-deployed engagement"
+        }
+      ],
+      "educationNotes": "Annamalai University · Global: US, Japan (3 yrs), India, Ukraine"
+    }
+  }
+}

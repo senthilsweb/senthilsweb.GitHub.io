@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Privacy Engineering with LLMs: Safeguarding PII While Enhancing Text with Privacy Shield — Senthilsweb</title><meta name="description" content="In the age of AI-powered tools and intelligent systems, the ability to search, analyze, and generate insights from documents has become paramount."><link rel="canonical" href="https://www.senthilsweb.com/blog/privacy-engineering-with-llms-safeguarding-pii-while-enhancing-text-with-privacy-shield/"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:type" content="article"><meta property="og:title" content="Privacy Engineering with LLMs: Safeguarding PII While Enhancing Text with Privacy Shield — Senthilsweb"><meta property="og:description" content="In the age of AI-powered tools and intelligent systems, the ability to search, analyze, and generate insights from documents has become paramount."><meta property="og:url" content="https://www.senthilsweb.com/blog/privacy-engineering-with-llms-safeguarding-pii-while-enhancing-text-with-privacy-shield/"><meta property="og:site_name" content="Senthilsweb"><meta property="og:image" content="https://www.senthilsweb.com/og/blog/privacy-engineering-with-llms-safeguarding-pii-while-enhancing-text-with-privacy-shield.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Privacy Engineering with LLMs: Safeguarding PII While Enhancing Text with Privacy Shield — Senthilsweb"><meta name="twitter:description" content="In the age of AI-powered tools and intelligent systems, the ability to search, analyze, and generate insights from documents has become paramount."><meta name="twitter:image" content="https://www.senthilsweb.com/og/blog/privacy-engineering-with-llms-safeguarding-pii-while-enhancing-text-with-privacy-shield.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":"https://www.senthilsweb.com/blog/privacy-engineering-with-llms-safeguarding-pii-while-enhancing-text-with-privacy-shield/","headline":"Privacy Engineering with LLMs: Safeguarding PII While Enhancing Text with Privacy Shield","description":"In the age of AI-powered tools and intelligent systems, the ability to search, analyze, and generate insights from documents has become paramount.","datePublished":"2024-12-31T12:00:00.000Z","image":"https://www.senthilsweb.com/og/blog/privacy-engineering-with-llms-safeguarding-pii-while-enhancing-text-with-privacy-shield.png","author":{"@type":"Person","name":"Senthilnathan Karuppaiah","url":"https://www.senthilsweb.com/about/","sameAs":["https://github.com/senthilsweb","https://www.linkedin.com/in/senthilnathan-karuppaiah/"]}}</script><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f2ea"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130e"><script>
+      document.documentElement.dataset.theme =
+        localStorage.theme ??
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;0,6..72,500&family=JetBrains+Mono:wght@500;600&family=Archivo+Narrow:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Base.B2SL9vj6.css"><style>.phero{border:1px solid var(--line);background:var(--card);border-radius:14px;margin-top:30px;position:relative;overflow:hidden}.phero .wash{color:var(--accent);background:radial-gradient(120% 150% at 100% 0%, var(--accent-soft), transparent 55%), radial-gradient(90% 120% at 0% 100%, var(--accent-soft), transparent 45%);position:absolute;inset:0}.phero .in{padding:24px 24px 18px;position:relative}.phero .k{letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font:600 11px JetBrains Mono,monospace}.phero h1{letter-spacing:-.025em;max-width:26ch;margin:10px 0 0;font-size:clamp(24px,4.6vw,34px);font-weight:700;line-height:1.1}.phero .dek{color:var(--ink-2);max-width:56ch;margin:12px 0 0;font-family:Newsreader,Georgia,serif;font-size:16.5px;font-style:italic}.phero .byline{border-top:1px solid var(--line);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap;gap:8px 16px;margin-top:16px;padding-top:12px;font:600 10.5px JetBrains Mono,monospace;display:flex}.toc{border-left:1px solid var(--line);max-height:calc(100vh - 90px);padding-left:16px;position:sticky;top:70px;overflow-y:auto}.toc-h{letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font:600 10px JetBrains Mono,monospace}.toc ul{margin:10px 0 0;padding:0;list-style:none}.toc li{margin:7px 0}.toc li.d3{padding-left:12px}.toc a{color:var(--muted);font-size:12.5px;line-height:1.35;display:block}.toc a:hover{color:var(--ink)}.toc a.active{color:var(--accent);font-weight:600}@media (width<=1099px){.toc{display:none}}
+</style></head><body><header class="bar" data-pagefind-ignore><div class="in"><a class="mark" href="/"><span class="d"></span><span>Senthilsweb</span></a><nav><a href="/blog">Blog</a><a href="/linkedin">LinkedIn</a><a href="/projects">Projects</a><a href="/resume">Resume</a><a href="/about">About</a><button id="search-open" aria-label="Search" title="Search ( / or ⌘K )"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.8-3.8"></path></svg></button><dialog id="search-dialog"><div class="sd-in"><div class="sd-head"><span class="sd-k">Search</span><button id="search-close" aria-label="Close">esc</button></div><pagefind-config bundle-path="/pagefind/"></pagefind-config><script type="module" src="/_astro/PagefindConfig.astro_astro_type_script_index_0_lang.oMACxZGj.js"></script><pagefind-searchbox showImages="false" class="pagefind-ui"></pagefind-searchbox></div></dialog><script type="module">var e=document.getElementById(`search-dialog`),t=()=>{e.showModal(),e.querySelector(`input`)?.focus()};document.getElementById(`search-open`).addEventListener(`click`,t),document.getElementById(`search-close`).addEventListener(`click`,()=>e.close()),e.addEventListener(`click`,t=>{t.target===e&&e.close()}),document.addEventListener(`keydown`,n=>{if((n.key===`/`||n.key===`k`&&(n.metaKey||n.ctrlKey))&&!e.open){let e=n.target;e.tagName!==`INPUT`&&e.tagName!==`TEXTAREA`&&(n.preventDefault(),t())}});</script><button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle class="sun" cx="12" cy="12" r="4.4"></circle><g class="sun"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19"></path></g><path class="moon" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"></path></svg></button><script type="module">document.getElementById(`theme-toggle`).addEventListener(`click`,()=>{let e=document.documentElement.dataset.theme===`dark`?`light`:`dark`;document.documentElement.dataset.theme=e,localStorage.theme=e});</script></nav></div></header><div class="wrap wide"><div class="post-grid"><article class="post" data-pagefind-body><header class="phero"><div class="wash" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="phdots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.3" fill="currentColor" fill-opacity=".22"></circle></pattern></defs><rect width="100%" height="100%" fill="url(#phdots)"></rect><g fill="currentColor"><rect x="86%" y="-30" width="120" height="120" rx="14" fill-opacity=".10" transform="rotate(45 1060 30)"></rect><rect x="72%" y="55%" width="170" height="170" rx="18" fill-opacity=".07" transform="rotate(45 900 160)"></rect><rect x="94%" y="45%" width="70" height="70" rx="10" fill-opacity=".14" transform="rotate(45 1160 130)"></rect></g></svg></div><div class="in"><span class="k">Blog</span><h1>Privacy Engineering with LLMs: Safeguarding PII While Enhancing Text with Privacy Shield</h1><p class="dek">In the age of AI-powered tools and intelligent systems, the ability to search, analyze, and generate insights from documents has become paramount.</p><div class="byline"><span>Senthilnathan Karuppaiah</span><span>Dec 31, 2024</span><span>9 min read</span></div></div></header><div class="prose"><p><img src="/i/blog/privacy-engineering-with-LLMs.png" alt="PrivacyEngineering"></p>
+<h2 id="introduction">Introduction</h2>
+<p>In today’s data-driven environment, the use of Large Language Models (LLMs) for generative AI and text processing is not just important but increasingly common. With tools like ChatGPT, Google Gemini, <a href="http://claude.ai/">Claude.ai</a>, Perplexity and open-source AI models like Llama, <a href="http://mistral.ai/">Mistral.ai</a> etc. people now rely on LLMs for tasks ranging from email proofreading to refining documents like legal contracts and research papers. However, this widespread adoption also brings a critical challenge: <strong>How do we protect Personally Identifiable Information (PII) within these workflows?</strong></p>
+<p>Privacy Shield is an open-source utility I created to address the increasing need for protecting Personally Identifiable Information (PII) when working with Large Language Models (LLMs). It builds directly on the code developed by <a href="https://python.langchain.com/v0.1/docs/guides/productionization/safety/presidio_data_anonymization/reversible/">LangChain</a> and Microsoft Presidio, which has been ported as a Python API and designed to be consumed as an API or microservice by frontend applications. It provides a structured approach to anonymize sensitive data, enhance text, and enable reversible de-anonymization, ensuring that sensitive information remains secure throughout the processing workflow.</p>
+<p>In this article, I explore the core technology, implementation details, and benefits of incorporating Privacy Shield into workflows that handle sensitive data, along with practical guidance and real-world examples.</p>
+<h2 id="use-case-scenario">Use Case Scenario</h2>
+<h3 id="protecting-sensitive-data">Protecting Sensitive Data</h3>
+<p>Consider a scenario where a company is processing legal documents or customer logs that contain PII. The goal is to use LLMs to refine the text, improve clarity, or extract insights. However, directly exposing sensitive data to external services poses a privacy risk.</p>
+<p>With <strong>Privacy Shield</strong>, the organization can:</p>
+<p>::list{type=“success”}</p>
+<ul>
+<li>Replace PII with realistic synthetic data.</li>
+<li>Use LLMs to enhance text.</li>
+<li>Restore the original PII after processing.
+::</li>
+</ul>
+<p>This ensures compliance with privacy regulations and eliminates the risk of data leaks.</p>
+<h2 id="technology-stack">Technology Stack</h2>
+<p>Privacy Shield combines several modern technologies to deliver a seamless and secure text-processing workflow:</p>
+<p>::list{type=“success”}</p>
+<ul>
+<li><strong><a href="https://ollama.com/">Presidio</a>:</strong> An open-source library for <strong>detecting and anonymizing PII</strong>, supporting over 100 PII types.</li>
+<li><strong><a href="https://ollama.com/">LangChain</a>:</strong> A framework for building <strong>LLM-powered applications</strong>, used here for reversible anonymization and LLM integration.</li>
+<li><strong><a href="https://openai.com/">OpenAI</a> or <a href="https://ollama.com/">Ollama API</a>:</strong> Provides access to powerful <strong>LLMs like GPT-3.5-turbo or Llama3.2</strong> for text processing.</li>
+<li><strong>Python:</strong> The core programming language for the project’s <strong>backend logic and component integration.</strong></li>
+<li><strong><a href="https://fastapi.tiangolo.com/">FastAPI</a>:</strong> A high-performance web framework for building the <strong>REST API.</strong>
+::</li>
+</ul>
+<h2 id="schematic-flow">Schematic Flow</h2>
+<p><img src="/i/blog/privacy-engineering-with-LLMs_1.png" alt="TechnicalDesign"></p>
+<h2 id="benefits-of-privacy-shield">Benefits of Privacy Shield</h2>
+<p>::list{type=“success”}</p>
+<ul>
+<li><strong>PII Protection:</strong> Keeps sensitive information secure by never exposing it to external services.</li>
+<li><strong>Data Privacy:</strong> Uses robust anonymization and de-anonymization techniques.</li>
+<li><strong>Safe Processing:</strong> Allows for powerful text enhancement without risking data breaches.</li>
+<li><strong>Flexibility:</strong> Supports customization with parameters like faker_seed, prompt_template, and temperature.</li>
+<li><strong>Scalability:</strong> Stateless architecture ensures seamless scalability for large datasets.</li>
+<li><strong>Comprehensive Logging:</strong> Enables detailed monitoring for auditability.
+::</li>
+</ul>
+<h2 id="live-demo">Live Demo</h2>
+<p><a href="https://privacyshield.vercel.app/">https://privacyshield.vercel.app/</a></p>
+<p><img src="/i/blog/privacy-engineering-with-LLMs_2.png" alt="PrivacyShieldTool"></p>
+<p>Use these inputs to experiment with the Privacy Shield Tool and observe how Anonymization and Reverse Anonymization work in action.</p>
+<p><strong>Example # 1</strong>
+John Doe submitted an application for a bank loan. His Social Security Number is 123-45-6789. If you need to contact him, call 555-123-4567 or email him at <a href="john.doe@example.com">john.doe@example.com.</a></p>
+<p><strong>Example # 2</strong>
+Emily Johnson recently reported a lost package. The tracking number is 1Z999AA10123456784. Please send updates to her email at <a href="emily.johnson@companymail.com">emily.johnson@companymail.com</a> or call her at (987) 654-3210.</p>
+<p><strong>Example # 3</strong>
+Dr. Sarah Brown conducted an appointment with patient Alex Smith. The patient’s phone number is 312-555-6789, and their email address is <a href="alex.smith@example.com">alex.smith@example.com.</a></p>
+<p><strong>Example # 4</strong>
+Mark Anthony purchased a ticket for the flight scheduled on 12/25/2024. His passport number is A1234567, and he can be contacted via email at <a href="mark.anthony@gmail.com">mark.anthony@gmail.com</a> or phone at +1-234-567-8901.</p>
+<p><strong>Example # 5</strong>
+David Clark placed an order on 11/10/2024 with the credit card number 4111 1111 1111 1111. For queries, contact him at <a href="david.clark@shoppingmail.com">david.clark@shoppingmail.com</a> or call 555-987-6543.</p>
+<h2 id="recorded-screencast">Recorded Screencast</h2>
+<p>Just in case the tool stops working, you can view the recorded screencast here:</p>
+<p><a href="https://res.cloudinary.com/nathansweb/video/upload/du_60,so_2,vc_auto/v1735701551/privacyshield-screencast.mp4">https://res.cloudinary.com/nathansweb/video/upload/du_60,so_2,vc_auto/v1735701551/privacyshield-screencast.mp4</a></p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="1-clone-the-repository">1. Clone the Repository</h3>
+<p>Clone the Privacy Shield repository and navigate to the project directory:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#E1E4E8">git clone https:</span><span style="color:#F97583">//</span><span style="color:#E1E4E8">github.com</span><span style="color:#F97583">/</span><span style="color:#E1E4E8">senthilsweb</span><span style="color:#F97583">/</span><span style="color:#E1E4E8">privacyshield.git</span></span>
+<span class="line"><span style="color:#E1E4E8">cd privacyshield</span></span></code></pre>
+<h3 id="2-set-up-the-environment">2. Set Up the Environment</h3>
+<p><strong>Step 1:</strong> Create and Activate Virtual Environment</p>
+<p>Use Python 3.10:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#E1E4E8">python3.10 </span><span style="color:#F97583">-</span><span style="color:#E1E4E8">m venv env</span></span>
+<span class="line"><span style="color:#E1E4E8">source env</span><span style="color:#F97583">/</span><span style="color:#79B8FF">bin</span><span style="color:#F97583">/</span><span style="color:#E1E4E8">activate</span></span></code></pre>
+<p><strong>Step 2:</strong> Install Dependencies</p>
+<p>Upgrade pip and install required packages:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#E1E4E8">pip install </span><span style="color:#FDAEB7;font-style:italic">--</span><span style="color:#E1E4E8">upgrade pip</span></span>
+<span class="line"><span style="color:#E1E4E8">pip install fastapi uvicorn langchain langchain</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">experimental langchain</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">openai \</span></span>
+<span class="line"><span style="color:#E1E4E8">presidio</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">analyzer presidio</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">anonymizer spacy pydantic python</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">dotenv faker requests</span></span></code></pre>
+<p>Or install dependencies from the requirements.txt file:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#E1E4E8">pip install </span><span style="color:#F97583">-</span><span style="color:#E1E4E8">r requirements.txt</span></span></code></pre>
+<p><strong>Step 3:</strong> Download SpaCy Model</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#E1E4E8">python </span><span style="color:#F97583">-</span><span style="color:#E1E4E8">m spacy download en_core_web_lg</span></span></code></pre>
+<p><strong>Step 4:</strong> Create .env from sample.env</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#79B8FF">OPENAI_API_KEY</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">your_key_here</span></span>
+<span class="line"><span style="color:#79B8FF">DEFAULT_TEMPERATURE</span><span style="color:#F97583">=</span><span style="color:#79B8FF">0</span></span>
+<span class="line"><span style="color:#6A737D">#DEFAULT_PROMPT_TEMPLATE="Rewrite this text into an official, short email:\n\n{anonymized_text}"</span></span>
+<span class="line"><span style="color:#79B8FF">DEFAULT_PROMPT_TEMPLATE</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Rewrite this text into an ServiceNow Incident Ticket:</span><span style="color:#79B8FF">\n\n{anonymized_text}</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#79B8FF">LOG_LEVEL</span><span style="color:#F97583">=</span><span style="color:#79B8FF">INFO</span></span>
+<span class="line"><span style="color:#79B8FF">DEFAULT_MODEL</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"gpt-3.5-turbo"</span></span></code></pre>
+<p>❗ The placeholder {anonymized_text} name cannot be modified.</p>
+<p><strong>Step 5:</strong> Run the API Server</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#E1E4E8">python3.10 main.py</span></span></code></pre>
+<p><strong>Step 6:</strong> Access the API <a href="http://localhost:8000">http://localhost:8000</a></p>
+<h2 id="restful-apis">RESTful APIs</h2>
+<h3 id="1-detect-pii-entities">1. Detect PII Entities</h3>
+<p><strong>Endpoint:</strong> /detect-pii-entities <strong>Method:</strong> POST <strong>Description:</strong> Detects PII entities in the text and replaces them with placeholders.</p>
+<h4 id="request-body-example">Request Body Example</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch recently lost his wallet. Inside is some cash and his credit card with the number 4838637940262. If you would find it, please call at 7344131647 or write an email here: jamesmichael@example.com. Maria Lynch would be very grateful!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "temperature"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.2</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Response Example</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "processed_text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"&lt;PERSON&gt; recently lost his wallet. Inside is some cash and his credit card with the number &lt;CREDIT_CARD&gt;. If you would find it, please call at &lt;DATE_TIME&gt; or write an email here: &lt;EMAIL_ADDRESS&gt;. &lt;PERSON&gt; would be very grateful!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "entities"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PERSON"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">11</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"CREDIT_CARD"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">94</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">107</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4838637940262"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_BANK_NUMBER"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">94</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">107</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4838637940262"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_DRIVER_LICENSE"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.01</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">94</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">107</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4838637940262"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"DATE_TIME"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PHONE_NUMBER"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.75</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"IN_PAN"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_BANK_NUMBER"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_DRIVER_LICENSE"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.01</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"EMAIL_ADDRESS"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">181</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">205</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"jamesmichael@example.com"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"URL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">194</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">205</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"example.com"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PERSON"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">207</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">218</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#79B8FF">    "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PII entities detected successfully"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="2-anonymize-and-transform">2. Anonymize and Transform</h3>
+<p><strong>Endpoint:</strong> /anonymize-and-transform <strong>Method:</strong> POST <strong>Description:</strong> Anonymizes PII and generates transformed text using an LLM.</p>
+<h4 id="request-body-example-1">Request Body Example</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch recently lost his wallet. Inside is some cash and his credit card with the number 4838637940262. If you would find it, please call at 7344131647 or write an email here: jamesmichael@example.com. Maria Lynch would be very grateful!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "temperature"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">"prompt_template"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Rewrite this text into an ServiceNow Incident Ticket:</span><span style="color:#79B8FF">\n\n</span><span style="color:#9ECBFF">{anonymized_text}"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="response-example">Response Example</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "original_text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch recently lost his wallet. Inside is some cash and his credit card with the number 4838637940262. If you would find it, please call at 7344131647 or write an email here: jamesmichael@example.com. Maria Lynch would be very grateful!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "anonymized_text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"&lt;PERSON&gt; recently lost his wallet. Inside is some cash and his credit card with the number &lt;CREDIT_CARD&gt;. If you would find it, please call at &lt;DATE_TIME&gt; or write an email here: &lt;EMAIL_ADDRESS&gt;. &lt;PERSON&gt; would be very grateful!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "faked_text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Jeffrey Curry recently lost his wallet. Inside is some cash and his credit card with the number 4079577328073. If you would find it, please call at 1974-01-25 or write an email here: rodriguezanna@example.org. Jeffrey Curry would be very grateful!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "faked_processed_text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n\n</span><span style="color:#9ECBFF">If you have found Jeffrey Curry's wallet, please contact him at the provided phone number or email address. Thank you for your help in returning his belongings."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "processed_text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n\n</span><span style="color:#9ECBFF">If you have found Maria Lynch's wallet, please contact him at the provided phone number or email address. Thank you for your help in returning his belongings."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "model_used"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"gpt-3.5-turbo"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "temperature_used"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "prompt_used"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">\n\n</span><span style="color:#9ECBFF">{anonymized_text}"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "entities"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PERSON"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">11</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"CREDIT_CARD"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">94</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">107</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4838637940262"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_BANK_NUMBER"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">94</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">107</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4838637940262"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_DRIVER_LICENSE"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.01</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">94</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">107</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4838637940262"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"DATE_TIME"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PHONE_NUMBER"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.75</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"IN_PAN"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_BANK_NUMBER"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_DRIVER_LICENSE"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.01</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"EMAIL_ADDRESS"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">181</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">205</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"jamesmichael@example.com"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"URL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">194</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">205</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"example.com"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PERSON"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">207</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">218</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#79B8FF">    "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Enhanced text processed successfully"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="3-anonymize-with-fake-data">3. Anonymize with Fake Data</h3>
+<p><strong>Endpoint:</strong> /anonymize-with-fake-data <strong>Method</strong>: POST <strong>Description</strong>: Detect PII entities and reaplce it with fake data</p>
+<h4 id="request-body-example-2">Request Body Example</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch recently lost his wallet. Inside is some cash and his credit card with the number 4838637940262. If you would find it, please call at 7344131647 or write an email here: jamesmichael@example.com. Maria Lynch would be very grateful!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "temperature"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.2</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="response-example-1">Response Example</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "processed_text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Jeffrey Curry recently lost his wallet. Inside is some cash and his credit card with the number 4079577328073. If you would find it, please call at 1974-01-25 or write an email here: rodriguezanna@example.org. Jeffrey Curry would be very grateful!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "entities"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PERSON"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">11</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"CREDIT_CARD"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">94</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">107</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4838637940262"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_BANK_NUMBER"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">94</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">107</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4838637940262"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_DRIVER_LICENSE"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.01</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">94</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">107</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4838637940262"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"DATE_TIME"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PHONE_NUMBER"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.75</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"IN_PAN"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_BANK_NUMBER"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.05</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"US_DRIVER_LICENSE"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.01</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">146</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">156</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"7344131647"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"EMAIL_ADDRESS"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">181</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">205</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"jamesmichael@example.com"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"URL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">194</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">205</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"example.com"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PERSON"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "start"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">207</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "end"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">218</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maria Lynch"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#79B8FF">    "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Anonymized with fake data: text processed successfully."</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+</div><div class="tags" data-pagefind-ignore><span>Technology</span><span>Software Development</span><span>Web Design</span><span>Vue.js</span><span>Nuxt.js</span><span>Open Source</span><span>Web Development</span><span>Low Code Platform</span></div></article><nav class="toc" aria-label="Table of contents" data-pagefind-ignore><span class="toc-h">On this page</span><ul><li class="d2"><a href="#introduction">Introduction</a></li><li class="d2"><a href="#use-case-scenario">Use Case Scenario</a></li><li class="d3"><a href="#protecting-sensitive-data">Protecting Sensitive Data</a></li><li class="d2"><a href="#technology-stack">Technology Stack</a></li><li class="d2"><a href="#schematic-flow">Schematic Flow</a></li><li class="d2"><a href="#benefits-of-privacy-shield">Benefits of Privacy Shield</a></li><li class="d2"><a href="#live-demo">Live Demo</a></li><li class="d2"><a href="#recorded-screencast">Recorded Screencast</a></li><li class="d2"><a href="#getting-started">Getting Started</a></li><li class="d3"><a href="#1-clone-the-repository">1. Clone the Repository</a></li><li class="d3"><a href="#2-set-up-the-environment">2. Set Up the Environment</a></li><li class="d2"><a href="#restful-apis">RESTful APIs</a></li><li class="d3"><a href="#1-detect-pii-entities">1. Detect PII Entities</a></li><li class="d3"><a href="#2-anonymize-and-transform">2. Anonymize and Transform</a></li><li class="d3"><a href="#3-anonymize-with-fake-data">3. Anonymize with Fake Data</a></li></ul></nav><script type="module">var e=document.querySelector(`.toc`);if(e){let t=[...e.querySelectorAll(`a`)],n=t.map(e=>({a:e,el:document.getElementById(decodeURIComponent(e.hash.slice(1)))})).filter(e=>e.el!==null),r=0,i=()=>{r=0;let e=n[0]?.a;for(let t of n)t.el.getBoundingClientRect().top<=90&&(e=t.a);t.forEach(t=>t.classList.toggle(`active`,t===e))};document.addEventListener(`scroll`,()=>{r||=requestAnimationFrame(i)},{passive:!0}),i()}</script></div></div><footer class="site" data-pagefind-ignore><p>© 2026 Senthilnathan Karuppaiah · Data &amp; AI engineering notes, open-source projects.</p><p><a href="https://github.com/senthilsweb" target="_blank" rel="noopener">GitHub ↗</a>&nbsp;·&nbsp;<a href="https://www.linkedin.com/in/senthilnathan-karuppaiah/" target="_blank" rel="noopener">LinkedIn ↗</a>&nbsp;·&nbsp;<a href="/data/posts.parquet">posts.parquet ↓</a>&nbsp;·&nbsp;<a href="/llms.txt">llms.txt</a></p></footer></body></html>
