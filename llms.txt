@@ -1,6 +1,6 @@
 # Senthilsweb
 
-> Personal site of Senthilnathan Karuppaiah — data platforms, GenAI, DuckDB, and open-source engineering. Every blog post is available as raw markdown by appending `.md` to its URL. Blog posts and LinkedIn articles are queryable as parquet at /data/posts.parquet; standalone LinkedIn posts, with their engagement stats, at /data/linkedin-posts.parquet.
+> Personal site of Senthilnathan Karuppaiah — data platforms, GenAI, DuckDB, and open-source engineering. Every blog post is available as raw markdown by appending `.md` to its URL. Blog posts and LinkedIn articles are published as parquet at /data/posts.parquet, standalone LinkedIn posts with their engagement stats at /data/linkedin-posts.parquet, and every collection also as CSV under /data/csv/. Those URLs are for downloading: GitHub Pages gzips them, which breaks HTTP-range readers like DuckDB, so to QUERY them use the raw mirror instead — https://raw.githubusercontent.com/senthilsweb/senthilsweb.github.io/main/data/<file>. See /datasets for the full catalog.
 
 ## Blog posts
 
