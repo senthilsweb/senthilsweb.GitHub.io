@@ -535,12 +535,39 @@ async function boot(){
 boot();
 
 /* senthilsweb.com adapter: ?url=<parquet-or-csv> seeds the editor and
-   auto-runs once the engine is ready (no S3 config needed for http urls). */
+   auto-runs once the engine is ready (no S3 config needed for http urls).
+
+   Text sources are fetched whole instead of read over HTTP ranges. GitHub —
+   both Pages and raw.githubusercontent — gzips text/plain, so the reported
+   content-length is the COMPRESSED size. DuckDB reads that many bytes of the
+   decompressed stream and stops, truncating the file with no error at all:
+   openbeerdb breweries.csv came back as 50 rows of 1,414. fetch() lets the
+   browser decompress properly, and we hand DuckDB the real bytes. Binary
+   formats (parquet) are served uncompressed, so they keep streaming. */
 const studioUrl = new URLSearchParams(location.search).get('url');
 if (studioUrl) {
-  editor.setValue(`SELECT *\nFROM '${studioUrl.replaceAll("'", "''")}'\nLIMIT 100;`);
-  const waitReady = setInterval(() => {
-    if (!runBtn.disabled) { clearInterval(waitReady); runQuery(); }
+  const sq = (s) => s.replaceAll("'", "''");
+  const isText = /\.(csv|tsv|txt|json|ndjson)(\?|$)/i.test(studioUrl);
+  let target = studioUrl, preload = null;
+  if (isText) {
+    target = (studioUrl.split('?')[0].split('/').pop()) || 'data.csv';
+    preload = async () => {
+      const res = await fetch(studioUrl);
+      if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${studioUrl}`);
+      await db.registerFileBuffer(target, new Uint8Array(await res.arrayBuffer()));
+    };
+  }
+  // No comment lines here — the statement splitter treats a leading `--` line
+  // as its own empty statement and nothing runs.
+  editor.setValue(`SELECT *\nFROM '${sq(target)}'\nLIMIT 100;`);
+  const waitReady = setInterval(async () => {
+    if (runBtn.disabled) return;
+    clearInterval(waitReady);
+    if (preload) {
+      try { await preload(); }
+      catch (e) { setStatus('err', e.message); console.error(e); return; }
+    }
+    runQuery();
   }, 300);
   setTimeout(() => clearInterval(waitReady), 60000);
 }
