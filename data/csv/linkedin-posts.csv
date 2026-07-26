@@ -1,0 +1,1247 @@
+urn,type,status,published_at_utc,post_url,title,excerpt,text,image_url,impressions,reactions,comments,reposts,stats_captured_at
+7487164575059058688,post,PUBLISHED,2026-07-26T15:18:59.485Z,https://www.linkedin.com/feed/update/urn:li:activity:7487164575059058688/,Pairwise Testing deserves more attention—especially now,The applied mathematics behind it offers a practical answer to a persistent engineering problem: How do we evaluate a complex system systematically when exhaustive testing is too…,"Pairwise Testing deserves more attention—especially now. The applied mathematics behind it offers a practical answer to a persistent engineering problem: How do we evaluate a complex system systematically when exhaustive testing is too expensive and time-consuming?
+
+The key concept is a Covering Array—a mathematical construct that transforms thousands of possible combinations into a smaller, systematic set of test cases while ensuring that every pair of input values appears at least once.
+
+In other words:
+• Combinatorial Science defines the challenge.
+• Covering Arrays provide the mathematical foundation.
+• Pairwise Testing turns it into an engineering practice.
+
+I previously explored this approach in detail, with practical examples, in my article on applying Combinatorial Science to enterprise data platforms. The concept is even more relevant in the era of Agentic AI and AI Evals.
+
+An agentic system may vary across models, prompts, tools, datasets, workflows, memory configurations, policies, and runtime conditions. Testing every possible combination quickly becomes impractical.
+
+Evals are also not fully automated. Humans still steer:
+• Evaluation scenarios
+• Judgments and expected outcomes
+• Rubrics and scoring criteria
+• Risk thresholds
+• Edge cases and failure analysis
+
+Applying combinatorial techniques can help teams design a smaller but more systematic evaluation matrix—reducing model calls, human review effort, cost, and execution time while preserving meaningful interaction coverage.
+
+""Every pair, at least once. That simple principle may become an important foundation for scalable AI evaluation engineering. ""
+
+Read the detailed article for the concepts, examples, and enterprise use cases.
+
+Article link: https://lnkd.in/g49nJ3wQ
+
+Article title ""Applying combinatorial science and discrete mathematics to data-platform engineering and testing""
+
+#AppliedMathematics #CombinatorialScience #CoveringArrays #PairwiseTesting #AIEvals #AgenticAI #AIEngineering #DataEngineering",https://media.licdn.com/dms/image/v2/D5622AQH3GqfLeHMRog/feedshare-shrink_800/B56Z.fAgbCHYAc-/0/1785079138251?e=1786579200&v=beta&t=Y2-gN25g6tgPTsti6Oe-03FvTtuY_7joFy9mPhcGztQ,35,1,0,0,2026-07-26
+7487142880839565312,post,PUBLISHED,2026-07-26T13:52:47.180Z,https://www.linkedin.com/feed/update/urn:li:activity:7487142880839565312/,Meet DataGov — my new open-source data governance CLI,"Written in Rust. Built for agents. The goal is simple: one binary, with no Python, Java, Node.js, or Docker dependency, that both engineers and AI agents can run reliably. DataGov…","Meet DataGov — my new open-source data governance CLI. Written in Rust. Built for agents.
+
+The goal is simple: one binary, with no Python, Java, Node.js, or Docker dependency, that both engineers and AI agents can run reliably.
+
+DataGov is being designed to:
+
+- Inspect CSV and Parquet datasets
+- Profile columns
+- Parse, format, and transpile SQL across dialects
+- Scan for PII
+- Run data quality checks
+- Generate a normalized JSON governance report
+
+Here are some commands you can use:
+- datagov inspect customers.parquet
+- datagov profile customers.csv
+- datagov sql transpile query.sql --from spark --to duckdb
+- datagov pii scan customers.parquet
+- datagov report customers.parquet --profile --pii --output report.json
+
+Why am I building it?
+
+Data governance has been my primary focus for years. As agents increasingly handle data engineering tasks, they require governance tools that provide JSON output, stable exit codes, deterministic behavior, and no interactive prompts. I couldn't find a CLI that merged these agent-ready features with effective data governance capabilities, which led me to create this tool.
+
+The guiding principles are:
+- Deterministic first
+- Local first
+- Privacy first
+
+PII detection will rely on rules and parsers instead of LLM guesses, ensuring sensitive values remain masked by default and that data stays on the local machine.
+
+This is just the beginning; it's an early-stage kickoff rather than a finished product announcement. Bolt 1, the CLI foundation and governance report envelope, is complete, and Bolt 2, focused on dataset inspection, is currently underway. The first milestone will encompass inspect, profile, SQL, PII scan, and report functionalities.
+
+Check out the repository at https://lnkd.in/gsuU48M5
+
+#AdaptiveDataGovOps #DataGovernance #OpenSource #Rust #AIAgents",https://media.licdn.com/dms/image/v2/D5622AQFb_gqoYru3nA/feedshare-shrink_800/B56Z.esxnFK4Ac-/0/1785073965877?e=1786579200&v=beta&t=DWkYtea5UcLW0OsG1Ch5b8qpcrV9zO2fMZahTiDBUEM,84,1,0,0,2026-07-26
+7486083742336417792,post,PUBLISHED,2026-07-23T15:44:08.883Z,https://www.linkedin.com/feed/update/urn:li:activity:7486083742336417792/,Introducing the latest addition to my agent fleet,"the youtube-transcriber, now number nine. What it does: Simply provide a YouTube link, and it returns the full spoken transcript of the audio, not just the captions. This means…","Introducing the latest addition to my agent fleet: the youtube-transcriber, now number nine.
+
+What it does: Simply provide a YouTube link, and it returns the full spoken transcript of the audio, not just the captions. This means you get the actual audio transcribed from start to finish.
+
+Why I built it: In conference talks, important figures are often mentioned in passing. Speakers may only mention a statistic once, and then it's lost. Captions can be auto-generated and may miss crucial information or be altered by marketing teams. I wanted a way to make those numbers searchable, with the speaker and timestamp included.
+
+What powers it:
+- LangGraph with five nodes: resolve → fetch audio → transcribe → write outputs, featuring a cached-audio branch for repeat runs to skip downloads.
+- faster-whisper (distil-large-v3) operates on my machine, not through an API.
+- yt-dlp for audio extraction and ffmpeg for normalization.
+- Pydantic for state management, tenacity for retries, and optional OpenTelemetry (I am using Arize and LangSmith)
+
+Each run produces four files: a readable transcript with timestamps, a full JSON file with per-segment timings, an SRT file, and a metrics file.
+
+In the first four talks (The Youtube videos, I used for my testing), I processed 67 minutes of audio, generating 10,658 words in about 14 minutes of compute time—roughly 4.5 to 4.9 times faster than real-time, with zero tokens and zero costs, as it operates entirely on my mac-mini.
+
+The other eight agents include: job-scout, job-matcher, job-pilot, api-test-generator, diagram-generator, github-pr-digest, privacy-classifier, and linkedin-cover-generator.
+
+#AIAgents #LangGraph #Whisper #LocalFirst #AINative",https://media.licdn.com/dms/image/v2/D5622AQFqKGhrGbCNmA/feedshare-shrink_800/B56Z.Ppfn.GUAc-/0/1784821447573?e=1786579200&v=beta&t=tifTNUTUsiD0ri8VB8kEFLsgFnQ2NjYXa6nj3R4ssh0,361,0,1,0,2026-07-26
+7486074529379913730,post,PUBLISHED,2026-07-23T15:07:32.343Z,https://www.linkedin.com/feed/update/urn:li:activity:7486074529379913730/,"The landscape of agent frameworks is rapidly evolving, with new names appearing…","every few weeks: OpenAI Agents SDK, LangGraph, CrewAI, PydanticAI, LangChain, Claude agents, and more. Despite the varying terminologies and abstractions, the underlying execution…","The landscape of agent frameworks is rapidly evolving, with new names appearing every few weeks: OpenAI Agents SDK, LangGraph, CrewAI, PydanticAI, LangChain, Claude agents, and more. Despite the varying terminologies and abstractions, the underlying execution pattern remains largely consistent.
+
+Currently, there is no single industry-standard agent lifecycle, but a common pattern is emerging that is more beneficial to learn than memorizing the vocabulary of any one framework. Here are the eleven stages, typically in the order they run:
+
+1. User request
+2. Context assembly
+3. Memory retrieval
+4. Knowledge retrieval
+5. Planning
+6. Tool or skill selection
+7. Execution
+8. Response generation
+9. Evaluation
+10. Reflection
+11. Optional memory update
+
+It's important to distinguish between evaluation and reflection. Evaluation assesses whether the output met the task requirements, while reflection considers the process and what changes might be needed for future runs (Feedback loop and Agent Training). Additionally, knowledge and memory are distinct; knowledge is derived from documents, databases, and APIs, whereas memory stems from interactions, preferences, and past decisions. Context is built from both for the current request only.
+
+Response generation, which is stage 8 of 11, is the visible part of the process, but it is often mistaken for the entirety of the system.
+
+I have compiled the full lifecycle into a one-page cheatsheet, as shown in the pdf document below.
+
+#AIAgents #AgentEngineering #GenAI #RAG #AIEngineering
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+Your document has finished loading
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,362,0,2,0,2026-07-26
+7486030816343654400,post,PUBLISHED,2026-07-23T12:13:50.343Z,https://www.linkedin.com/feed/update/urn:li:activity:7486030816343654400/,"Last week, I requested my linkedin-cover-image agent to utilize a darker…","palette for a privacy article, and it executed the task well. However, the next day, when I opened a new session, I found myself repeating the same request. The agent was not at…","Last week, I requested my linkedin-cover-image agent to utilize a darker palette for a privacy article, and it executed the task well. However, the next day, when I opened a new session, I found myself repeating the same request. The agent was not at fault; the application was. It failed to retain what I had taught it.
+
+Most AI agents today can perform tasks, but very few can improve over time. This isn't due to the model's inability to learn, but rather because the application (The agent) does not preserve that learning.
+
+Consider what a single session actually contains:
+- Keep the cover image less crowded.
+- Use a darker palette for privacy topics.
+- Add more whitespace.
+- Move the title higher.
+- Avoid unnecessary icons.
+
+In many agent applications, these corrections vanish when the session ends, and the next session begins almost from scratch. The missing component is a reflection loop.
+
+Instead of stopping when the task is complete, the application should run one more step: comparing the original request, the generated output, my corrections, and the final accepted result. It should then ask, ""What changed during this interaction?"" This allows it to differentiate between a one-time instruction and a genuine preference, reusable design rule, or a recurring workflow issue.
+
+The next step is distillation—not model distillation, but condensing a lengthy interaction into a small amount of reusable knowledge. ""For privacy-related covers, prefer a darker, minimal, executive style with more whitespace"" -> This single line is far more valuable than storing the entire transcript.
+
+Thus, the loop becomes: reflect, distill, ask for confirmation, store as structured memory, and retrieve it next time. No fine-tuning is needed in that process.
+
+There are essentially two loops at play, and conflating them is a mistake. The first is user-level, capturing my preferences—writing style, palette, level of detail, layout—enhancing the agent's performance for me. The second is product-level; if numerous users request the cover generator to reduce clutter, that indicates a need for a new version of the core skill itself.
+
+Memory personalizes the agent, while reflection enhances the system. Repeated feedback evolves the skill. Building the agent is only half the job; teaching it how to improve is the other half.
+
+Agent Engineering is gradually evolving into Memory Engineering, as memory is not merely the full transcript but the distilled knowledge that deserves to persist beyond the session.
+
+#AgentEngineering #AIAgents #MemoryEngineering #GenAI #AIEngineering",https://media.licdn.com/dms/image/v2/D5622AQFQfY_qSk4T2w/feedshare-shrink_800/B56Z.O5WuzKwAc-/0/1784808828059?e=1786579200&v=beta&t=lidb2vLHm7TCHbqir2NHK1eh5tsJ8EyYyRmsaXtCCsU,492,1,0,0,2026-07-26
+7485498869477310464,post,PUBLISHED,2026-07-22T01:00:04.327Z,https://www.linkedin.com/feed/update/urn:li:activity:7485498869477310464/,"Every week, new ideas emerge around AI-SDLC, spec-driven development, agentic…","engineering, AI evaluations, governance, observability, and AI-native delivery platforms. The engineering side is gradually converging around common practices, methodologies, and…","Every week, new ideas emerge around AI-SDLC, spec-driven development, agentic engineering, AI evaluations, governance, observability, and AI-native delivery platforms. The engineering side is gradually converging around common practices, methodologies, and supporting ecosystems.
+
+However, AI is also transforming the economics of software delivery. If AI significantly alters delivery speed, team structures, engineering effort, and quality, how should projects be estimated, priced, and valued?
+
+This question extends beyond just business or sales; it is crucial for architects, engineering leaders, pre-sales teams, delivery managers, and consulting organizations. The estimate prepared during pre-sales ultimately becomes the delivery commitment that engineering teams must fulfill.
+
+It appears that while the engineering conversation is becoming increasingly structured, estimation, pricing, value realization, and commercial models are evolving more quietly. Are our commercial practices converging as swiftly as our AI engineering practices?
+
+I am interested in how others are approaching this transition.",https://media.licdn.com/dms/image/v2/D5622AQHVnn-cTZsXUA/feedshare-shrink_800/B56Z.HVjqPGQAg-/0/1784682003337?e=1786579200&v=beta&t=SkxyHvkfhZAiwHtef1w3X_eeojOhZxKKUQfW5STND9s,529,0,1,1,2026-07-26
+7484656081412001792,post,PUBLISHED,2026-07-19T17:11:07.994Z,https://www.linkedin.com/feed/update/urn:li:activity:7484656081412001792/,I am setting up a production line for my open-source work — and the workers on…,"it are AI agents. Every project needs a website, docs, a blog, and an API reference. I did not want to hand-build that each time, and I do not want my agents to either.…","I am setting up a production line for my open-source work — and the workers on it are AI agents.
+
+Every project needs a website, docs, a blog, and an API reference. I did not want to hand-build that each time, and I do not want my agents to either.
+
+TemplrPress is the publishing station on that line. It is my opinionated, open-source content publishing system — I built it for my own needs first, and now I am giving it to the community. A 15 MB Go binary: markdown in, product website out.
+
+It started in 2021 as Zypress, built on Vue.js/Nuxt.js CMS. Five years of gradual work later, agents can operate it end to end:
+
+- Docs and OpenAPI reference in one place, free.
+- PDF export in pure Go — no headless browser.
+- A JSON API serving the same content.
+- Paste a link in WhatsApp or Slack and it shows a proper preview card.
+- /llms.txt plus a committed code map, so agents read the site and the repo without scanning.
+
+Fully open source, MIT license. Built on Golang and NextJS/TypeScript — the UI compiles into the binary, so the server needs no Node, no database, no build step. One config file, one station done. More stations coming.
+
+Code: https://lnkd.in/eZxzGfY2
+Demo: https://lnkd.in/e2iYASgB
+
+#GoLang #OpenSource #AIAgents #DeveloperTools #LLM",https://media.licdn.com/dms/image/v2/D4E22AQE7PjQfjdlATw/feedshare-shrink_800/B4EZ97XC4ZJMAg-/0/1784481066864?e=1786579200&v=beta&t=a61LCZURmSdB7Mucjsp-Y7l9ay55eua0_ey7hTLJwCY,278,0,0,0,2026-07-26
+7483510885441937408,post,PUBLISHED,2026-07-16T13:20:31.998Z,https://www.linkedin.com/feed/update/urn:li:activity:7483510885441937408/,"Recently, while exploring modern AI evaluation frameworks, I had a realization","Initially, the categories seemed like a collection of technical metrics—valuable for testing model behavior, comparing outputs, and enhancing performance. However, the deeper I…","Recently, while exploring modern AI evaluation frameworks, I had a realization. Initially, the categories seemed like a collection of technical metrics—valuable for testing model behavior, comparing outputs, and enhancing performance. However, the deeper I delved, the more I understood that they represent something much more significant: the dimensions of AI trust.
+
+- Security: Can the system protect sensitive information and resist misuse?
+- Safety: Can it reduce harmful, toxic, or biased outcomes?
+- Quality: Is the response correct, relevant, grounded, and reliable?
+- Conversation: Did the system understand the user and help accomplish the intended task?
+- Trajectory: Did the agent choose the right tools, follow the right process, and reach the outcome in a defensible way?
+
+These are not just evaluation metrics; they are measurable signals indicating whether an enterprise should trust an AI system in production. This perspective shifts how we should approach AI engineering.
+
+Data Governance defines what trustworthy data should look like. AI Engineering builds systems that utilize that data. AI Evaluations provide evidence that those systems behave as intended.
+
+Governance without evaluation remains a set of expectations, while evaluation without governance lacks business and regulatory context. AI engineering without either may yield an impressive system, but not necessarily one that an organization can deploy responsibly.
+
+This forms the basis of my thoughts on Adaptive Data Governance: governance, data quality, engineering, risk, and continuous evaluation should not function in isolation. They must create a connected feedback loop that evolves with the data, business, regulations, and the AI system itself.
+
+Trust cannot simply be declared at the end of development; it must be designed, measured, documented, and continuously earned.
+
+Trustworthy AI is not a feature of the model; it is an engineering outcome.",https://media.licdn.com/dms/image/v2/D4E22AQGYcPxLbSx8dw/feedshare-shrink_800/B4EZ9rFfpFK4Ac-/0/1784208030549?e=1786579200&v=beta&t=C3NLJ3Qw5IRKN5oyTjQ8TrB2dcF3SxPC5QOPUTTj59w,293,0,0,0,2026-07-26
+7471004221698543617,post,PUBLISHED,2026-06-12T01:03:30.999Z,https://www.linkedin.com/feed/update/urn:li:activity:7471004221698543617/,Why pay for frontier models when NVIDIA hosts Nemotron 3 Ultra for free,I plugged it into GitHub Copilot CLI in under a minute — swipe through the cheatsheet to set it up yourself. 👇 #AI #GitHubCopilot #NVIDIA #Nemotron #DeveloperTools …more Your…,"Why pay for frontier models when NVIDIA hosts Nemotron 3 Ultra for free?
+
+I plugged it into GitHub Copilot CLI in under a minute — swipe through the cheatsheet to set it up yourself. 👇
+
+#AI #GitHubCopilot #NVIDIA #Nemotron #DeveloperTools
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+Your document has finished loading
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,432,0,0,0,2026-07-26
+7466873934731198464,post,PUBLISHED,2026-05-31T15:31:13.849Z,https://www.linkedin.com/feed/update/urn:li:activity:7466873934731198464/,Adaptive DataGovOps — summarized on one page,"While ""adaptive"" may sound simple, putting it into practice is challenging. Here’s the playbook: 12 practices for governing data in the GenAI era, organized into 4 phases — Talk,…","Adaptive DataGovOps — summarized on one page. While ""adaptive"" may sound simple, putting it into practice is challenging.
+
+Here’s the playbook: 12 practices for governing data in the GenAI era, organized into 4 phases — Talk, Test, Track, and Tune.
+
+Grab it below.
+
+#DataGovernance #AdaptiveDataGovOps #GenAI #DataOps
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+Your document has finished loading
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,243,0,0,0,2026-07-26
+7466673908327432192,post,PUBLISHED,2026-05-31T02:16:23.838Z,https://www.linkedin.com/feed/update/urn:li:activity:7466673908327432192/,"Data governance requires an adaptive operating model, as it is not a…","one-size-fits-all solution. Throughout our work on data discovery, classification, and governance challenges, we consistently encountered the same issue: each organization has…","Data governance requires an adaptive operating model, as it is not a one-size-fits-all solution. Throughout our work on data discovery, classification, and governance challenges, we consistently encountered the same issue: each organization has unique requirements that cannot always be addressed by standard rules or a single AI model.
+
+With Pentaho Data Catalog, we embrace this adaptive approach by facilitating governance pipelines that can be customized to fit each customer's data reality. This can involve using algorithms, business rules, custom APIs, or optional AI/ML models.
+
+I refer to this concept as ""Adaptive DataGovOps"".
+
+""Effective data governance is not about discovering a universal solution; it is about finding the right answer tailored to your organization.""
+
+If your organization is facing similar data governance, discovery, or classification challenges, I’d be happy to exchange ideas and explore how we can help.
+
+#DataGovernance #AdaptiveDataGovOps #Pentaho #DataCatalog #DataOps #AI #GenAI",https://media.licdn.com/dms/image/v2/D4E22AQGJtHiATwCLWA/feedshare-shrink_800/B4EZ570WvGHoAc-/0/1780193783063?e=1786579200&v=beta&t=pzkPtBu3hOwR9irFac_M5VMFH0M1rzU0JgvA0dSvIxk,205,0,0,0,2026-07-26
+7456792081718677504,post,PUBLISHED,2026-05-03T19:49:32.779Z,https://www.linkedin.com/feed/update/urn:li:activity:7456792081718677504/,"I have modernized my open-source Privacy Shield project into a simple,…","local-first Data Loss Prevention (DLP) workflow designed for everyday text use cases. This workflow assists in detecting Personally Identifiable Information (PII), anonymizing…","I have modernized my open-source Privacy Shield project into a simple, local-first Data Loss Prevention (DLP) workflow designed for everyday text use cases.
+
+This workflow assists in detecting Personally Identifiable Information (PII), anonymizing data before sharing, optionally enhancing text, and safely reversing anonymization using in-memory mapping.
+
+The project is built with Microsoft Presidio, FastAPI, and LangChain-style pipeline patterns.
+
+You can explore the live demo at: https://lnkd.in/exe6snp4
+
+Check out the GitHub repository here: github[dot]com/senthilsweb/privacyshield
+
+Swipe through the carousel for an overview of the UI and workflow.
+
+#Privacy #PII #DLP #DataProtection #PrivacyEngineering #LLMSecurity #GenAI #AppSec #OpenSource #Docker #Presidio #LangChain
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+Your document has finished loading
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,237,0,1,0,2026-07-26
+7454643044483698688,post,PUBLISHED,2026-04-27T21:30:02.375Z,https://www.linkedin.com/feed/update/urn:li:activity:7454643044483698688/,"OpenAI recently (Apr 22, 2026) released Privacy Filter, a lightweight frontier…",model designed for detecting and redacting personally identifiable information (PII) in text. Read the post @ https:// https://lnkd.in/eqSaUNYV A key feature of Privacy Filter is…,"OpenAI recently (Apr 22, 2026) released Privacy Filter, a lightweight frontier model designed for detecting and redacting personally identifiable information (PII) in text.
+
+Read the post @ https:// https://lnkd.in/eqSaUNYV
+
+A key feature of Privacy Filter is its ability to run locally, which ensures that sensitive data does not need to be sent to a public inference API. This is particularly relevant for professionals in data cataloging, privacy, and governance, as context-aware sensitive data detection is becoming increasingly important compared to simple pattern matching.
+
+Privacy Filter is worth exploring for its applications in Sensitive Data Discovery, Data Loss Prevention(DLP), data discovery, indexing, logging workflows.
+
+Github repo: https:// https://lnkd.in/eg2EphpP
+
+#Privacy #DataGovernance #DataCatalog #PII #AI #OpenAI",https://media.licdn.com/dms/image/v2/D4E22AQHacH2kloXjiA/feedshare-shrink_800/B4EZ3P69L4JUAg-/0/1777309832290?e=1786579200&v=beta&t=UHHKqj6o6dIQ8YXeq3O7x37FvZQwxz8eth_r6koQ3l8,114,0,0,0,2026-07-26
+7453939830444564480,post,PUBLISHED,2026-04-25T22:55:43.083Z,https://www.linkedin.com/feed/update/urn:li:activity:7453939830444564480/,Quick cloud-neutral tip to know your public IP from any terminal,"commands: curl -s ifconfig.me (or) curl -s https://api.ipify.org Simple, portable, and handy across clouds, private VMs, laptops, and containers. #whatsmyip #DevOps #routerip…","Quick cloud-neutral tip to know your public IP from any terminal!
+
+commands:
+curl -s ifconfig.me (or)
+curl -s https://api.ipify.org
+
+Simple, portable, and handy across clouds, private VMs, laptops, and containers.
+
+#whatsmyip #DevOps #routerip #ifconfig.me #api.ipify.org",https://media.licdn.com/dms/image/v2/D4E22AQEbkc04TTPvmw/feedshare-shrink_800/B4EZ3G2xujIgAc-/0/1777157741762?e=1786579200&v=beta&t=zsiqeDL9ioDZ54z2x_-DjHyg31_hP54hoa9qU3R0JUM,111,2,0,0,2026-07-26
+7453932766288674816,post,PUBLISHED,2026-04-25T22:27:38.857Z,https://www.linkedin.com/feed/update/urn:li:activity:7453932766288674816/,Here's a small AWS/Linux tip I learned recently,"When logged into an AWS Linux VM, you might need to quickly check the public IP. Previously, I would open the AWS console or try various Linux commands. Then I found this simple…","Here's a small AWS/Linux tip I learned recently. When logged into an AWS Linux VM, you might need to quickly check the public IP. Previously, I would open the AWS console or try various Linux commands.
+
+Then I found this simple command:
+Command: curl -s https:// checkip.amazonaws.com
+
+This command returns the public IP immediately. When opened from your laptop at home, it shows your home router’s public IP — the IP seen by the internet.
+
+Simple, fast, and handy.
+
+#AWS #Linux #whatsmyip #DevOps #TechTips",https://media.licdn.com/dms/image/v2/D4E22AQECqpp8AqOZFA/feedshare-shrink_800/B4EZ3GwWkMKQAc-/0/1777156057694?e=1786579200&v=beta&t=nT_uKdkUWzxC1JcRB3shAJ9AbxR0sN8OeHXX7R-yg3w,633,0,0,0,2026-07-26
+7448028908018520064,post,PUBLISHED,2026-04-09T15:27:49.357Z,https://www.linkedin.com/feed/update/urn:li:activity:7448028908018520064/,What if AI app development was simpler than expected,Imagine if the GitHub Copilot subscription your team already has could do far more than just provide code suggestions. Many engineers believe that building AI-powered applications…,"What if AI app development was simpler than expected?
+
+Imagine if the GitHub Copilot subscription your team already has could do far more than just provide code suggestions. Many engineers believe that building AI-powered applications requires new API keys, separate model subscriptions, added costs, security reviews, and procurement delays. But what if that wasn’t necessary?
+
+This idea inspired me to include a feature in TemplrGo — a lightweight, single-binary Go platform that can turn your existing GitHub Copilot access into an AI-ready backend. It uses the authenticated GitHub CLI session and connects to the GitHub Copilot chat endpoint, while exposing an OpenAI-compatible /chat/completions API that your apps can use directly.
+
+That means:
+
+✅ No separate OpenAI subscription
+✅ No separate Anthropic subscription
+✅ No extra vendor onboarding
+✅ No procurement delays
+✅ Just the GitHub Copilot license many engineers already have
+
+For teams blocked by cost, compliance, or procurement constraints, this can be a very practical shortcut to start building AI-powered apps without waiting on new approvals.
+
+With TemplrGo, you get a self-hosted AI gateway experience with features like SSE streaming, multi-model support, session persistence, and OpenAI-compatible APIs — all packaged in a simple Go binary.
+
+TemplrGo is being developed to remain simple, useful, and easy to run. More updates to come.",https://media.licdn.com/dms/image/v2/D4E22AQEma9852udbcg/feedshare-shrink_800/B4EZ1y202ZIwAc-/0/1775748468413?e=1786579200&v=beta&t=1q5Ps2v4_vDE05IceKL9ZKgZmar7GPgZ1399g33LyZY,276,4,0,0,2026-07-26
+7447328775312281600,post,PUBLISHED,2026-04-07T17:05:44.712Z,https://www.linkedin.com/feed/update/urn:li:activity:7447328775312281600/,"When tools like Copilot, Claude code, Cursor, Codex etc.","speed up coding, scope grows faster and expectations rise. Without a sizing discipline, you’re flying blind at higher speed. Since 2009, I’ve relied on Function Point Analysis…","When tools like Copilot, Claude code, Cursor, Codex etc.. speed up coding, scope grows faster and expectations rise. Without a sizing discipline, you’re flying blind at higher speed.
+
+Since 2009, I’ve relied on Function Point Analysis (IFPUG) — not because it’s old-school, but because it’s language-, tool-, and “AI-agnostic”. It measures what software does, not how it’s built.
+
+If you’ve worked with me, you’ve sized features, debated complexity, and tuned VAF. You know the drill.
+
+For everyone else — I’ve been building this into TemplrGo as an free to use software engineer productivity tool. More soon.
+
+#FunctionPointEstimation #IFPUG #SoftwareEngineering #AI #TemplrGo #OpenSource #EstimationMatters",https://media.licdn.com/dms/image/v2/D4E22AQE2IS_J6ISqjw/feedshare-shrink_800/B4EZ1o6DuKJIAg-/0/1775581543563?e=1786579200&v=beta&t=KSOEes5l4tZnFgm99GQczgKKi-cbGNaZp7OSwSR569E,408,10,1,0,2026-07-26
+7446009838691586048,post,PUBLISHED,2026-04-04T01:44:45.717Z,https://www.linkedin.com/feed/update/urn:li:activity:7446009838691586048/,Imagine having everything a developer needs packed into a single ~20MB binary…,"that runs on all operating systems—Windows, Linux, and Mac. This includes an API server, SQL playground, Serverless Functions, AI chat, ASK AI Copilot Support, Content Management…","Imagine having everything a developer needs packed into a single ~20MB binary that runs on all operating systems—Windows, Linux, and Mac. This includes an API server, SQL playground, Serverless Functions, AI chat, ASK AI Copilot Support, Content Management Server, documentation, database explorer, task manager, scheduler, and Pub/Sub Event Bus.
+
+No Docker. No runtime dependencies. No infrastructure headaches. Just download, configure with YAML, and run.
+
+I have been quietly building this solution called TemplrGo, powered by Go, Next.js, and Lua, and it's launching for free.
+
+Stay tuned as I break down each superpower in upcoming posts.
+
+#Golang #NextJS #DevTools #Serverless #Lua #DeveloperProductivity #SideProject #IndieHacker",https://media.licdn.com/dms/image/v2/D4E22AQHIr_341MOyvA/feedshare-shrink_800/B4EZ1WKfnnGcAg-/0/1775267085082?e=1786579200&v=beta&t=nwwj38uahuajic2ArMUklP8gdlRejUoHcOblq-4RtAY,1022,12,2,0,2026-07-26
+7296683908291592192,post,PUBLISHED,2025-02-16T00:16:49.568Z,https://www.linkedin.com/feed/update/urn:li:activity:7296683908291592192/,I’m happy to share that I’ve obtained a new certification,"Social Innovation Leader -Global- from Hitachi! https://lnkd.in/ez4vriya …more Celebrating a New Certification <div class=""","I’m happy to share that I’ve obtained a new certification: Social Innovation Leader -Global- from Hitachi!
+
+https://lnkd.in/ez4vriya
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Celebrating a New Certification
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,1995,63,29,1,2026-07-26
+7280067811652059136,post,PUBLISHED,2025-01-01T03:50:23.417Z,https://www.linkedin.com/feed/update/urn:li:activity:7280067811652059136/,🌟✨ Seeing is Believing,"Privacy Shield in Action! ✨🌟 After seeing the response and impressions from the article ""Privacy Engineering with LLMs: ...."" I posted yesterday motivated me to complete the…","🌟✨ Seeing is Believing: Privacy Shield in Action! ✨🌟
+
+After seeing the response and impressions from the article ""Privacy Engineering with LLMs: ...."" I posted yesterday motivated me to complete the Privacy Shield web application by this evening! . This utility demonstrates how the Privacy Shield code protects Personally Identifiable Information (PII) through LangChain's version of the Reversible data anonymization with Microsoft Presidio, along with integrations of Large Language Models (LLMs).
+
+This project is also my first experience building a web app in Next.js with my coding buddy claude, as I usually prefer Vue/Nuxt.js. 🛡️🔐
+
+🎥 Here’s a 1-minute demo of the tool in action:
+https://lnkd.in/erEDC-sp
+🌐 Try it yourself online: https://lnkd.in/eEG8gbyF
+💻 The full source code is available on GitHub: https://lnkd.in/eRXh7Nve
+#PrivacyEngineering #LLM #Presidio #LangChain #DataPrivacy #Anonymization #OpenSource",https://media.licdn.com/dms/image/v2/D4E22AQElJgHubdfdxw/feedshare-shrink_800/B4EZQf_GElHEAg-/0/1735703422325?e=1786579200&v=beta&t=WbhDOno_EtPrLNtBcP7qg7sWXyPHPDCtbXjLtocopQo,500,11,1,0,2026-07-26
+7276997897399799808,post,PUBLISHED,2024-12-23T16:31:38.823Z,https://www.linkedin.com/feed/update/urn:li:activity:7276997897399799808/,📊 My 2024 LinkedIn stats (from Cleve.ai),20 posts - 321 total reactions - 8 comments Here's 10 lessons I learned in 2024: 🛠️ Open-source projects can fill gaps in existing tools. 🌐 Creating user-friendly interfaces…,"📊 My 2024 LinkedIn stats (from Cleve.ai):
+- 20 posts
+- 321 total reactions
+- 8 comments
+
+Here's 10 lessons I learned in 2024:
+🛠️ Open-source projects can fill gaps in existing tools.
+🌐 Creating user-friendly interfaces enhances accessibility and usability.
+📊 Data visualization tools can simplify complex information.
+📚 Continuous learning is essential in the evolving tech landscape.
+🤝 Collaboration with existing technologies can lead to innovative solutions.
+📖 Documentation is key; automatic API docs are invaluable for users.
+🌈 Embrace flexibility in languages to attract a broader audience.
+🙌 Community feedback is vital for refining and improving projects.
+🚀 Taking initiative can lead to significant advancements in your field.
+🔍 Understanding user needs is critical for designing effective tools.
+
+My 3 favourite personal highlights in 2024:
+
+1️⃣ Launched DuckDB Studio for enhanced database interaction!
+2️⃣ Published an article on Semantic Data Modeling!
+3️⃣ Had a great week at Pentaho, focused on team collaboration!
+
+Looking forward to more amazing experiences ahead! ✨
+
+Get your free LinkedIn unwrapped from cleve.ai/unwrapped.
+
+#LinkedinUnwrapped #CleveAI
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+Your document has finished loading
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,877,11,1,0,2026-07-26
+7231316388047454208,post,PUBLISHED,2024-08-19T15:09:38.272Z,https://www.linkedin.com/feed/update/urn:li:activity:7231316388047454208/,Had an incredible week at the Pentaho office in Orlando,"🙌 It was all about collaboration, innovation, and, of course, some well-deserved downtime with this amazing team. 🚀 Working together not only drives results but also builds…","Had an incredible week at the Pentaho office in Orlando! 🙌 It was all about collaboration, innovation, and, of course, some well-deserved downtime with this amazing team. 🚀 Working together not only drives results but also builds lasting memories with the best in the business.
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pentaho
+
+
+
+
+30,820 followers
+
+
+
+
+1yr • 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Part of the team wrapped up a week of hard work at the Pentaho office in Orlando last week, and what better way to celebrate than with some good food and even better company? 🎉🍻 Everyone brought their A-game all week and were able to kick back and enjoy some well-deserved downtime.
+
+Here’s to the laughs, the hustle, and making memories with some of the best people in the software business! #Pentaho #OrlandoVibes #WorkHardPlayHard #TeamFun",,765,16,0,0,2026-07-26
+7178876499700154369,post,PUBLISHED,2024-03-27T22:12:14.604Z,https://www.linkedin.com/feed/update/urn:li:activity:7178876499700154369/,I am thrilled to announce the launch of my newest open-source endeavor - DuckDB…,"Studio! Following the warm reception of ""DuckDB Data API & Micro ORM,"" I'm excited to present this extension product ""DuckDB Studio"", a web-based utility designed to streamline…","I am thrilled to announce the launch of my newest open-source endeavor - DuckDB Studio!
+
+Following the warm reception of ""DuckDB Data API & Micro ORM,"" I'm excited to present this extension product ""DuckDB Studio"", a web-based utility designed to streamline your interaction with DuckDB databases.
+
+DuckDB Studio is crafted for data enthusiasts and Data Engineers, AI/ML Developers, and those eager to dive into database management without the complexity. Give it a spin and see how it transforms your data workflow.
+
+DuckDB Studio on GitHub https://lnkd.in/eEDVDD7a
+DuckDB Studio on Vercel, Demo https://lnkd.in/eKbp_amC
+
+The online demo comes with two databases ""tickit"" and ""OpenBeersDB""
+
+Why DuckDB Studio stands out:
+
+- Ease of Access: Effortlessly view your databases and tables.
+- Enhanced Data Visualization: Navigate through your data in a user-friendly table view, with convenient pagination.
+- Flexible SQL Query Execution: Run any SQL query, tailored to your needs.
+- 'Prettify' Feature: Beautify your SQL queries with ease, enhancing readability and maintenance.
+
+As of now, the open-source landscape offers limited tools for querying DuckDB, with DBWeaver catering more to professional use. DuckDB Studio fills this gap, providing a versatile, web-based solution.
+
+Looking Ahead:
+
+- Automatic online API docs for newly created tables/entities.
+- Incorporation of SQLGlot for
+- advanced online query transpile to 20+ data sources
+- A robust SQL Query Optimizer, and
+- Enhanced data lineage insights with table, column, and projection extraction.
+
+Inspiration for DuckDB Studio was drawn from several notable projects like Drizzle Studio/ORM, RillData, Grafana Query Editor, and SQLglot, aiming to simplify data handling and analysis.",https://media.licdn.com/dms/image/v2/D4E22AQEo2KOrLrHdwQ/feedshare-shrink_800/feedshare-shrink_800/0/1711577530880?e=1786579200&v=beta&t=SpOIG9IcNqHr7VAeLhKXYvzlQEqTT-48ayOEjgxBKP4,0,72,3,0,2026-07-26
+7174539745090269185,post,PUBLISHED,2024-03-15T22:59:31.732Z,https://www.linkedin.com/feed/update/urn:li:activity:7174539745090269185/,I just open-sourced the 🚀DuckDB Data API & Micro ORM,Your RESTful Bridge to MotherDuck 🦆 Unlock the full potential of DuckDB directly from your applications with this open-source project. It empowers you to interact with DuckDB…,"I just open-sourced the 🚀DuckDB Data API & Micro ORM: Your RESTful Bridge to MotherDuck 🦆
+
+Unlock the full potential of DuckDB directly from your applications with this open-source project. It empowers you to interact with DuckDB databases via a RESTful interface—crafted by this project to complement MotherDuck's serverless DB capabilities.
+
+👉 Explore now: https://lnkd.in/eMpzze39
+
+While MotherDuck excels as a serverless solution for DuckDB, The duckdb_data_api introduces the missing piece: easy RESTful access. Designed for hobbyists and small projects, this solution is perfect for edge deployment, ensuring your applications stay close to your data with the unbeatable performance of DuckDB.
+
+Tech Stack Highlights:
+
+🌟 MotherDuck: The serverless backbone for DuckDB.
+✨ RESTful Access: The star feature of this project, making MotherDuck accessible via HTTP.
+🐍 Python & SQLAlchemy: Crafting a dynamic and robust data layer.
+🚀 FastAPI: For building efficient, scalable backend services.
+☁️ Vercel: Deploy effortlessly, scale infinitely. Bring your DuckDB-powered applications to the edge with zero hassle.
+
+#OpenSource #DuckDB #MotherDuck #Python #FastAPI #SQLAlchemy #Vercel #DataAPI #RESTAPI
+
+
+
+
+…more
+
+
+
+
+
+
+
+<article class=""",,0,24,0,0,2026-07-26
+7098016010166784000,post,PUBLISHED,2023-08-17T19:01:31.584Z,https://www.linkedin.com/feed/update/urn:li:activity:7098016010166784000/,The true sign of intelligence is not knowledge but imagination,"Albert Einstein once said that. But he didn't use AI;) He was right in saying that the intelligence level of an individual is not dependent on the facts he knows, but on how he…","The true sign of intelligence is not knowledge but imagination.
+
+Albert Einstein once said that. But he didn't use AI;)
+
+He was right in saying that the intelligence level of an
+individual is not dependent on the facts he knows, but
+on how he applies them creatively to solve problems in the world.
+
+We are now at a point where AI can help us access any
+formula and scientific data, and even esthetic calculations
+like the ones MidJ is performing.
+
+But by memorizing formula and scientific data, we only prove
+to the world that our brain’s storage capacity is high; in fact,
+anyone can read encyclopedias and gain knowledge but not
+everyone can find loopholes and make new discoveries.
+
+Bill Gates, Mark Zuckerberg, and Larry Ellison, who are known for their intelligence, never completed their university studies. If intelligence was based on the knowledge that people gained at colleges and universities, these three gentlemen would never have made it to the list of most intelligent people in the world.
+
+There is no limit to imagination, which is what makes it so unique.
+And also us humans:)
+Ideas stem from curiosity and imagination, and these ideas can be transformed into useful applications with the help of existing knowledge.
+
+Keep your creativity going!:)
+
+Video credit: @adailycloud
+#ai #artificialintelligence #creativity #technology
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PlayMedia is loadingPlayPlayLoaded: 23.93%0:00Stream Type LIVERemaining time -0:16 1xPlayback speedPlayback speed0.5x0.75x1x, selected1.25x1.5x1.75x2xTurn closed captions onShow captionsUnmuteTurn fullscreen onFullscreenMedia player modal window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""","https://media.licdn.com/dms/image/v2/D4D05AQGsN3WcOGThfg/feedshare-thumbnail_720_1280/feedshare-thumbnail_720_1280/0/1691999032925?e=1785686400&v=beta&t=LmwSAOu7dKummfxgzleqMwhhciIr4c-MJAMaKDb4uRM"");",0,6,0,0,2026-07-26
+7081135560949387264,post,PUBLISHED,2023-07-02T05:04:38.867Z,https://www.linkedin.com/feed/update/urn:li:activity:7081135560949387264/,Teamwork & Growth Mindset | Follow Vedang R,"Vatsa FRSA Teamwork and growth mindset are two powerful forces that can help people achieve great things. When people work together with a growth mindset, they can overcome any…","Teamwork & Growth Mindset | Follow Vedang R. Vatsa FRSA
+
+Teamwork and growth mindset are two powerful forces that can help people achieve great things. When people work together with a growth mindset, they can overcome any challenge and achieve their goals.
+
+If you want to be successful in your career, it is important to develop both teamwork and growth mindset skills. Here are some tips:
+
+• Be willing to collaborate: Be open to working with others and sharing your ideas.
+
+• Be supportive: Be there for your teammates and offer your help and encouragement.
+
+• Be open to feedback: Be willing to listen to and consider the input of others.
+
+• Be persistent: Don't give up easily when faced with challenges.
+
+• Be willing to learn: Be open to new experiences and learning new things.
+
+#motivation #leadership #management #growth
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PlayMedia is loadingPlayPlayLoaded: 20.56%0:00Stream Type LIVERemaining time -0:38 1xPlayback speedPlayback speed0.5x0.75x1x, selected1.25x1.5x1.75x2xTurn closed captions onShow captionsUnmuteTurn fullscreen onFullscreenMedia player modal windowMedia player modal window This modal can be closed by pressing the Escape key or activating the close button.Close modal window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,0,9,0,0,2026-07-26
+7069814276034629632,post,PUBLISHED,2023-05-31T23:17:54.204Z,https://www.linkedin.com/feed/update/urn:li:activity:7069814276034629632/,If you do anything long enough you will figure out how to get things done more…,efficiently 💯. Agree? 👏🏻 Let's connect and follow me! ❤️ #letsconnect #business #management #innovation #motivation #kindness #Networking #Workfromhome #Homeoffice…,"If you do anything long enough you will figure out how to get things done more efficiently 💯. Agree? 👏🏻
+Let's connect and follow me! ❤️
+
+#letsconnect #business #management #innovation #motivation #kindness #Networking #Workfromhome #Homeoffice
+#workingathome #Life #Entrepreneurship #Work #Success
+#mentorship #Creativity #Inspiration #Mobileapplications
+#Healthcare #entrepreneur #Mondaymotivation #careers
+#future #innovation #humanresources #digitalmarketing #technology #economics #india #leadership #hr #love
+#personaldevelopment #branding #marketing #socialmedia
+#jobinterviews #futurism #bestadvice #socialnetworking
+#whatinspiresme #markets #startups #venturecapital
+#leanstartups #advertisingandmarketing #investing #bankingindustry #personalbranding #education #productivity
+
+Checkout the post 👇 and enjoy your day!
+
+https://lnkd.in/exvNER3p
+https://lnkd.in/eh7WN_Ht
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PlayMedia is loadingPlayPlayLoaded: 29.70%0:00Stream Type LIVERemaining time -0:13 1xPlayback speedPlayback speed0.5x0.75x1x, selected1.25x1.5x1.75x2xTurn closed captions onShow captionsUnmuteTurn fullscreen onFullscreenMedia player modal window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,0,0,0,0,2026-07-26
+7064691230785298433,post,PUBLISHED,2023-05-17T20:00:45.035Z,https://www.linkedin.com/feed/update/urn:li:activity:7064691230785298433/,"When we allow creativity 🍂🍁to lead us, we shift our perspective 🤩 to see our…",environment through a lens of possibility. Let’s all give ourselves a creative 😎moment today. Slow down and do something that feeds our creative souls. 👩🏾‍🎤🎨👩🏻‍🎨 Let’s…,"When we allow creativity 🍂🍁to lead us, we shift our perspective 🤩 to see our environment through a lens of possibility.
+
+Let’s all give ourselves a creative 😎moment today.
+
+Slow down and do something that feeds our creative souls. 👩🏾‍🎤🎨👩🏻‍🎨
+
+Let’s notice what happens when we go back into our routine.⚡️💡🤔
+
+Creativity of any kind is often the path to innovation. 🦄🦋➰
+
+Let’s value and nurture our inner creativity and allow ourselves to enjoy the process.
+
+Our greatest gifts 💐become accessible when we are able to fully express ourselves, our ideas, our unique perspective and yes, even the art we create along the way.
+
+✅ Check out my profile if you need some support, book a discovery call.
+
+#thoughtleader #creativity #perspective Talk Boutique
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PlayMedia is loadingPlayPlayLoaded: 27.25%0:00Stream Type LIVERemaining time -0:44 1xPlayback speedPlayback speed0.5x0.75x1x, selected1.25x1.5x1.75x2xTurn closed captions onShow captionsUnmuteTurn fullscreen onFullscreenMedia player modal windowMedia player modal window This modal can be closed by pressing the Escape key or activating the close button.Close modal window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,0,2,0,0,2026-07-26
+7046921120423272448,post,PUBLISHED,2023-03-29T19:08:40.572Z,https://www.linkedin.com/feed/update/urn:li:activity:7046921120423272448/,"A woman, who came to the US as an Immigrant, developed ChatGPT","Mira Murati It's the most popular technology and one that's going to change the way we do a lot of things. Mira Murati, is the CTO of the company and that's something other…","A woman, who came to the US as an Immigrant, developed ChatGPT
+Mira Murati
+
+It's the most popular technology and one that's going to change the way we do a lot of things.
+
+Mira Murati, is the CTO of the company and that's something other people, especially girls growing up, should know.
+
+Very cool, and very revolutionary 👏🏾👏🏾
+
+It's Women's History Month and she made history!🥂
+
+#technology #change #womanintech
+
+https://lnkd.in/egbVJ2wT
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+<article class=""",,0,3,0,0,2026-07-26
+7035999604307341312,post,PUBLISHED,2023-02-27T15:50:28.218Z,https://www.linkedin.com/feed/update/urn:li:activity:7035999604307341312/,BRINGING OUT CREATIVITY AT ITS FINEST,"Creativity is for everyone. No matter how old you are, what you do in your life, it is around us. We always use our heads in creating something unique to show or in doing…","BRINGING OUT CREATIVITY AT ITS FINEST
+
+Creativity is for everyone. No matter how old you are, what you do in your life, it is around us. We always use our heads in creating something unique to show or in doing something. It is essential. This is what usually professionals do once they hit the field. They express through different ways.
+
+Creativity helps increase your confidence either on the runway or to show your outcome. You know why? Because everything came from you. You were able to express everything though art in the best way. Confidence may take time to develop, but the more you practice and make it a routine, you will definitely get there. Don’t be scared, there are a lot of ways in learning as well. Go explore and inspire yourself in creating something from the heart.
+
+Creativity flows within us. Some or most of you may not use it often, but it is always there. There are a lot of ways in expressing not just in outputs, but also in our daily life. It can be done in the kitchen, a way you do in finishing your work, beating the deadline, and so on. It has no limits and rules, just go with it in whatever you feel like doing it.
+
+Checkout the video 👇 to know about these cup and saucer sets which have won the Guinness Book of World records for beautification.Lots of Physics/optics are involved in designing the illusions.Truly a masterpiece of art.
+
+Video Credit - This is taken from the #socialmedia and all credit goes to the owner of this video.
+
+Follow Ravi Narayanan for inspiring and motivational posts everyday.
+
+#creativethinking #creativity #creativityskills #creativedesign #finest #linkedin #whatinspiresme #bestadvice
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PlayMedia is loadingPlayPlayLoaded: 2.11%0:00Stream Type LIVERemaining time -3:06 1xPlayback speedPlayback speed0.5x0.75x1x, selected1.25x1.5x1.75x2xTurn closed captions onShow captionsUnmuteTurn fullscreen onFullscreenMedia player modal windowMedia player modal window This modal can be closed by pressing the Escape key or activating the close button.Close modal window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""","https://media.licdn.com/dms/image/v2/D5605AQH2QD0d-hqIXw/feedshare-thumbnail_720_1280/feedshare-thumbnail_720_1280/0/1676429857574?e=1785686400&v=beta&t=S2fEOWVJtxmeZUaUxA614QZs0L_KtVgYz0QHygNOpos"");",0,1,0,0,2026-07-26
+7032393100408872961,post,PUBLISHED,2023-02-17T16:59:30.683Z,https://www.linkedin.com/feed/update/urn:li:activity:7032393100408872961/,💠 How do creative people come up with great ideas.❓,"💠 Let's talk about creativity, and this necessity to be creative. 👍 💠 Creativity is a process where knowledge imagination, and actions are put into practice and exercised…","💠 How do creative people come up with great ideas.❓
+
+💠 Let's talk about creativity, and this necessity to be creative. 👍
+
+💠 Creativity is a process where knowledge imagination, and actions are put into practice and exercised regularly.💯
+
+💠 Let your mind wander, challenge yourself to think up lots of ideas around a topic or problem at the same time.✔
+
+💠 Never expect creativity to just happen. look for new sources of inspiration that will give you fresh ideas and motivate you to generate unique.💯🙏
+
+👉 Which one you like the most in video, credit goes to owner 👈
+
+#creativity #people #inspiration #creative #wander #challenge
+
+
+
+
+…more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PlayMedia is loadingPlayPlayLoaded: 72.52%0:02Stream Type LIVERemaining time -0:47 1xPlayback speedPlayback speed0.5x0.75x1x, selected1.25x1.5x1.75x2xTurn closed captions onShow captionsUnmuteTurn fullscreen onFullscreenMedia player modal windowMedia player modal window This modal can be closed by pressing the Escape key or activating the close button.Close modal window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class=""",,0,4,0,0,2026-07-26

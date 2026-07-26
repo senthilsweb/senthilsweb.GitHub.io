@@ -1,0 +1,5 @@
+slug,title,description,sections,source_repo,source_path,topic,sort_order
+ai-dlc,AI-DLC In Practice: agent-job-matcher,"The AI Development Life Cycle methodology, taught through the live build of agent-job-matcher.",18,https://github.com/senthilsweb/ai-dlc,ai-dlc/index.html,"AI-DLC,Methodology",1
+ai-sdet-workbench,AI SDET Workbench,Spec-driven AI engineering for software testing — the Pentaho SDET AI Workbench story.,17,https://github.com/senthilsweb/ai-agents,ai-sdet-workbench/index.html,"AI,Testing",3
+aidlc-pii-classifier,AI-DLC In Practice: PII Classifier,From intent to operations — building the Privacy Classifier agent with AI-DLC.,25,https://github.com/senthilsweb/ai-agents,ai-dlc-in-practice/pii-classifier/index.html,"AI-DLC,Privacy",4
+claimwise-lakehouse,Healthcare RCM Analytics — Data Lakehouse Architecture,ClaimWise: synthetic revenue-cycle data through a dbt lakehouse with dashboards and lineage.,38,https://github.com/senthilsweb/claimwise,slides/index.html,"Healthcare,Lakehouse",2

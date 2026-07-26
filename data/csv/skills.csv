@@ -1,0 +1,6 @@
+name,description,kind,file_count,size_kb,download_path
+article-writing,"Write blog articles and docs pages in the house style — plain storytelling, concrete numbers, one true story, runnable CTAs.",single,1,12,/downloads/skills/article-writing.md
+linkedin-content,"LinkedIn posts, articles, and carousel one-pagers in a plain-English practitioner voice.",single,1,12,/downloads/skills/linkedin-content.md
+linkedin-cover-generator,"Editorial LinkedIn cover images — left-text/right-visual layout, curated palettes, safe-area rules.",single,1,24,/downloads/skills/linkedin-cover-generator.md
+demo-video,"Human-paced screen-capture demo videos with Playwright recordVideo — scene planning, QA, ffmpeg post.",bundle,2,12,/downloads/skills/demo-video.zip
+slide-deck,"Reveal.js decks in the house style — dark-navy/cyan theme, icon system, code panels, PDF export.",bundle,2,36,/downloads/skills/slide-deck.zip
