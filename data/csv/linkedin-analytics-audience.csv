@@ -1,0 +1,55 @@
+row_key,snapshot_date,category,value,percentage_label,percentage,country
+2026-07-27|Company|Pentaho,2026-07-27,Company,Pentaho,4%,4,
+2026-07-27|Company|Hitachi Vantara,2026-07-27,Company,Hitachi Vantara,2%,2,
+2026-07-27|Company|Tata Consultancy Services,2026-07-27,Company,Tata Consultancy Services,1%,1,
+2026-07-27|Company|IBM,2026-07-27,Company,IBM,1%,1,
+2026-07-27|Company|HCLTech,2026-07-27,Company,HCLTech,1%,1,
+2026-07-27|Company|Accenture,2026-07-27,Company,Accenture,1%,1,
+2026-07-27|Company|Infosys,2026-07-27,Company,Infosys,1%,1,
+2026-07-27|Company|Vmoksha Technologies Pvt. Ltd,2026-07-27,Company,Vmoksha Technologies Pvt. Ltd,1%,1,
+2026-07-27|Company|Cognizant,2026-07-27,Company,Cognizant,< 1%,0.5,
+2026-07-27|Location|Greater Bengaluru Area,2026-07-27,Location,Greater Bengaluru Area,27%,27,India
+2026-07-27|Location|New York City Metropolitan Area,2026-07-27,Location,New York City Metropolitan Area,9%,9,United States
+2026-07-27|Location|San Francisco Bay Area,2026-07-27,Location,San Francisco Bay Area,5%,5,United States
+2026-07-27|Location|Greater Chennai Area,2026-07-27,Location,Greater Chennai Area,4%,4,India
+2026-07-27|Location|Greater Hyderabad Area,2026-07-27,Location,Greater Hyderabad Area,4%,4,India
+"2026-07-27|Location|London Area, United Kingdom",2026-07-27,Location,"London Area, United Kingdom",2%,2,United Kingdom
+2026-07-27|Location|Singapore,2026-07-27,Location,Singapore,2%,2,Singapore
+2026-07-27|Location|Greater Delhi Area,2026-07-27,Location,Greater Delhi Area,2%,2,India
+2026-07-27|Location|Greater Orlando,2026-07-27,Location,Greater Orlando,2%,2,United States
+"2026-07-27|Company size|10,001+ employees",2026-07-27,Company size,"10,001+ employees",28%,28,
+2026-07-27|Company size|51-200 employees,2026-07-27,Company size,51-200 employees,10%,10,
+"2026-07-27|Company size|1,001-5,000 employees",2026-07-27,Company size,"1,001-5,000 employees",9%,9,
+"2026-07-27|Company size|5,001-10,000 employees",2026-07-27,Company size,"5,001-10,000 employees",8%,8,
+2026-07-27|Company size|11-50 employees,2026-07-27,Company size,11-50 employees,8%,8,
+2026-07-27|Company size|2-10 employees,2026-07-27,Company size,2-10 employees,8%,8,
+2026-07-27|Company size|201-500 employees,2026-07-27,Company size,201-500 employees,7%,7,
+"2026-07-27|Company size|501-1,000 employees",2026-07-27,Company size,"501-1,000 employees",5%,5,
+2026-07-27|Company size|0-1 employees,2026-07-27,Company size,0-1 employees,1%,1,
+2026-07-27|Seniority|Senior,2026-07-27,Seniority,Senior,44%,44,
+2026-07-27|Seniority|Entry,2026-07-27,Seniority,Entry,12%,12,
+2026-07-27|Seniority|Director,2026-07-27,Seniority,Director,11%,11,
+2026-07-27|Seniority|Manager,2026-07-27,Seniority,Manager,7%,7,
+2026-07-27|Seniority|VP,2026-07-27,Seniority,VP,6%,6,
+2026-07-27|Seniority|CXO,2026-07-27,Seniority,CXO,5%,5,
+2026-07-27|Seniority|Owner,2026-07-27,Seniority,Owner,3%,3,
+2026-07-27|Seniority|Partner,2026-07-27,Seniority,Partner,2%,2,
+2026-07-27|Job title|Software Engineer,2026-07-27,Job title,Software Engineer,6%,6,
+2026-07-27|Job title|Founder,2026-07-27,Job title,Founder,3%,3,
+2026-07-27|Job title|Co-Founder,2026-07-27,Job title,Co-Founder,2%,2,
+2026-07-27|Job title|Solutions Architect,2026-07-27,Job title,Solutions Architect,2%,2,
+2026-07-27|Job title|Chief Executive Officer,2026-07-27,Job title,Chief Executive Officer,2%,2,
+2026-07-27|Job title|Project Manager,2026-07-27,Job title,Project Manager,1%,1,
+2026-07-27|Job title|Professor,2026-07-27,Job title,Professor,1%,1,
+2026-07-27|Job title|Data Engineer,2026-07-27,Job title,Data Engineer,1%,1,
+2026-07-27|Job title|Architect,2026-07-27,Job title,Architect,1%,1,
+2026-07-27|Industry|IT Services and IT Consulting,2026-07-27,Industry,IT Services and IT Consulting,36%,36,
+2026-07-27|Industry|Software Development,2026-07-27,Industry,Software Development,21%,21,
+2026-07-27|Industry|Financial Services,2026-07-27,Industry,Financial Services,4%,4,
+"2026-07-27|Industry|Technology, Information and Internet",2026-07-27,Industry,"Technology, Information and Internet",3%,3,
+2026-07-27|Industry|Staffing and Recruiting,2026-07-27,Industry,Staffing and Recruiting,3%,3,
+2026-07-27|Industry|Human Resources Services,2026-07-27,Industry,Human Resources Services,3%,3,
+2026-07-27|Industry|Business Consulting and Services,2026-07-27,Industry,Business Consulting and Services,2%,2,
+2026-07-27|Industry|Banking,2026-07-27,Industry,Banking,1%,1,
+2026-07-27|Industry|Hospitals and Health Care,2026-07-27,Industry,Hospitals and Health Care,1%,1,
+2026-07-27|Industry|Semiconductor Manufacturing,2026-07-27,Industry,Semiconductor Manufacturing,1%,1,

@@ -142,6 +142,7 @@
 
 - [Resume](https://www.senthilsweb.com/resume/) — also machine-readable JSON Resume at /resume.json
 - [About](https://www.senthilsweb.com/about/)
+- [LinkedIn analytics](https://www.senthilsweb.com/analytics/) — reach, audience and top posts; 4 parquets under /data/linkedin-analytics-*.parquet
 - [Projects](https://www.senthilsweb.com/projects/) — catalog at /data/projects.parquet
 - [AI Agents](https://www.senthilsweb.com/agents/) — catalog at /data/agents.parquet
 - [Docker Images](https://www.senthilsweb.com/images/) — catalog at /data/docker.parquet
