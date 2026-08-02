@@ -29,7 +29,7 @@ Article link: https://lnkd.in/g49nJ3wQ
 
 Article title ""Applying combinatorial science and discrete mathematics to data-platform engineering and testing""
 
-#AppliedMathematics #CombinatorialScience #CoveringArrays #PairwiseTesting #AIEvals #AgenticAI #AIEngineering #DataEngineering",https://media.licdn.com/dms/image/v2/D5622AQH3GqfLeHMRog/feedshare-shrink_800/B56Z.fAgbCHYAc-/0/1785079138251?e=1786579200&v=beta&t=Y2-gN25g6tgPTsti6Oe-03FvTtuY_7joFy9mPhcGztQ,35,1,0,0,2026-07-26
+#AppliedMathematics #CombinatorialScience #CoveringArrays #PairwiseTesting #AIEvals #AgenticAI #AIEngineering #DataEngineering",https://media.licdn.com/dms/image/v2/D5622AQH3GqfLeHMRog/feedshare-shrink_800/B56Z.fAgbCHYAc-/0/1785079138251?e=1786579200&v=beta&t=Y2-gN25g6tgPTsti6Oe-03FvTtuY_7joFy9mPhcGztQ,233,0,0,0,2026-08-02
 7487142880839565312,post,PUBLISHED,2026-07-26T13:52:47.180Z,https://www.linkedin.com/feed/update/urn:li:activity:7487142880839565312/,Meet DataGov — my new open-source data governance CLI,"Written in Rust. Built for agents. The goal is simple: one binary, with no Python, Java, Node.js, or Docker dependency, that both engineers and AI agents can run reliably. DataGov…","Meet DataGov — my new open-source data governance CLI. Written in Rust. Built for agents.
 
 The goal is simple: one binary, with no Python, Java, Node.js, or Docker dependency, that both engineers and AI agents can run reliably.
@@ -65,7 +65,7 @@ This is just the beginning; it's an early-stage kickoff rather than a finished p
 
 Check out the repository at https://lnkd.in/gsuU48M5
 
-#AdaptiveDataGovOps #DataGovernance #OpenSource #Rust #AIAgents",https://media.licdn.com/dms/image/v2/D5622AQFb_gqoYru3nA/feedshare-shrink_800/B56Z.esxnFK4Ac-/0/1785073965877?e=1786579200&v=beta&t=DWkYtea5UcLW0OsG1Ch5b8qpcrV9zO2fMZahTiDBUEM,84,1,0,0,2026-07-26
+#AdaptiveDataGovOps #DataGovernance #OpenSource #Rust #AIAgents",https://media.licdn.com/dms/image/v2/D5622AQFb_gqoYru3nA/feedshare-shrink_800/B56Z.esxnFK4Ac-/0/1785073965877?e=1786579200&v=beta&t=DWkYtea5UcLW0OsG1Ch5b8qpcrV9zO2fMZahTiDBUEM,1134,0,0,0,2026-08-02
 7486083742336417792,post,PUBLISHED,2026-07-23T15:44:08.883Z,https://www.linkedin.com/feed/update/urn:li:activity:7486083742336417792/,Introducing the latest addition to my agent fleet,"the youtube-transcriber, now number nine. What it does: Simply provide a YouTube link, and it returns the full spoken transcript of the audio, not just the captions. This means…","Introducing the latest addition to my agent fleet: the youtube-transcriber, now number nine.
 
 What it does: Simply provide a YouTube link, and it returns the full spoken transcript of the audio, not just the captions. This means you get the actual audio transcribed from start to finish.
@@ -84,7 +84,7 @@ In the first four talks (The Youtube videos, I used for my testing), I processed
 
 The other eight agents include: job-scout, job-matcher, job-pilot, api-test-generator, diagram-generator, github-pr-digest, privacy-classifier, and linkedin-cover-generator.
 
-#AIAgents #LangGraph #Whisper #LocalFirst #AINative",https://media.licdn.com/dms/image/v2/D5622AQFqKGhrGbCNmA/feedshare-shrink_800/B56Z.Ppfn.GUAc-/0/1784821447573?e=1786579200&v=beta&t=tifTNUTUsiD0ri8VB8kEFLsgFnQ2NjYXa6nj3R4ssh0,361,0,1,0,2026-07-26
+#AIAgents #LangGraph #Whisper #LocalFirst #AINative",https://media.licdn.com/dms/image/v2/D5622AQFqKGhrGbCNmA/feedshare-shrink_800/B56Z.Ppfn.GUAc-/0/1784821447573?e=1786579200&v=beta&t=tifTNUTUsiD0ri8VB8kEFLsgFnQ2NjYXa6nj3R4ssh0,434,0,1,0,2026-08-02
 7486074529379913730,post,PUBLISHED,2026-07-23T15:07:32.343Z,https://www.linkedin.com/feed/update/urn:li:activity:7486074529379913730/,"The landscape of agent frameworks is rapidly evolving, with new names appearing…","every few weeks: OpenAI Agents SDK, LangGraph, CrewAI, PydanticAI, LangChain, Claude agents, and more. Despite the varying terminologies and abstractions, the underlying execution…","The landscape of agent frameworks is rapidly evolving, with new names appearing every few weeks: OpenAI Agents SDK, LangGraph, CrewAI, PydanticAI, LangChain, Claude agents, and more. Despite the varying terminologies and abstractions, the underlying execution pattern remains largely consistent.
 
 Currently, there is no single industry-standard agent lifecycle, but a common pattern is emerging that is more beneficial to learn than memorizing the vocabulary of any one framework. Here are the eleven stages, typically in the order they run:
@@ -147,7 +147,7 @@ Your document has finished loading
 
 
 
-<div class=""",,362,0,2,0,2026-07-26
+<div class=""",,461,0,2,0,2026-08-02
 7486030816343654400,post,PUBLISHED,2026-07-23T12:13:50.343Z,https://www.linkedin.com/feed/update/urn:li:activity:7486030816343654400/,"Last week, I requested my linkedin-cover-image agent to utilize a darker…","palette for a privacy article, and it executed the task well. However, the next day, when I opened a new session, I found myself repeating the same request. The agent was not at…","Last week, I requested my linkedin-cover-image agent to utilize a darker palette for a privacy article, and it executed the task well. However, the next day, when I opened a new session, I found myself repeating the same request. The agent was not at fault; the application was. It failed to retain what I had taught it.
 
 Most AI agents today can perform tasks, but very few can improve over time. This isn't due to the model's inability to learn, but rather because the application (The agent) does not preserve that learning.
@@ -173,7 +173,7 @@ Memory personalizes the agent, while reflection enhances the system. Repeated fe
 
 Agent Engineering is gradually evolving into Memory Engineering, as memory is not merely the full transcript but the distilled knowledge that deserves to persist beyond the session.
 
-#AgentEngineering #AIAgents #MemoryEngineering #GenAI #AIEngineering",https://media.licdn.com/dms/image/v2/D5622AQFQfY_qSk4T2w/feedshare-shrink_800/B56Z.O5WuzKwAc-/0/1784808828059?e=1786579200&v=beta&t=lidb2vLHm7TCHbqir2NHK1eh5tsJ8EyYyRmsaXtCCsU,492,1,0,0,2026-07-26
+#AgentEngineering #AIAgents #MemoryEngineering #GenAI #AIEngineering",https://media.licdn.com/dms/image/v2/D5622AQFQfY_qSk4T2w/feedshare-shrink_800/B56Z.O5WuzKwAc-/0/1784808828059?e=1786579200&v=beta&t=lidb2vLHm7TCHbqir2NHK1eh5tsJ8EyYyRmsaXtCCsU,599,1,0,0,2026-08-02
 7485498869477310464,post,PUBLISHED,2026-07-22T01:00:04.327Z,https://www.linkedin.com/feed/update/urn:li:activity:7485498869477310464/,"Every week, new ideas emerge around AI-SDLC, spec-driven development, agentic…","engineering, AI evaluations, governance, observability, and AI-native delivery platforms. The engineering side is gradually converging around common practices, methodologies, and…","Every week, new ideas emerge around AI-SDLC, spec-driven development, agentic engineering, AI evaluations, governance, observability, and AI-native delivery platforms. The engineering side is gradually converging around common practices, methodologies, and supporting ecosystems.
 
 However, AI is also transforming the economics of software delivery. If AI significantly alters delivery speed, team structures, engineering effort, and quality, how should projects be estimated, priced, and valued?
@@ -182,7 +182,7 @@ This question extends beyond just business or sales; it is crucial for architect
 
 It appears that while the engineering conversation is becoming increasingly structured, estimation, pricing, value realization, and commercial models are evolving more quietly. Are our commercial practices converging as swiftly as our AI engineering practices?
 
-I am interested in how others are approaching this transition.",https://media.licdn.com/dms/image/v2/D5622AQHVnn-cTZsXUA/feedshare-shrink_800/B56Z.HVjqPGQAg-/0/1784682003337?e=1786579200&v=beta&t=SkxyHvkfhZAiwHtef1w3X_eeojOhZxKKUQfW5STND9s,529,0,1,1,2026-07-26
+I am interested in how others are approaching this transition.",https://media.licdn.com/dms/image/v2/D5622AQHVnn-cTZsXUA/feedshare-shrink_800/B56Z.HVjqPGQAg-/0/1784682003337?e=1786579200&v=beta&t=SkxyHvkfhZAiwHtef1w3X_eeojOhZxKKUQfW5STND9s,566,0,1,1,2026-08-02
 7484656081412001792,post,PUBLISHED,2026-07-19T17:11:07.994Z,https://www.linkedin.com/feed/update/urn:li:activity:7484656081412001792/,I am setting up a production line for my open-source work — and the workers on…,"it are AI agents. Every project needs a website, docs, a blog, and an API reference. I did not want to hand-build that each time, and I do not want my agents to either.…","I am setting up a production line for my open-source work — and the workers on it are AI agents.
 
 Every project needs a website, docs, a blog, and an API reference. I did not want to hand-build that each time, and I do not want my agents to either.
@@ -202,7 +202,7 @@ Fully open source, MIT license. Built on Golang and NextJS/TypeScript — the UI
 Code: https://lnkd.in/eZxzGfY2
 Demo: https://lnkd.in/e2iYASgB
 
-#GoLang #OpenSource #AIAgents #DeveloperTools #LLM",https://media.licdn.com/dms/image/v2/D4E22AQE7PjQfjdlATw/feedshare-shrink_800/B4EZ97XC4ZJMAg-/0/1784481066864?e=1786579200&v=beta&t=a61LCZURmSdB7Mucjsp-Y7l9ay55eua0_ey7hTLJwCY,278,0,0,0,2026-07-26
+#GoLang #OpenSource #AIAgents #DeveloperTools #LLM",https://media.licdn.com/dms/image/v2/D4E22AQE7PjQfjdlATw/feedshare-shrink_800/B4EZ97XC4ZJMAg-/0/1784481066864?e=1786579200&v=beta&t=a61LCZURmSdB7Mucjsp-Y7l9ay55eua0_ey7hTLJwCY,290,0,0,0,2026-08-02
 7483510885441937408,post,PUBLISHED,2026-07-16T13:20:31.998Z,https://www.linkedin.com/feed/update/urn:li:activity:7483510885441937408/,"Recently, while exploring modern AI evaluation frameworks, I had a realization","Initially, the categories seemed like a collection of technical metrics—valuable for testing model behavior, comparing outputs, and enhancing performance. However, the deeper I…","Recently, while exploring modern AI evaluation frameworks, I had a realization. Initially, the categories seemed like a collection of technical metrics—valuable for testing model behavior, comparing outputs, and enhancing performance. However, the deeper I delved, the more I understood that they represent something much more significant: the dimensions of AI trust.
 
 - Security: Can the system protect sensitive information and resist misuse?
@@ -221,7 +221,7 @@ This forms the basis of my thoughts on Adaptive Data Governance: governance, dat
 
 Trust cannot simply be declared at the end of development; it must be designed, measured, documented, and continuously earned.
 
-Trustworthy AI is not a feature of the model; it is an engineering outcome.",https://media.licdn.com/dms/image/v2/D4E22AQGYcPxLbSx8dw/feedshare-shrink_800/B4EZ9rFfpFK4Ac-/0/1784208030549?e=1786579200&v=beta&t=C3NLJ3Qw5IRKN5oyTjQ8TrB2dcF3SxPC5QOPUTTj59w,293,0,0,0,2026-07-26
+Trustworthy AI is not a feature of the model; it is an engineering outcome.",https://media.licdn.com/dms/image/v2/D4E22AQGYcPxLbSx8dw/feedshare-shrink_800/B4EZ9rFfpFK4Ac-/0/1784208030549?e=1786579200&v=beta&t=C3NLJ3Qw5IRKN5oyTjQ8TrB2dcF3SxPC5QOPUTTj59w,300,0,0,0,2026-08-02
 7471004221698543617,post,PUBLISHED,2026-06-12T01:03:30.999Z,https://www.linkedin.com/feed/update/urn:li:activity:7471004221698543617/,Why pay for frontier models when NVIDIA hosts Nemotron 3 Ultra for free,I plugged it into GitHub Copilot CLI in under a minute — swipe through the cheatsheet to set it up yourself. 👇 #AI #GitHubCopilot #NVIDIA #Nemotron #DeveloperTools …more Your…,"Why pay for frontier models when NVIDIA hosts Nemotron 3 Ultra for free?
 
 I plugged it into GitHub Copilot CLI in under a minute — swipe through the cheatsheet to set it up yourself. 👇
@@ -266,7 +266,7 @@ Your document has finished loading
 
 
 
-<div class=""",,432,0,0,0,2026-07-26
+<div class=""",,432,0,0,0,2026-08-02
 7466873934731198464,post,PUBLISHED,2026-05-31T15:31:13.849Z,https://www.linkedin.com/feed/update/urn:li:activity:7466873934731198464/,Adaptive DataGovOps — summarized on one page,"While ""adaptive"" may sound simple, putting it into practice is challenging. Here’s the playbook: 12 practices for governing data in the GenAI era, organized into 4 phases — Talk,…","Adaptive DataGovOps — summarized on one page. While ""adaptive"" may sound simple, putting it into practice is challenging.
 
 Here’s the playbook: 12 practices for governing data in the GenAI era, organized into 4 phases — Talk, Test, Track, and Tune.
@@ -313,7 +313,7 @@ Your document has finished loading
 
 
 
-<div class=""",,243,0,0,0,2026-07-26
+<div class=""",,244,0,0,0,2026-08-02
 7466673908327432192,post,PUBLISHED,2026-05-31T02:16:23.838Z,https://www.linkedin.com/feed/update/urn:li:activity:7466673908327432192/,"Data governance requires an adaptive operating model, as it is not a…","one-size-fits-all solution. Throughout our work on data discovery, classification, and governance challenges, we consistently encountered the same issue: each organization has…","Data governance requires an adaptive operating model, as it is not a one-size-fits-all solution. Throughout our work on data discovery, classification, and governance challenges, we consistently encountered the same issue: each organization has unique requirements that cannot always be addressed by standard rules or a single AI model.
 
 With Pentaho Data Catalog, we embrace this adaptive approach by facilitating governance pipelines that can be customized to fit each customer's data reality. This can involve using algorithms, business rules, custom APIs, or optional AI/ML models.
@@ -324,7 +324,7 @@ I refer to this concept as ""Adaptive DataGovOps"".
 
 If your organization is facing similar data governance, discovery, or classification challenges, I’d be happy to exchange ideas and explore how we can help.
 
-#DataGovernance #AdaptiveDataGovOps #Pentaho #DataCatalog #DataOps #AI #GenAI",https://media.licdn.com/dms/image/v2/D4E22AQGJtHiATwCLWA/feedshare-shrink_800/B4EZ570WvGHoAc-/0/1780193783063?e=1786579200&v=beta&t=pzkPtBu3hOwR9irFac_M5VMFH0M1rzU0JgvA0dSvIxk,205,0,0,0,2026-07-26
+#DataGovernance #AdaptiveDataGovOps #Pentaho #DataCatalog #DataOps #AI #GenAI",https://media.licdn.com/dms/image/v2/D4E22AQGJtHiATwCLWA/feedshare-shrink_800/B4EZ570WvGHoAc-/0/1780193783063?e=1786579200&v=beta&t=pzkPtBu3hOwR9irFac_M5VMFH0M1rzU0JgvA0dSvIxk,206,0,0,0,2026-08-02
 7456792081718677504,post,PUBLISHED,2026-05-03T19:49:32.779Z,https://www.linkedin.com/feed/update/urn:li:activity:7456792081718677504/,"I have modernized my open-source Privacy Shield project into a simple,…","local-first Data Loss Prevention (DLP) workflow designed for everyday text use cases. This workflow assists in detecting Personally Identifiable Information (PII), anonymizing…","I have modernized my open-source Privacy Shield project into a simple, local-first Data Loss Prevention (DLP) workflow designed for everyday text use cases.
 
 This workflow assists in detecting Personally Identifiable Information (PII), anonymizing data before sharing, optionally enhancing text, and safely reversing anonymization using in-memory mapping.
@@ -377,7 +377,7 @@ Your document has finished loading
 
 
 
-<div class=""",,237,0,1,0,2026-07-26
+<div class=""",,239,0,1,0,2026-08-02
 7454643044483698688,post,PUBLISHED,2026-04-27T21:30:02.375Z,https://www.linkedin.com/feed/update/urn:li:activity:7454643044483698688/,"OpenAI recently (Apr 22, 2026) released Privacy Filter, a lightweight frontier…",model designed for detecting and redacting personally identifiable information (PII) in text. Read the post @ https:// https://lnkd.in/eqSaUNYV A key feature of Privacy Filter is…,"OpenAI recently (Apr 22, 2026) released Privacy Filter, a lightweight frontier model designed for detecting and redacting personally identifiable information (PII) in text.
 
 Read the post @ https:// https://lnkd.in/eqSaUNYV
@@ -388,7 +388,7 @@ Privacy Filter is worth exploring for its applications in Sensitive Data Discove
 
 Github repo: https:// https://lnkd.in/eg2EphpP
 
-#Privacy #DataGovernance #DataCatalog #PII #AI #OpenAI",https://media.licdn.com/dms/image/v2/D4E22AQHacH2kloXjiA/feedshare-shrink_800/B4EZ3P69L4JUAg-/0/1777309832290?e=1786579200&v=beta&t=UHHKqj6o6dIQ8YXeq3O7x37FvZQwxz8eth_r6koQ3l8,114,0,0,0,2026-07-26
+#Privacy #DataGovernance #DataCatalog #PII #AI #OpenAI",https://media.licdn.com/dms/image/v2/D4E22AQHacH2kloXjiA/feedshare-shrink_800/B4EZ3P69L4JUAg-/0/1777309832290?e=1786579200&v=beta&t=UHHKqj6o6dIQ8YXeq3O7x37FvZQwxz8eth_r6koQ3l8,114,0,0,0,2026-08-02
 7453939830444564480,post,PUBLISHED,2026-04-25T22:55:43.083Z,https://www.linkedin.com/feed/update/urn:li:activity:7453939830444564480/,Quick cloud-neutral tip to know your public IP from any terminal,"commands: curl -s ifconfig.me (or) curl -s https://api.ipify.org Simple, portable, and handy across clouds, private VMs, laptops, and containers. #whatsmyip #DevOps #routerip…","Quick cloud-neutral tip to know your public IP from any terminal!
 
 commands:
@@ -397,7 +397,7 @@ curl -s https://api.ipify.org
 
 Simple, portable, and handy across clouds, private VMs, laptops, and containers.
 
-#whatsmyip #DevOps #routerip #ifconfig.me #api.ipify.org",https://media.licdn.com/dms/image/v2/D4E22AQEbkc04TTPvmw/feedshare-shrink_800/B4EZ3G2xujIgAc-/0/1777157741762?e=1786579200&v=beta&t=zsiqeDL9ioDZ54z2x_-DjHyg31_hP54hoa9qU3R0JUM,111,2,0,0,2026-07-26
+#whatsmyip #DevOps #routerip #ifconfig.me #api.ipify.org",https://media.licdn.com/dms/image/v2/D4E22AQEbkc04TTPvmw/feedshare-shrink_800/B4EZ3G2xujIgAc-/0/1777157741762?e=1786579200&v=beta&t=zsiqeDL9ioDZ54z2x_-DjHyg31_hP54hoa9qU3R0JUM,112,2,0,0,2026-08-02
 7453932766288674816,post,PUBLISHED,2026-04-25T22:27:38.857Z,https://www.linkedin.com/feed/update/urn:li:activity:7453932766288674816/,Here's a small AWS/Linux tip I learned recently,"When logged into an AWS Linux VM, you might need to quickly check the public IP. Previously, I would open the AWS console or try various Linux commands. Then I found this simple…","Here's a small AWS/Linux tip I learned recently. When logged into an AWS Linux VM, you might need to quickly check the public IP. Previously, I would open the AWS console or try various Linux commands.
 
 Then I found this simple command:
@@ -407,7 +407,7 @@ This command returns the public IP immediately. When opened from your laptop at 
 
 Simple, fast, and handy.
 
-#AWS #Linux #whatsmyip #DevOps #TechTips",https://media.licdn.com/dms/image/v2/D4E22AQECqpp8AqOZFA/feedshare-shrink_800/B4EZ3GwWkMKQAc-/0/1777156057694?e=1786579200&v=beta&t=nT_uKdkUWzxC1JcRB3shAJ9AbxR0sN8OeHXX7R-yg3w,633,0,0,0,2026-07-26
+#AWS #Linux #whatsmyip #DevOps #TechTips",https://media.licdn.com/dms/image/v2/D4E22AQECqpp8AqOZFA/feedshare-shrink_800/B4EZ3GwWkMKQAc-/0/1777156057694?e=1786579200&v=beta&t=nT_uKdkUWzxC1JcRB3shAJ9AbxR0sN8OeHXX7R-yg3w,633,0,0,0,2026-08-02
 7448028908018520064,post,PUBLISHED,2026-04-09T15:27:49.357Z,https://www.linkedin.com/feed/update/urn:li:activity:7448028908018520064/,What if AI app development was simpler than expected,Imagine if the GitHub Copilot subscription your team already has could do far more than just provide code suggestions. Many engineers believe that building AI-powered applications…,"What if AI app development was simpler than expected?
 
 Imagine if the GitHub Copilot subscription your team already has could do far more than just provide code suggestions. Many engineers believe that building AI-powered applications requires new API keys, separate model subscriptions, added costs, security reviews, and procurement delays. But what if that wasn’t necessary?
@@ -426,7 +426,7 @@ For teams blocked by cost, compliance, or procurement constraints, this can be a
 
 With TemplrGo, you get a self-hosted AI gateway experience with features like SSE streaming, multi-model support, session persistence, and OpenAI-compatible APIs — all packaged in a simple Go binary.
 
-TemplrGo is being developed to remain simple, useful, and easy to run. More updates to come.",https://media.licdn.com/dms/image/v2/D4E22AQEma9852udbcg/feedshare-shrink_800/B4EZ1y202ZIwAc-/0/1775748468413?e=1786579200&v=beta&t=1q5Ps2v4_vDE05IceKL9ZKgZmar7GPgZ1399g33LyZY,276,4,0,0,2026-07-26
+TemplrGo is being developed to remain simple, useful, and easy to run. More updates to come.",https://media.licdn.com/dms/image/v2/D4E22AQEma9852udbcg/feedshare-shrink_800/B4EZ1y202ZIwAc-/0/1775748468413?e=1786579200&v=beta&t=1q5Ps2v4_vDE05IceKL9ZKgZmar7GPgZ1399g33LyZY,277,4,0,0,2026-08-02
 7447328775312281600,post,PUBLISHED,2026-04-07T17:05:44.712Z,https://www.linkedin.com/feed/update/urn:li:activity:7447328775312281600/,"When tools like Copilot, Claude code, Cursor, Codex etc.","speed up coding, scope grows faster and expectations rise. Without a sizing discipline, you’re flying blind at higher speed. Since 2009, I’ve relied on Function Point Analysis…","When tools like Copilot, Claude code, Cursor, Codex etc.. speed up coding, scope grows faster and expectations rise. Without a sizing discipline, you’re flying blind at higher speed.
 
 Since 2009, I’ve relied on Function Point Analysis (IFPUG) — not because it’s old-school, but because it’s language-, tool-, and “AI-agnostic”. It measures what software does, not how it’s built.
@@ -435,7 +435,7 @@ If you’ve worked with me, you’ve sized features, debated complexity, and tun
 
 For everyone else — I’ve been building this into TemplrGo as an free to use software engineer productivity tool. More soon.
 
-#FunctionPointEstimation #IFPUG #SoftwareEngineering #AI #TemplrGo #OpenSource #EstimationMatters",https://media.licdn.com/dms/image/v2/D4E22AQE2IS_J6ISqjw/feedshare-shrink_800/B4EZ1o6DuKJIAg-/0/1775581543563?e=1786579200&v=beta&t=KSOEes5l4tZnFgm99GQczgKKi-cbGNaZp7OSwSR569E,408,10,1,0,2026-07-26
+#FunctionPointEstimation #IFPUG #SoftwareEngineering #AI #TemplrGo #OpenSource #EstimationMatters",https://media.licdn.com/dms/image/v2/D4E22AQE2IS_J6ISqjw/feedshare-shrink_800/B4EZ1o6DuKJIAg-/0/1775581543563?e=1786579200&v=beta&t=KSOEes5l4tZnFgm99GQczgKKi-cbGNaZp7OSwSR569E,409,10,1,0,2026-08-02
 7446009838691586048,post,PUBLISHED,2026-04-04T01:44:45.717Z,https://www.linkedin.com/feed/update/urn:li:activity:7446009838691586048/,Imagine having everything a developer needs packed into a single ~20MB binary…,"that runs on all operating systems—Windows, Linux, and Mac. This includes an API server, SQL playground, Serverless Functions, AI chat, ASK AI Copilot Support, Content Management…","Imagine having everything a developer needs packed into a single ~20MB binary that runs on all operating systems—Windows, Linux, and Mac. This includes an API server, SQL playground, Serverless Functions, AI chat, ASK AI Copilot Support, Content Management Server, documentation, database explorer, task manager, scheduler, and Pub/Sub Event Bus.
 
 No Docker. No runtime dependencies. No infrastructure headaches. Just download, configure with YAML, and run.
@@ -444,7 +444,7 @@ I have been quietly building this solution called TemplrGo, powered by Go, Next.
 
 Stay tuned as I break down each superpower in upcoming posts.
 
-#Golang #NextJS #DevTools #Serverless #Lua #DeveloperProductivity #SideProject #IndieHacker",https://media.licdn.com/dms/image/v2/D4E22AQHIr_341MOyvA/feedshare-shrink_800/B4EZ1WKfnnGcAg-/0/1775267085082?e=1786579200&v=beta&t=nwwj38uahuajic2ArMUklP8gdlRejUoHcOblq-4RtAY,1022,12,2,0,2026-07-26
+#Golang #NextJS #DevTools #Serverless #Lua #DeveloperProductivity #SideProject #IndieHacker",https://media.licdn.com/dms/image/v2/D4E22AQHIr_341MOyvA/feedshare-shrink_800/B4EZ1WKfnnGcAg-/0/1775267085082?e=1786579200&v=beta&t=nwwj38uahuajic2ArMUklP8gdlRejUoHcOblq-4RtAY,1023,12,2,0,2026-08-02
 7296683908291592192,post,PUBLISHED,2025-02-16T00:16:49.568Z,https://www.linkedin.com/feed/update/urn:li:activity:7296683908291592192/,I’m happy to share that I’ve obtained a new certification,"Social Innovation Leader -Global- from Hitachi! https://lnkd.in/ez4vriya …more Celebrating a New Certification <div class=""","I’m happy to share that I’ve obtained a new certification: Social Innovation Leader -Global- from Hitachi!
 
 https://lnkd.in/ez4vriya
