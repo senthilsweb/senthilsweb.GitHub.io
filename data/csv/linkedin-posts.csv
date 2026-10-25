@@ -1,4 +1,158 @@
 urn,type,status,published_at_utc,post_url,title,excerpt,text,image_url,impressions,reactions,comments,reposts,stats_captured_at
+7519788896952709120,post,PUBLISHED,2026-10-24T15:56:23.955Z,https://www.linkedin.com/feed/update/urn:li:activity:7519788896952709120/,Jev in job-pilot: typed decisions in my open source job search agent,"My open source job agent now asks Jev (TypeSafe AI) for its fuzzy decisions, and the dataset it publishes every day stays open.","My open source job agent now asks Jev (TypeSafe AI) for its fuzzy decisions, and the dataset it publishes every day stays open.
+
+job-agents is a small open-source job search tool I built and still maintain: job-scout collects postings from about 95 tech companies' public job APIs into DuckDB, job-matcher scores a candidate's resume against a posting, and job-pilot sits between them and decides which postings are worth scoring.
+
+job-pilot's decisions were string rules. A list of cities decided if a posting was in the US. On one day that rule alone dropped 148 of 308 new postings, some of them good jobs in cities not on the list.
+
+Those three decisions now go to Jev from TypeSafe AI. Jev does not write text. It answers typed questions. job-pilot sends the public facts of a posting and three questions in one call: two of type choice (location bucket, which configured resume variant to score) and one of type noul, a 0 to 1 answer to ""is this a target role"". Back comes a choice and a confidence. If Jev is unsure or the call fails, the old rule decides. It sees six public fields of the posting, never the candidate's documents.
+
+I left the project open source as a playground, and I keep maintaining it. The dataset it publishes every day is public, and other people query it. I feel responsible for keeping that working.
+
+The two-page RefCard below explains how it is wired. https://lnkd.in/gvfuHYuu
+
+Related:
+🔵 I Left My Job Hunt Running — Now It's a Public Dataset Anyone Can Query https://lnkd.in/g894jbuB
+🔵 Job Hunting Is a Data Problem. I Treated It Like One. https://lnkd.in/gY9FfYnK
+🔵 Daily hiring trends report https://lnkd.in/gqDn_yNz
+🔵 Query the data in your browser: DuckDB console https://lnkd.in/gJvBv27q
+🔵 Query any parquet or CSV URL in your browser: Data Studio (DuckDB-WASM) https://lnkd.in/gXVb-VDJ
+
+#AIAgents #OpenSource #DuckDB #TypeSafeAI",,309,4,0,0,2026-10-25
+7498922367382114304,post,PUBLISHED,2026-08-28T02:00:15.624Z,https://www.linkedin.com/feed/update/urn:li:activity:7498922367382114304/,Today was my last working day at Pentaho,"Eleven years. Three acquisitions. Four names. One product. My journey with this product began in 2015 at Rokitt Inc., a small New Jersey startup building a machine-learning-driven…","Today was my last working day at Pentaho.
+
+Eleven years. Three acquisitions. Four names. One product.
+
+My journey with this product began in 2015 at Rokitt Inc., a small New Jersey startup building a machine-learning-driven data discovery product called ASTRA. I was part of the founding engineering team, and the team filed several patents around that technology.
+
+May 2017 — Io-Tahoe, a Centrica plc subsidiary, acquired Rokitt's assets. We re-engineered the product as Halo.
+
+June 2021 — Hitachi Vantara acquired Io-Tahoe. Halo came together with Waterline Data (which Hitachi Vantara had acquired in 2020) to become the Lumada Data Catalog.
+
+November 2023 — with the Pentaho+ platform launch, it became Pentaho Data Catalog, sitting alongside Pentaho Data Integration (PDI) and Pentaho Business Analytics (PBA), products with a 20-year history.
+
+June 2026 — Pentaho found a new home under LEO Software Group, part of Constellation Software.
+
+Through those years I wore many hats. Core engineering first. Then implementation architecture and consulting for enterprises in pharma, life sciences, banking, insurance, government, telecom, and mortgage. In recent years, managing and mentoring engineers across the US, UK, Portugal, Ukraine, and India, with peers from many countries on a follow-the-sun model. Together we set up new competencies from the ground up — performance engineering, SDET, and within it a new AI Engineering practice. Through every role, I never stopped coding.
+
+To the leaders (CTO / CEO / VP of Engineering) I reported to — Rohit Mahajan, Ajay Vohora, Lester Waters, Venkat Subramanian, and Jeff Gierlach — thank you for trusting me at every stage. In hard times, personal and professional, my managers stood by me. I will not forget that.
+
+To my teams and peers — you did the real work, and learning from you was the best part of my job. To our customers — thank you for letting us learn on your hardest data problems.
+
+Pentaho's data intelligence and integration platform is used by 73% of the Fortune 100. The product and the people are in good hands. I will be cheering from outside.
+
+From next week, something completely different: my team changes from people to AI agents — I will be building and managing a fleet of them, in the insurance and underwriting world, a domain brand new to me. After six years of working from home, it is also back to the office five days a week. Real whiteboards, real markers.
+
+Starting over after an eleven-year journey with one product is a little scary. That is exactly why I am doing it.
+
+This is not a sad goodbye — with gratitude, I bid adieu.
+
+See you on the other side.",https://media.licdn.com/dms/image/v2/D5622AQHBM2-1NGoIhg/feedshare-shrink_1280/B56aBGGKIxIwAM-/0/1787882414871?e=1794441600&v=beta&t=VPkCviOru37jWpwoHijX8Yve3x65bIVewY9Gwfni8-g,2537,71,0,0,2026-10-25
+7498533916497076224,post,PUBLISHED,2026-08-27T00:16:41.716Z,https://www.linkedin.com/feed/update/urn:li:activity:7498533916497076224/,Happy International Dog Day,"🐾 Milo has been by my side since May, 2023 — quiet teammate on long workdays, stress reliever, and my daily reminder to slow down and enjoy the little moments. Some companions…","Happy International Dog Day! 🐾
+
+Milo has been by my side since May, 2023 — quiet teammate on long workdays, stress reliever, and my daily reminder to slow down and enjoy the little moments.
+
+Some companions don't need words. ❤️
+
+To all the wonderful dogs out there, and the humans lucky enough to love them — Happy Dog Day. 🐶🐾
+
+#InternationalDogDay #DogDay #Milo #CompanionBeyondWords #LifeWithDogs",https://media.licdn.com/dms/image/v2/D5622AQHjp2n8yaBcHA/feedshare-shrink_1280/B56aBAk3KCJsAM-/0/1787789800387?e=1794441600&v=beta&t=8iDHUu2pRtnlaOgu-RWfikMqOLoBZbIG4WfbmX7_kEM,952,15,0,0,2026-10-25
+7496385109663731712,post,PUBLISHED,2026-08-21T01:58:06.244Z,https://www.linkedin.com/feed/update/urn:li:activity:7496385109663731712/,Every enterprise system remembers what happened,"Very few can explain how it happened. Life sciences shows this gap at its sharpest. A clinical trial runs for years — protocols change, sites join, subjects enroll, adverse events…","Every enterprise system remembers what happened. Very few can explain how it happened.
+
+Life sciences shows this gap at its sharpest. A clinical trial runs for years — protocols change, sites join, subjects enroll, adverse events get reported, approvals pile up. The transactional system holds the current state. The warehouse holds the numbers. But the story — who changed what, why, and what it affected — sits scattered across audit logs.
+
+My new white paper (attached) proposes a third layer: a Semantic and Temporal Knowledge Graph. It connects people, entities, and events, stamps every relationship with valid-from / valid-to time, and stays current by listening to business events.
+
+On top sits Agentic AI Analytics: a supervisor agent that owns no data tools, routing each question to bounded specialist agents — one for governed metrics, one for graph traversals, one for operational state — everything read-only.
+
+Life sciences has been my long-standing interest, and I build in the open there. This paper is the design; the three-part open-source build series comes next, using Graphiti by Zep and FalkorDB.
+
+If clinical trials, knowledge graphs, or agentic AI are your world, it is a 10-minute read. Tell me where the design breaks.
+
+#LifeSciences #ClinicalTrials #TemporalKnowledgeGraph #AgenticAI #KnowledgeGraph",,494,4,0,0,2026-10-25
+7494396453914603521,post,PUBLISHED,2026-08-15T14:15:53.766Z,https://www.linkedin.com/feed/update/urn:li:activity:7494396453914603521/,"I created my own digital brain as a knowledge graph, and it is already up and…","running on my laptop/server using Zep’s Graphiti + FalkorDB. I was inspired by Garry Tan’s GBrain project, but I took a very different approach and it is not just documents,…","I created my own digital brain as a knowledge graph, and it is already up and running on my laptop/server using Zep’s Graphiti + FalkorDB.
+
+I was inspired by Garry Tan’s GBrain project, but I took a very different approach and it is not just documents, embeddings, or vector search. It connects people, projects, decisions, preferences, events, requirements, procedures, topics and activities — and keeps those relationships updated over time.
+
+The important part for me is temporal memory.
+
+🟦 What I believed earlier.
+🟦 What changed.
+🟦 Why I made a decision.
+🟦 What worked.
+🟦 What did not.
+🟦 And how I normally approach a problem.
+
+Now, whenever I start new work in claude code cli, my tools can first search the graph for:
+
+🟫 What do I already know about this?
+🟫 Have I solved something similar before?
+🟫 How did I approach it?
+
+And this is not limited to technical work. The graph can continuously build context from all my activities, decisions and learning — becoming a digital twin of how I work, think and approach problems.
+
+Graphiti handles the temporal knowledge graph. FalkorDB stores the connected memory. My tools recall it when I work.
+
+References / Inspiration:
+
+🟪 Garry Tan’s GBrain: https://lnkd.in/eDcaJx_x
+🟪 Zep Graphiti: https://lnkd.in/eFrYHGJq — the open-source temporal knowledge graph framework.
+🟪 FalkorDB: https://lnkd.in/eUgKbR7J — the graph database backing the knowledge graph.
+
+#KnowledgeGraph #TemporalKnowledgeGraph #DigitalTwin #AgenticAI #Graphiti #FalkorDB #MCP #ClaudeCode #AIEngineering",,1770,12,0,0,2026-10-25
+7492559728846385152,post,PUBLISHED,2026-08-10T12:37:24.385Z,https://www.linkedin.com/feed/update/urn:li:activity:7492559728846385152/,"AI Evals, Metrics and Rubrics are often discussed more as theory, but they…","become very important when we build real AI systems. Coming from Data Governance and regulated-industry experience, I have always seen PII identification as a good example.…","AI Evals, Metrics and Rubrics are often discussed more as theory, but they become very important when we build real AI systems.
+
+Coming from Data Governance and regulated-industry experience, I have always seen PII identification as a good example. Missing sensitive information can have a very different impact from simply producing a false positive.
+
+So I picked PII discovery as a practical example and put together this short 3-page RefCard covering Precision, Recall, F1, risk-aware rubrics, release gates, LLM-as-a-Judge, grounding, hallucination and drift.
+
+The idea is simply to connect metrics → risk → decision, rather than looking at an evaluation score in isolation. The RefCard also shows how HARD/SOFT rules can turn metrics into an actual release gate.
+
+Sharing it here in case it is useful for anyone working on AI Engineering, Data Governance or Responsible AI.
+
+#AIEngineering #AIEvals #DataGovernance #ResponsibleAI #GenAI #PII",,492,6,0,0,2026-10-25
+7492236312016556032,post,PUBLISHED,2026-08-09T15:12:15.804Z,https://www.linkedin.com/feed/update/urn:li:activity:7492236312016556032/,I don't open VSCode anymore,"Everything I build now runs through the CLI. I've been living in the terminal since February. I picked up GitHub Copilot CLI but in April this year, I switched to Claude Code — no…","I don't open VSCode anymore. Everything I build now runs through the CLI.
+
+I've been living in the terminal since February. I picked up GitHub Copilot CLI but in April this year, I switched to Claude Code — no regrets since.
+
+A few things that changed how I work:
+
+🟦 Claude Code on the iOS app, with remote control enabled on my Mac mini — 64GB, and it's my dev machine and server both.
+🟦 Voice prompting when I don't feel like typing (I call myself a power vibe coder.)
+🟦 For the past few months I've mostly been building developer tools, skills, rules, and standards, and automating as much as I can with agents — from simple skill-file agents to Python agents where I'm trying out different frameworks.
+🟦 Evals, documentation, and what I'd call AI-DLC (AI-assisted development lifecycle, not the AWS product with the same name) are there from day one — shift-left, not added later.
+🟦 Observability isn't new to me, but with agents it's stopped being optional. I run Arize and a local OpenObserve setup.
+
+At this point Claude Code writes 100% of the code . I steer — hand it tasks and specs almost round the clock, follow-the-sun style — and my git commit history, how often and when I commit, is the actual record of that.
+
+Most of what I build this way is open and sits outside my day job. The time it frees up goes back into reading tech books/articles, publishing posts/articles, research and listening tech talks — mainly to get sharper at architecture, design, decision-making, planning, spotting the right use cases, and designing test data.
+
+By my own rough read, my output is close to 8x what it used to be — I don't have hard numbers to back that, just how the days feel. What I can say for sure: my interest in coding has grown right along with it, and I'll now pick up any language, because the only thing that matters is whatever fits the problem.
+
+#ClaudeCode #DeveloperProductivity #AIAgents #CLI #SoftwareEngineering",https://media.licdn.com/dms/image/v2/D4E22AQFSJiGQ-J-sQw/feedshare-shrink_1280/B4EZ_nFOhnJMAM-/0/1786288335260?e=1794441600&v=beta&t=XAdZ4VZcZDu03a6P9bi4otI5SJCD-D6pn1ykt59K2i0,1274,18,0,0,2026-10-25
+7492216236253163521,post,PUBLISHED,2026-08-09T13:52:29.369Z,https://www.linkedin.com/feed/update/urn:li:activity:7492216236253163521/,I am a big fan of Boris Cherny (Head of Claude Code at Anthropic) — I follow…,"nearly all his podcast appearances and YouTube talks. His latest conversation on Lenny's Podcast left one line stuck in my head: ""Coding is largely solved. I imagine a world where…","I am a big fan of Boris Cherny (Head of Claude Code at Anthropic) — I follow nearly all his podcast appearances and YouTube talks. His latest conversation on Lenny's Podcast left one line stuck in my head:
+
+""Coding is largely solved. I imagine a world where everyone is able to program — anyone can just build software, anytime.""
+
+Boris is not saying it for shock value. He says it plainly, like it is simply where things are heading in the next few months — ""for every codebase, every tech stack.""
+
+What struck me more is what he said about his own team. Some people specialize in code. Others spend more time on coordination, planning, forecasting, and stakeholder alignment. His bet: by end of year, the title ""software engineer"" blurs into just ""builder."" Everyone codes a bit. Everyone does a bit of PM work too.
+
+I don't take this as a threat. I take it as a bell — not to panic, but to prepare.
+If the coding part keeps getting commoditized, the edge moves to everything around it:
+
+🟦 Knowing your domain
+🟦 Working with SMEs
+🟦 Framing the right problem
+🟦 Running the project
+🟦 Keeping stakeholders aligned. That part does not get automated away so easily.
+
+💡 Side note: I didn't just listen — I extracted the hard numbers from this talk (and others like it) using one of my AI agents. Every figure is grounded to the exact quote and linked back to the moment it was said, and the full dataset is queryable as a DuckDB-ready parquet file. You can browse it here:
+https://lnkd.in/eyPZcKy7
+
+Worth watching his video, if you are in tech and thinking about what to double down on next.
+
+https://lnkd.in/eU75EsHy",,826,13,0,0,2026-10-25
 7487164575059058688,post,PUBLISHED,2026-07-26T15:18:59.485Z,https://www.linkedin.com/feed/update/urn:li:activity:7487164575059058688/,Pairwise Testing deserves more attention—especially now,The applied mathematics behind it offers a practical answer to a persistent engineering problem: How do we evaluate a complex system systematically when exhaustive testing is too…,"Pairwise Testing deserves more attention—especially now. The applied mathematics behind it offers a practical answer to a persistent engineering problem: How do we evaluate a complex system systematically when exhaustive testing is too expensive and time-consuming?
 
 The key concept is a Covering Array—a mathematical construct that transforms thousands of possible combinations into a smaller, systematic set of test cases while ensuring that every pair of input values appears at least once.
@@ -29,7 +183,7 @@ Article link: https://lnkd.in/g49nJ3wQ
 
 Article title ""Applying combinatorial science and discrete mathematics to data-platform engineering and testing""
 
-#AppliedMathematics #CombinatorialScience #CoveringArrays #PairwiseTesting #AIEvals #AgenticAI #AIEngineering #DataEngineering",https://media.licdn.com/dms/image/v2/D5622AQH3GqfLeHMRog/feedshare-shrink_800/B56Z.fAgbCHYAc-/0/1785079138251?e=1786579200&v=beta&t=Y2-gN25g6tgPTsti6Oe-03FvTtuY_7joFy9mPhcGztQ,233,0,0,0,2026-08-02
+#AppliedMathematics #CombinatorialScience #CoveringArrays #PairwiseTesting #AIEvals #AgenticAI #AIEngineering #DataEngineering",https://media.licdn.com/dms/image/v2/D5622AQH3GqfLeHMRog/feedshare-shrink_800/B56Z.fAgbCHYAc-/0/1785079138251?e=1786579200&v=beta&t=Y2-gN25g6tgPTsti6Oe-03FvTtuY_7joFy9mPhcGztQ,281,5,0,0,2026-10-25
 7487142880839565312,post,PUBLISHED,2026-07-26T13:52:47.180Z,https://www.linkedin.com/feed/update/urn:li:activity:7487142880839565312/,Meet DataGov — my new open-source data governance CLI,"Written in Rust. Built for agents. The goal is simple: one binary, with no Python, Java, Node.js, or Docker dependency, that both engineers and AI agents can run reliably. DataGov…","Meet DataGov — my new open-source data governance CLI. Written in Rust. Built for agents.
 
 The goal is simple: one binary, with no Python, Java, Node.js, or Docker dependency, that both engineers and AI agents can run reliably.
@@ -65,7 +219,7 @@ This is just the beginning; it's an early-stage kickoff rather than a finished p
 
 Check out the repository at https://lnkd.in/gsuU48M5
 
-#AdaptiveDataGovOps #DataGovernance #OpenSource #Rust #AIAgents",https://media.licdn.com/dms/image/v2/D5622AQFb_gqoYru3nA/feedshare-shrink_800/B56Z.esxnFK4Ac-/0/1785073965877?e=1786579200&v=beta&t=DWkYtea5UcLW0OsG1Ch5b8qpcrV9zO2fMZahTiDBUEM,1134,0,0,0,2026-08-02
+#AdaptiveDataGovOps #DataGovernance #OpenSource #Rust #AIAgents",https://media.licdn.com/dms/image/v2/D5622AQFb_gqoYru3nA/feedshare-shrink_800/B56Z.esxnFK4Ac-/0/1785073965877?e=1786579200&v=beta&t=DWkYtea5UcLW0OsG1Ch5b8qpcrV9zO2fMZahTiDBUEM,1209,6,0,0,2026-10-25
 7486083742336417792,post,PUBLISHED,2026-07-23T15:44:08.883Z,https://www.linkedin.com/feed/update/urn:li:activity:7486083742336417792/,Introducing the latest addition to my agent fleet,"the youtube-transcriber, now number nine. What it does: Simply provide a YouTube link, and it returns the full spoken transcript of the audio, not just the captions. This means…","Introducing the latest addition to my agent fleet: the youtube-transcriber, now number nine.
 
 What it does: Simply provide a YouTube link, and it returns the full spoken transcript of the audio, not just the captions. This means you get the actual audio transcribed from start to finish.
@@ -84,7 +238,7 @@ In the first four talks (The Youtube videos, I used for my testing), I processed
 
 The other eight agents include: job-scout, job-matcher, job-pilot, api-test-generator, diagram-generator, github-pr-digest, privacy-classifier, and linkedin-cover-generator.
 
-#AIAgents #LangGraph #Whisper #LocalFirst #AINative",https://media.licdn.com/dms/image/v2/D5622AQFqKGhrGbCNmA/feedshare-shrink_800/B56Z.Ppfn.GUAc-/0/1784821447573?e=1786579200&v=beta&t=tifTNUTUsiD0ri8VB8kEFLsgFnQ2NjYXa6nj3R4ssh0,434,0,1,0,2026-08-02
+#AIAgents #LangGraph #Whisper #LocalFirst #AINative",https://media.licdn.com/dms/image/v2/D5622AQFqKGhrGbCNmA/feedshare-shrink_800/B56Z.Ppfn.GUAc-/0/1784821447573?e=1786579200&v=beta&t=tifTNUTUsiD0ri8VB8kEFLsgFnQ2NjYXa6nj3R4ssh0,491,6,0,0,2026-10-25
 7486074529379913730,post,PUBLISHED,2026-07-23T15:07:32.343Z,https://www.linkedin.com/feed/update/urn:li:activity:7486074529379913730/,"The landscape of agent frameworks is rapidly evolving, with new names appearing…","every few weeks: OpenAI Agents SDK, LangGraph, CrewAI, PydanticAI, LangChain, Claude agents, and more. Despite the varying terminologies and abstractions, the underlying execution…","The landscape of agent frameworks is rapidly evolving, with new names appearing every few weeks: OpenAI Agents SDK, LangGraph, CrewAI, PydanticAI, LangChain, Claude agents, and more. Despite the varying terminologies and abstractions, the underlying execution pattern remains largely consistent.
 
 Currently, there is no single industry-standard agent lifecycle, but a common pattern is emerging that is more beneficial to learn than memorizing the vocabulary of any one framework. Here are the eleven stages, typically in the order they run:
@@ -147,7 +301,7 @@ Your document has finished loading
 
 
 
-<div class=""",,461,0,2,0,2026-08-02
+<div class=""",,541,7,0,0,2026-10-25
 7486030816343654400,post,PUBLISHED,2026-07-23T12:13:50.343Z,https://www.linkedin.com/feed/update/urn:li:activity:7486030816343654400/,"Last week, I requested my linkedin-cover-image agent to utilize a darker…","palette for a privacy article, and it executed the task well. However, the next day, when I opened a new session, I found myself repeating the same request. The agent was not at…","Last week, I requested my linkedin-cover-image agent to utilize a darker palette for a privacy article, and it executed the task well. However, the next day, when I opened a new session, I found myself repeating the same request. The agent was not at fault; the application was. It failed to retain what I had taught it.
 
 Most AI agents today can perform tasks, but very few can improve over time. This isn't due to the model's inability to learn, but rather because the application (The agent) does not preserve that learning.
@@ -173,7 +327,7 @@ Memory personalizes the agent, while reflection enhances the system. Repeated fe
 
 Agent Engineering is gradually evolving into Memory Engineering, as memory is not merely the full transcript but the distilled knowledge that deserves to persist beyond the session.
 
-#AgentEngineering #AIAgents #MemoryEngineering #GenAI #AIEngineering",https://media.licdn.com/dms/image/v2/D5622AQFQfY_qSk4T2w/feedshare-shrink_800/B56Z.O5WuzKwAc-/0/1784808828059?e=1786579200&v=beta&t=lidb2vLHm7TCHbqir2NHK1eh5tsJ8EyYyRmsaXtCCsU,599,1,0,0,2026-08-02
+#AgentEngineering #AIAgents #MemoryEngineering #GenAI #AIEngineering",https://media.licdn.com/dms/image/v2/D5622AQFQfY_qSk4T2w/feedshare-shrink_800/B56Z.O5WuzKwAc-/0/1784808828059?e=1786579200&v=beta&t=lidb2vLHm7TCHbqir2NHK1eh5tsJ8EyYyRmsaXtCCsU,631,2,0,0,2026-10-25
 7485498869477310464,post,PUBLISHED,2026-07-22T01:00:04.327Z,https://www.linkedin.com/feed/update/urn:li:activity:7485498869477310464/,"Every week, new ideas emerge around AI-SDLC, spec-driven development, agentic…","engineering, AI evaluations, governance, observability, and AI-native delivery platforms. The engineering side is gradually converging around common practices, methodologies, and…","Every week, new ideas emerge around AI-SDLC, spec-driven development, agentic engineering, AI evaluations, governance, observability, and AI-native delivery platforms. The engineering side is gradually converging around common practices, methodologies, and supporting ecosystems.
 
 However, AI is also transforming the economics of software delivery. If AI significantly alters delivery speed, team structures, engineering effort, and quality, how should projects be estimated, priced, and valued?
@@ -182,7 +336,7 @@ This question extends beyond just business or sales; it is crucial for architect
 
 It appears that while the engineering conversation is becoming increasingly structured, estimation, pricing, value realization, and commercial models are evolving more quietly. Are our commercial practices converging as swiftly as our AI engineering practices?
 
-I am interested in how others are approaching this transition.",https://media.licdn.com/dms/image/v2/D5622AQHVnn-cTZsXUA/feedshare-shrink_800/B56Z.HVjqPGQAg-/0/1784682003337?e=1786579200&v=beta&t=SkxyHvkfhZAiwHtef1w3X_eeojOhZxKKUQfW5STND9s,566,0,1,1,2026-08-02
+I am interested in how others are approaching this transition.",https://media.licdn.com/dms/image/v2/D5622AQHVnn-cTZsXUA/feedshare-shrink_800/B56Z.HVjqPGQAg-/0/1784682003337?e=1786579200&v=beta&t=SkxyHvkfhZAiwHtef1w3X_eeojOhZxKKUQfW5STND9s,609,6,0,0,2026-10-25
 7484656081412001792,post,PUBLISHED,2026-07-19T17:11:07.994Z,https://www.linkedin.com/feed/update/urn:li:activity:7484656081412001792/,I am setting up a production line for my open-source work — and the workers on…,"it are AI agents. Every project needs a website, docs, a blog, and an API reference. I did not want to hand-build that each time, and I do not want my agents to either.…","I am setting up a production line for my open-source work — and the workers on it are AI agents.
 
 Every project needs a website, docs, a blog, and an API reference. I did not want to hand-build that each time, and I do not want my agents to either.
@@ -202,7 +356,7 @@ Fully open source, MIT license. Built on Golang and NextJS/TypeScript — the UI
 Code: https://lnkd.in/eZxzGfY2
 Demo: https://lnkd.in/e2iYASgB
 
-#GoLang #OpenSource #AIAgents #DeveloperTools #LLM",https://media.licdn.com/dms/image/v2/D4E22AQE7PjQfjdlATw/feedshare-shrink_800/B4EZ97XC4ZJMAg-/0/1784481066864?e=1786579200&v=beta&t=a61LCZURmSdB7Mucjsp-Y7l9ay55eua0_ey7hTLJwCY,290,0,0,0,2026-08-02
+#GoLang #OpenSource #AIAgents #DeveloperTools #LLM",https://media.licdn.com/dms/image/v2/D4E22AQE7PjQfjdlATw/feedshare-shrink_800/B4EZ97XC4ZJMAg-/0/1784481066864?e=1786579200&v=beta&t=a61LCZURmSdB7Mucjsp-Y7l9ay55eua0_ey7hTLJwCY,314,5,0,0,2026-10-25
 7483510885441937408,post,PUBLISHED,2026-07-16T13:20:31.998Z,https://www.linkedin.com/feed/update/urn:li:activity:7483510885441937408/,"Recently, while exploring modern AI evaluation frameworks, I had a realization","Initially, the categories seemed like a collection of technical metrics—valuable for testing model behavior, comparing outputs, and enhancing performance. However, the deeper I…","Recently, while exploring modern AI evaluation frameworks, I had a realization. Initially, the categories seemed like a collection of technical metrics—valuable for testing model behavior, comparing outputs, and enhancing performance. However, the deeper I delved, the more I understood that they represent something much more significant: the dimensions of AI trust.
 
 - Security: Can the system protect sensitive information and resist misuse?
@@ -221,7 +375,7 @@ This forms the basis of my thoughts on Adaptive Data Governance: governance, dat
 
 Trust cannot simply be declared at the end of development; it must be designed, measured, documented, and continuously earned.
 
-Trustworthy AI is not a feature of the model; it is an engineering outcome.",https://media.licdn.com/dms/image/v2/D4E22AQGYcPxLbSx8dw/feedshare-shrink_800/B4EZ9rFfpFK4Ac-/0/1784208030549?e=1786579200&v=beta&t=C3NLJ3Qw5IRKN5oyTjQ8TrB2dcF3SxPC5QOPUTTj59w,300,0,0,0,2026-08-02
+Trustworthy AI is not a feature of the model; it is an engineering outcome.",https://media.licdn.com/dms/image/v2/D4E22AQGYcPxLbSx8dw/feedshare-shrink_800/B4EZ9rFfpFK4Ac-/0/1784208030549?e=1786579200&v=beta&t=C3NLJ3Qw5IRKN5oyTjQ8TrB2dcF3SxPC5QOPUTTj59w,312,5,0,0,2026-10-25
 7471004221698543617,post,PUBLISHED,2026-06-12T01:03:30.999Z,https://www.linkedin.com/feed/update/urn:li:activity:7471004221698543617/,Why pay for frontier models when NVIDIA hosts Nemotron 3 Ultra for free,I plugged it into GitHub Copilot CLI in under a minute — swipe through the cheatsheet to set it up yourself. 👇 #AI #GitHubCopilot #NVIDIA #Nemotron #DeveloperTools …more Your…,"Why pay for frontier models when NVIDIA hosts Nemotron 3 Ultra for free?
 
 I plugged it into GitHub Copilot CLI in under a minute — swipe through the cheatsheet to set it up yourself. 👇
