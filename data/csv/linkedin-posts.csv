@@ -1,4 +1,43 @@
 urn,type,status,published_at_utc,post_url,title,excerpt,text,image_url,impressions,reactions,comments,reposts,stats_captured_at
+7520265443165671424,post,PUBLISHED,2026-10-25T23:30:01.426Z,https://www.linkedin.com/feed/update/urn:li:activity:7520265443165671424/,"An AI function for SQL, one row at a time: the answers come back as new columns","In January 2025 I put an LLM inside a SQL editor. The answer was text. This is the implementation on top of the Pyodide foundation: the function, the working code and the demo.","In January 2025 I put an LLM inside a SQL editor. MotherDuck's prompt() function inspired it, and it worked. The answer was text.
+
+In the last few weeks, since Jev from TypeSafe AI was released, I have used it for a few small jobs. It is a model that writes no text and answers typed questions with a score or a pick from a list.
+
+My last post covered the foundation: Python and DuckDB running in the web browser with Pyodide. This one is the implementation on top of it: the function, the working code and the same demo. https://lnkd.in/eNz6zPVD
+
+The idea is simple. Take any normal query. Wrap it with the function. Each row goes to Jev in one call, and that one call carries several questions at once: is this personal data, which kind, does GDPR apply, does HIPAA apply. The answers come back as new columns, sitting next to the original ones. Same rows, same columns, plus the answers.
+
+Because the answers are typed, a score or a pick from a list, SQL can filter, join and count them as they are. There is no text to parse.
+
+You can also write your own questions, and each question can name the column it is about: is the name a real full name, is the date of birth plausible, what kind of contact detail is this. They still travel in one call per row.
+
+What happens to a value afterwards, keep, mask, hash, drop or review, is not a model answer. It is a plain rule in code. Doubt goes to review, never to a silent keep.
+
+This is part of my Adaptive Data Governance series. The AI design is System One: the model answers typed questions fast, writes no text, and plain code decides what happens next.
+
+The details are in the RefCard attached: the architecture on page 1, the vocabulary and the eleven built-in answers on page 2, the two ways to call it, the policy table and the guard rails on page 3.
+
+👉 Try it in the browser, no install: https://lnkd.in/eNz6zPVD
+👉 Source: https://lnkd.in/eG6jcVS3
+👉 Where it started: https://lnkd.in/e7JTWGWd
+
+#AdaptiveDataGovOps #DataGovernance #SQL #DuckDB #TypeSafeAI #Jev #SystemOne",,16,0,0,0,2026-10-25
+7520252759909072896,post,PUBLISHED,2026-10-25T22:39:37.502Z,https://www.linkedin.com/feed/update/urn:li:activity:7520252759909072896/,"Python in the browser, with Pyodide: the foundation for AI in SQL","I wanted to show AI in SQL, using Jev. For that I needed Python running next to DuckDB, in a place anyone can open without installing anything. Pyodide gave me that.","I wanted to show AI in SQL, using Jev. For that I needed Python running next to DuckDB, in a place anyone can open without installing anything. Pyodide gave me that.
+
+Pyodide is Python compiled to WebAssembly, so it runs inside the web browser. This post is the foundation: what runs in the web browser, and why each piece is there. The detailed post on the AI function itself is on the way.
+
+What runs in the web browser:
+
+🔵 Pyodide, with Python 3.14, running in a Web Worker so the page stays responsive.
+🔵 DuckDB, which Pyodide ships as a package, along with NumPy, pyyaml and pyodide-http.
+🔵 An in-memory file system. The browser downloads the CSV or Parquet file and writes it there, so DuckDB reads it from memory. The file is never uploaded.
+🔵 Custom Python code, written into the same file system and used like a normal package. One function in it is attached to DuckDB, so SQL can call it.
+🔵 Jev, a model from TypeSafe AI that answers typed questions and writes no text. The function sends it each row, and the answers come back as new columns. The model's API does not accept calls from a browser, so a small proxy sits in between. You bring your own key.
+
+👉 Try it, no install: ""https://lnkd.in/eNz6zPVD""
+👉 Source: ""https://lnkd.in/eG6jcVS3""
+
+#AdaptiveDataGovOps #Pyodide #WebAssembly #DuckDB #TypeSafeAI",,34,0,0,0,2026-10-25
 7519788896952709120,post,PUBLISHED,2026-10-24T15:56:23.955Z,https://www.linkedin.com/feed/update/urn:li:activity:7519788896952709120/,Jev in job-pilot: typed decisions in my open source job search agent,"My open source job agent now asks Jev (TypeSafe AI) for its fuzzy decisions, and the dataset it publishes every day stays open.","My open source job agent now asks Jev (TypeSafe AI) for its fuzzy decisions, and the dataset it publishes every day stays open.
 
 job-agents is a small open-source job search tool I built and still maintain: job-scout collects postings from about 95 tech companies' public job APIs into DuckDB, job-matcher scores a candidate's resume against a posting, and job-pilot sits between them and decides which postings are worth scoring.
@@ -18,7 +57,7 @@ Related:
 🔵 Query the data in your browser: DuckDB console https://lnkd.in/gJvBv27q
 🔵 Query any parquet or CSV URL in your browser: Data Studio (DuckDB-WASM) https://lnkd.in/gXVb-VDJ
 
-#AIAgents #OpenSource #DuckDB #TypeSafeAI",,309,4,0,0,2026-10-25
+#AIAgents #OpenSource #DuckDB #TypeSafeAI",,358,5,0,0,2026-10-25
 7498922367382114304,post,PUBLISHED,2026-08-28T02:00:15.624Z,https://www.linkedin.com/feed/update/urn:li:activity:7498922367382114304/,Today was my last working day at Pentaho,"Eleven years. Three acquisitions. Four names. One product. My journey with this product began in 2015 at Rokitt Inc., a small New Jersey startup building a machine-learning-driven…","Today was my last working day at Pentaho.
 
 Eleven years. Three acquisitions. Four names. One product.
@@ -47,7 +86,7 @@ Starting over after an eleven-year journey with one product is a little scary. T
 
 This is not a sad goodbye — with gratitude, I bid adieu.
 
-See you on the other side.",https://media.licdn.com/dms/image/v2/D5622AQHBM2-1NGoIhg/feedshare-shrink_1280/B56aBGGKIxIwAM-/0/1787882414871?e=1794441600&v=beta&t=VPkCviOru37jWpwoHijX8Yve3x65bIVewY9Gwfni8-g,2537,71,0,0,2026-10-25
+See you on the other side.",https://media.licdn.com/dms/image/v2/D5622AQHBM2-1NGoIhg/feedshare-shrink_1280/B56aBGGKIxIwAM-/0/1787882414871?e=1794441600&v=beta&t=VPkCviOru37jWpwoHijX8Yve3x65bIVewY9Gwfni8-g,2539,71,0,0,2026-10-25
 7498533916497076224,post,PUBLISHED,2026-08-27T00:16:41.716Z,https://www.linkedin.com/feed/update/urn:li:activity:7498533916497076224/,Happy International Dog Day,"🐾 Milo has been by my side since May, 2023 — quiet teammate on long workdays, stress reliever, and my daily reminder to slow down and enjoy the little moments. Some companions…","Happy International Dog Day! 🐾
 
 Milo has been by my side since May, 2023 — quiet teammate on long workdays, stress reliever, and my daily reminder to slow down and enjoy the little moments.
@@ -56,7 +95,7 @@ Some companions don't need words. ❤️
 
 To all the wonderful dogs out there, and the humans lucky enough to love them — Happy Dog Day. 🐶🐾
 
-#InternationalDogDay #DogDay #Milo #CompanionBeyondWords #LifeWithDogs",https://media.licdn.com/dms/image/v2/D5622AQHjp2n8yaBcHA/feedshare-shrink_1280/B56aBAk3KCJsAM-/0/1787789800387?e=1794441600&v=beta&t=8iDHUu2pRtnlaOgu-RWfikMqOLoBZbIG4WfbmX7_kEM,952,15,0,0,2026-10-25
+#InternationalDogDay #DogDay #Milo #CompanionBeyondWords #LifeWithDogs",https://media.licdn.com/dms/image/v2/D5622AQHjp2n8yaBcHA/feedshare-shrink_1280/B56aBAk3KCJsAM-/0/1787789800387?e=1794441600&v=beta&t=8iDHUu2pRtnlaOgu-RWfikMqOLoBZbIG4WfbmX7_kEM,956,15,0,0,2026-10-25
 7496385109663731712,post,PUBLISHED,2026-08-21T01:58:06.244Z,https://www.linkedin.com/feed/update/urn:li:activity:7496385109663731712/,Every enterprise system remembers what happened,"Very few can explain how it happened. Life sciences shows this gap at its sharpest. A clinical trial runs for years — protocols change, sites join, subjects enroll, adverse events…","Every enterprise system remembers what happened. Very few can explain how it happened.
 
 Life sciences shows this gap at its sharpest. A clinical trial runs for years — protocols change, sites join, subjects enroll, adverse events get reported, approvals pile up. The transactional system holds the current state. The warehouse holds the numbers. But the story — who changed what, why, and what it affected — sits scattered across audit logs.
@@ -69,7 +108,7 @@ Life sciences has been my long-standing interest, and I build in the open there.
 
 If clinical trials, knowledge graphs, or agentic AI are your world, it is a 10-minute read. Tell me where the design breaks.
 
-#LifeSciences #ClinicalTrials #TemporalKnowledgeGraph #AgenticAI #KnowledgeGraph",,494,4,0,0,2026-10-25
+#LifeSciences #ClinicalTrials #TemporalKnowledgeGraph #AgenticAI #KnowledgeGraph",,495,4,0,0,2026-10-25
 7494396453914603521,post,PUBLISHED,2026-08-15T14:15:53.766Z,https://www.linkedin.com/feed/update/urn:li:activity:7494396453914603521/,"I created my own digital brain as a knowledge graph, and it is already up and…","running on my laptop/server using Zep’s Graphiti + FalkorDB. I was inspired by Garry Tan’s GBrain project, but I took a very different approach and it is not just documents,…","I created my own digital brain as a knowledge graph, and it is already up and running on my laptop/server using Zep’s Graphiti + FalkorDB.
 
 I was inspired by Garry Tan’s GBrain project, but I took a very different approach and it is not just documents, embeddings, or vector search. It connects people, projects, decisions, preferences, events, requirements, procedures, topics and activities — and keeps those relationships updated over time.
@@ -99,7 +138,7 @@ References / Inspiration:
 🟪 Zep Graphiti: https://lnkd.in/eFrYHGJq — the open-source temporal knowledge graph framework.
 🟪 FalkorDB: https://lnkd.in/eUgKbR7J — the graph database backing the knowledge graph.
 
-#KnowledgeGraph #TemporalKnowledgeGraph #DigitalTwin #AgenticAI #Graphiti #FalkorDB #MCP #ClaudeCode #AIEngineering",,1770,12,0,0,2026-10-25
+#KnowledgeGraph #TemporalKnowledgeGraph #DigitalTwin #AgenticAI #Graphiti #FalkorDB #MCP #ClaudeCode #AIEngineering",,1773,12,0,0,2026-10-25
 7492559728846385152,post,PUBLISHED,2026-08-10T12:37:24.385Z,https://www.linkedin.com/feed/update/urn:li:activity:7492559728846385152/,"AI Evals, Metrics and Rubrics are often discussed more as theory, but they…","become very important when we build real AI systems. Coming from Data Governance and regulated-industry experience, I have always seen PII identification as a good example.…","AI Evals, Metrics and Rubrics are often discussed more as theory, but they become very important when we build real AI systems.
 
 Coming from Data Governance and regulated-industry experience, I have always seen PII identification as a good example. Missing sensitive information can have a very different impact from simply producing a false positive.
@@ -110,7 +149,7 @@ The idea is simply to connect metrics → risk → decision, rather than looking
 
 Sharing it here in case it is useful for anyone working on AI Engineering, Data Governance or Responsible AI.
 
-#AIEngineering #AIEvals #DataGovernance #ResponsibleAI #GenAI #PII",,492,6,0,0,2026-10-25
+#AIEngineering #AIEvals #DataGovernance #ResponsibleAI #GenAI #PII",,494,6,0,0,2026-10-25
 7492236312016556032,post,PUBLISHED,2026-08-09T15:12:15.804Z,https://www.linkedin.com/feed/update/urn:li:activity:7492236312016556032/,I don't open VSCode anymore,"Everything I build now runs through the CLI. I've been living in the terminal since February. I picked up GitHub Copilot CLI but in April this year, I switched to Claude Code — no…","I don't open VSCode anymore. Everything I build now runs through the CLI.
 
 I've been living in the terminal since February. I picked up GitHub Copilot CLI but in April this year, I switched to Claude Code — no regrets since.
@@ -129,7 +168,7 @@ Most of what I build this way is open and sits outside my day job. The time it f
 
 By my own rough read, my output is close to 8x what it used to be — I don't have hard numbers to back that, just how the days feel. What I can say for sure: my interest in coding has grown right along with it, and I'll now pick up any language, because the only thing that matters is whatever fits the problem.
 
-#ClaudeCode #DeveloperProductivity #AIAgents #CLI #SoftwareEngineering",https://media.licdn.com/dms/image/v2/D4E22AQFSJiGQ-J-sQw/feedshare-shrink_1280/B4EZ_nFOhnJMAM-/0/1786288335260?e=1794441600&v=beta&t=XAdZ4VZcZDu03a6P9bi4otI5SJCD-D6pn1ykt59K2i0,1274,18,0,0,2026-10-25
+#ClaudeCode #DeveloperProductivity #AIAgents #CLI #SoftwareEngineering",https://media.licdn.com/dms/image/v2/D4E22AQFSJiGQ-J-sQw/feedshare-shrink_1280/B4EZ_nFOhnJMAM-/0/1786288335260?e=1794441600&v=beta&t=XAdZ4VZcZDu03a6P9bi4otI5SJCD-D6pn1ykt59K2i0,1277,18,0,0,2026-10-25
 7492216236253163521,post,PUBLISHED,2026-08-09T13:52:29.369Z,https://www.linkedin.com/feed/update/urn:li:activity:7492216236253163521/,I am a big fan of Boris Cherny (Head of Claude Code at Anthropic) — I follow…,"nearly all his podcast appearances and YouTube talks. His latest conversation on Lenny's Podcast left one line stuck in my head: ""Coding is largely solved. I imagine a world where…","I am a big fan of Boris Cherny (Head of Claude Code at Anthropic) — I follow nearly all his podcast appearances and YouTube talks. His latest conversation on Lenny's Podcast left one line stuck in my head:
 
 ""Coding is largely solved. I imagine a world where everyone is able to program — anyone can just build software, anytime.""
@@ -152,7 +191,7 @@ https://lnkd.in/eyPZcKy7
 
 Worth watching his video, if you are in tech and thinking about what to double down on next.
 
-https://lnkd.in/eU75EsHy",,826,13,0,0,2026-10-25
+https://lnkd.in/eU75EsHy",,828,13,0,0,2026-10-25
 7487164575059058688,post,PUBLISHED,2026-07-26T15:18:59.485Z,https://www.linkedin.com/feed/update/urn:li:activity:7487164575059058688/,Pairwise Testing deserves more attention—especially now,The applied mathematics behind it offers a practical answer to a persistent engineering problem: How do we evaluate a complex system systematically when exhaustive testing is too…,"Pairwise Testing deserves more attention—especially now. The applied mathematics behind it offers a practical answer to a persistent engineering problem: How do we evaluate a complex system systematically when exhaustive testing is too expensive and time-consuming?
 
 The key concept is a Covering Array—a mathematical construct that transforms thousands of possible combinations into a smaller, systematic set of test cases while ensuring that every pair of input values appears at least once.

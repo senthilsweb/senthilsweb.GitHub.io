@@ -109,6 +109,8 @@
 
 ## LinkedIn posts
 
+- [An AI function for SQL, one row at a time: the answers come back as new columns](https://www.linkedin.com/feed/update/urn:li:activity:7520265443165671424/): In January 2025 I put an LLM inside a SQL editor. The answer was text. This is the implementation on top of the Pyodide foundation: the func
+- [Python in the browser, with Pyodide: the foundation for AI in SQL](https://www.linkedin.com/feed/update/urn:li:activity:7520252759909072896/): I wanted to show AI in SQL, using Jev. For that I needed Python running next to DuckDB, in a place anyone can open without installing anythi
 - [Jev in job-pilot: typed decisions in my open source job search agent](https://www.linkedin.com/feed/update/urn:li:activity:7519788896952709120/): My open source job agent now asks Jev (TypeSafe AI) for its fuzzy decisions, and the dataset it publishes every day stays open.
 - [Today was my last working day at Pentaho](https://www.linkedin.com/feed/update/urn:li:activity:7498922367382114304/): Eleven years. Three acquisitions. Four names. One product. My journey with this product began in 2015 at Rokitt Inc., a small New Jersey sta
 - [Happy International Dog Day](https://www.linkedin.com/feed/update/urn:li:activity:7498533916497076224/): 🐾 Milo has been by my side since May, 2023 — quiet teammate on long workdays, stress reliever, and my daily reminder to slow down and enjoy
